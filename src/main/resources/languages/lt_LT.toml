@@ -1,0 +1,426 @@
+# Inscribe lt_LT
+
+[director.help]
+no_subcommands = "Šiame puslapyje nėra antrinių komandų."
+no_description = "Aprašymas nepateiktas"
+command_group = "Komandų grupė. Spustelėkite, kad atidarytumėte."
+category = "Komandų kategorija"
+no_parameters = "Parametrų nėra. Spustelėkite, kad iš anksto užpildytumėte komandą."
+parameters_hover = "Užveskite pelės žymeklį ant parametrų, kad sužinotumėte daugiau."
+
+[director.help.navigation]
+back = "Atgal"
+page = "Puslapis"
+
+[director.help.navigation.parent]
+hover = "Grįžti į pirminę komandų grupę"
+
+[director.help.navigation.previous]
+hover = "Ankstesnis puslapis"
+
+[director.help.navigation.next]
+hover = "Kitas puslapis"
+
+[director.help.parameter]
+required = "Šis parametras yra privalomas."
+optional = "Šis parametras yra neprivalomas."
+default = "Jei nenurodyta, numatytoji reikšmė yra \"{value}\"."
+type = "Šio parametro tipas yra {type}."
+
+[director.runtime.error]
+invalid_origin = "Šios komandos negalima vykdyti iš šio šaltinio."
+unknown_parameter = "Nežinomas parametro raktas: {key}"
+unexpected_argument = "Netikėtas argumentas \"{argument}\". Pasirenkami parametrai turi būti nurodyti su raktu, pvz. seed=123"
+unclosed_group = "Trūksta uždarančio \"]\" parametrui {key}"
+conversion_failed = "Reikšmės \"{value}\" nepavyko konvertuoti į {type} parametrui {parameter}"
+default_parse_failed = "Nepavyko nuskaityti parametro {parameter} numatytosios reikšmės"
+missing_argument = "Trūksta argumento \"{parameter}\" ({type})"
+execution_failed = "Nepavyko įvykdyti komandos {command}: {reason}"
+
+[language.menu]
+your_language = "Jūsų kalba"
+reset_your_language = "Atkurti jūsų kalbą"
+server_default = "Numatytoji serverio kalba"
+edit_messages = "Redaguoti kalbos pranešimus"
+use_server_default = "Naudoti numatytąją serverio kalbą"
+current = "Dabartinė: {locale}"
+current_with_personal = "Dabartinė: {locale} (Jūsų: {personal})"
+your_description = "Keiskite tik jums rodomus pranešimus."
+reset_description = "Naudokite numatytąją serverio kalbą."
+server_description = "Keiskite numatytąją serverio kalbą."
+edit_description = "Atverkite kiekvienos kalbos pranešimų redaktorių."
+select_description = "Spustelėkite, kad pasirinktumėte šią kalbą."
+remove_personal_description = "Pašalinkite asmeninį kalbos pasirinkimą."
+no_controls = "Jums nepasiekiami kalbos nustatymai."
+command = "Komanda: {command}"
+selected = "pasirinkta"
+all-volmit-plugins = "visi Volmit papildiniai"
+
+[language.error]
+stopping = "Stabdant papildinį kalbos pasirinkimas nepasiekiamas."
+editor-player-only = "Atidarykite kalbos redaktorių žaidime."
+no-providers = "Nėra prieinamų Volmit kalbų teikėjų."
+numeric-page = "Įveskite puslapio numerį."
+personal-player-only = "Žaidėjo kalbos nuostatas reikia pasirinkti žaidime."
+personal-permission = "Neturite leidimo pasirinkti savo kalbos."
+plugin-personal-permission = "Neturite leidimo pasirinkti savo kalbos papildiniui {plugin}."
+plugin-server-permission = "Neturite leidimo keisti serverio kalbos papildiniui {plugin}."
+server-locale-required = "Pasirinkite numatytosios serverio kalbos kodą, pavyzdžiui, en_US."
+unavailable-for-all = "Kalba {locale} prieinama ne visiems pasirinktiems papildiniams."
+
+[language.usage]
+editor = "Naudojimas: /{command} language server edit [locale]"
+selection = "Naudojimas: /{command} language self [locale|reset] arba server [locale]"
+volmit-selection = "Naudojimas: /volmit plugins languages [locale]"
+update = "Naudojimas: /{command} language update"
+
+[language.update]
+checking = "{plugin}: tikrinami kalbų saugyklos pakeitimai..."
+unchanged = "{plugin}: įdiegtos kalbos jau atitinka saugyklą."
+applied = "{plugin}: kalba {locale} atnaujinta (pridėta: {added}, pakeista: {updated}, išsaugota vietinių pakeitimų: {kept})."
+cooldown = "{plugin}: kalbų saugykla neseniai tikrinta; bandykite dar kartą po {remaining}."
+locale-failed = "{plugin}: kalba {locale} neatnaujinta: {reason}"
+failed = "{plugin}: kalbų atnaujinti nepavyko: {reason}"
+
+[language.selection]
+preparing = "Ruošiama kalba {locale}: {target}..."
+save-failed = "{plugin}: nepavyko išsaugoti kalbos pasirinkimo; patikrinkite serverio konsolę."
+english-fallback = "{plugin}: kalba {locale} nepasiekiama; naudojama anglų kalba (en_US)."
+personal-selected = "{plugin}: jūsų kalba dabar yra {locale}."
+server-selected = "{plugin}: serverio kalba dabar yra {locale}."
+server-default-selected = "{plugin}: jūsų kalba dabar atitinka numatytąją serverio kalbą."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "Įkeliami kalbos {locale} pranešimai..."
+
+[language.editor.section]
+languages = "Kalbos"
+search = "Paieška"
+search-title = "{locale} / Paieška"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Ieškokite pranešimo rakto arba teksto. Norėdami grįžti, įveskite cancel."
+value = "Pokalbyje įveskite naują rakto {key} reikšmę."
+current = "Dabartinė reikšmė: {value}"
+variables = "Kintamieji: {variables}"
+guidance = "Naudokite \\n naujai eilutei, \\\\ atvirkštiniam pasvirajam brūkšniui arba įveskite cancel, kad grįžtumėte."
+
+[language.editor.input]
+expired = "Baigėsi kalbos redaktoriaus įvesties laikas."
+too-long = "Įvestyje gali būti ne daugiau kaip {maximum} simbolių."
+unable-to-save = "Nepavyko išsaugoti: {reason}"
+
+[language.editor.navigation]
+back = "&eAtgal&r"
+close = "&cUždaryti&r"
+previous-page = "&eAnkstesnis puslapis&r"
+next-page = "&eKitas puslapis&r"
+
+[language.editor.search]
+messages = "Ieškoti pranešimų"
+messages-lore = "Spustelėkite norėdami ieškoti visuose pranešimuose."
+clear = "Išvalyti paiešką"
+
+[language.editor.message]
+current-value = "&7Dabartinė reikšmė:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Spustelėkite norėdami redaguoti daugiskaitos formą.&r"
+edit-lines = "&7Spustelėkite norėdami redaguoti atskiras eilutes.&r"
+edit-chat = "&7Spustelėkite norėdami redaguoti pokalbyje.&r"
+
+[language.editor.locale]
+open = "&8Spustelėkite norėdami atverti šią kalbą.&r"
+
+[language.editor.category]
+message-count = "&7Pranešimų: {count}&r"
+open = "&8Spustelėkite norėdami atverti šią kategoriją.&r"
+
+[language.editor.error]
+no-permission = "Neturite leidimo redaguoti papildinio {plugin} kalbų."
+unable-to-edit = "Nepavyko redaguoti: {reason}"
+
+[language.editor.saved]
+summary = "{locale} išsaugota. Kalbų pasirinkimai nepakeisti."
+change = "{key}: „{before}“ pakeista į „{after}“."
+
+[language.editor.part]
+line = "Eilutė {line}"
+
+[language.editor.value]
+none = "Nėra"
+empty = "(tuščia)"
+
+[config.editor]
+title = "{plugin} / Konfigūracija"
+section = "Skyrius: {path}"
+page = "Puslapis {page} iš {pages}"
+entry = "Įrašas {number}"
+current = "Dabar: {value}"
+open = "Spustelėkite, kad atidarytumėte šį skyrių."
+toggle = "Spustelėkite, kad perjungtumėte true arba false."
+edit = "Spustelėkite ir įveskite naują reikšmę pokalbyje."
+prompt = "Įveskite naują {path} reikšmę. Norėdami grįžti, įveskite cancel."
+expired = "Konfigūracijos įvedimo laikas baigėsi."
+too-long = "Įveskite daugiausia {maximum} simbolių."
+saving = "Saugoma konfigūracija..."
+saved = "{path} išsaugota. Pakeitimai pritaikomi automatiškai."
+failed = "Nepavyko redaguoti konfigūracijos: {reason}"
+loading = "Įkeliama konfigūracija..."
+empty = "Šiame skyriuje nėra nustatymų."
+player-only = "Atidarykite konfigūracijos redaktorių žaidime."
+no-permission = "Neturite leidimo redaguoti šios konfigūracijos."
+back = "Atgal"
+previous = "Ankstesnis puslapis"
+next = "Kitas puslapis"
+refresh = "Atnaujinti"
+close = "Uždaryti"
+
+[config.editor.type]
+text = "Tekstas; kabučių nereikia."
+integer = "Įveskite sveikąjį skaičių."
+decimal = "Įveskite skaičių, pavyzdžiui, 0.25."
+list = "Naudokite TOML sąrašą, pavyzdžiui, [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "Užkerėjimų perkėlimas išjungtas."
+creative = "Norėdami perkelti užkerėjimus, įjunkite išgyvenimo režimą."
+denied = "Neturite leidimo tai atlikti."
+empty = "Šis daiktas neturi perkeliamų užkerėjimų."
+space = "Atlaisvinkite vietos knygai inventoriuje."
+changed = "Jūsų daiktai arba nustatymai pasikeitė. Pradėkite perkėlimą iš naujo."
+unaffordable = "Negalite sumokėti perkėlimo kainos."
+economy = "Mokėjimai pinigais neprieinami."
+failed = "Perkėlimas nepavyko. Kreipkitės į administratorių."
+success = "Užkerėjimai perkelti."
+applied = "Užkerėjimai pritaikyti."
+incompatible = "Ši knyga neturi šiam daiktui tinkamų patobulinimų."
+select = "Pasirinkite bent vieną užkerėjimą."
+reconciliation = "Mokėjimas netikėtai nepavyko. Prieš bandydami dar kartą paprašykite administratoriaus patikrinti ekonomiką."
+
+[menu]
+title = "Inscribe"
+keep = "Palikti: {name} {level}"
+transfer = "Perkelti: {name} {level}"
+cost = "Kaina: {cost}"
+price = "{experience} patirties + {money} pinigų"
+experience = "{experience} patirties"
+money = "{money} pinigų"
+free = "Nemokamai"
+confirm = "Patvirtinti perkėlimą"
+cancel = "Atšaukti"
+previous = "Ankstesnis puslapis"
+next = "Kitas puslapis"
+total = "Iš viso: {cost}"
+apply = "Pritaikyti: {name} {level}"
+skip = "Praleisti: {name} {level}"
+current = "Dabartinis lygis: {level}"
+confirm_apply = "Pritaikyti užkerėjimus"
+
+[command]
+player = "Naudokite šią komandą žaidime."
+failed = "Komanda nepavyko. Patikrinkite serverio konsolę."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Išsaugoti diagnostikos ataskaitą"
+root = "Inscribe pagalba ir valdymas"
+language = "Pasirinkti arba redaguoti kalbas"
+debug = "Diagnostikos įrankiai"
+version = "Rodyti įdiegtą versiją"
+config = "Redaguoti Inscribe nustatymus"
+status = "Rodyti nustatymus, atidarytus meniu ir suderinamumą"
+
+[command.parameter]
+upload = "Įkelti tik aiškiai leidus."
+
+[setting.general.enabled]
+name = "Įjungta"
+description = "Įjungti ištraukimą ir pritaikymą."
+
+[setting.transfers.allowCreative]
+name = "Kūrybinis režimas"
+description = "Leisti perkėlimus kūrybiniame režime."
+
+[setting.transfers.allowUnsafe]
+name = "Lygiai virš ribos"
+description = "Išsaugoti aukštesnius lygius; suderinamumas ir konfliktai vis tiek tikrinami."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Mokėjimai pinigais (Folia)"
+description = "Įjungti tik jei ekonomikos teikėjas palaiko Folia."
+
+[setting.pricing.extractionCost]
+name = "Ištraukimo mokestis"
+description = "Numatytoji kaina už pasirinktą užkerėjimą taškais arba pinigais."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Ištraukimas pagal lygį"
+description = "Padauginti kiekvieną ištraukimo mokestį iš užkerėjimo lygio."
+
+[setting.pricing.applicationCost]
+name = "Pritaikymo mokestis"
+description = "Kaina už pritaikymą; nulis reiškia nemokamai."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Pritaikymas pagal lygį"
+description = "Padauginti pritaikymo mokestį iš pritaikomų lygių sumos."
+
+[setting.pricing.currency]
+name = "Valiuta"
+description = "EXPERIENCE naudoja patirties taškus. MONEY reikia Vault."
+
+[setting.general.language]
+name = "Serverio kalba"
+description = "Numatyta kalba; asmeninis pasirinkimas turi pirmenybę."
+
+[setting.hotReload.enabled]
+name = "Automatinis perkrovimas"
+description = "Automatiškai pritaikyti redaguotus konfigūracijos ir kalbos failus."
+
+[setting.presentation.splashScreen]
+name = "Paleidimo juosta"
+description = "Rodyti papildinio juostą serverio žurnale."
+
+[setting.debug.uploadEnabled]
+name = "Diagnostikos įkėlimas"
+description = "Leisti įkėlimą tik gavus aiškų prašymą."
+
+[setting.transfers.extractionMaterials]
+name = "Ištraukimo medžiagos"
+description = "Leidžiamos daiktų medžiagos; tuščias sąrašas leidžia tinkamus daiktus."
+
+[setting.transfers.applicationMaterials]
+name = "Pritaikymo medžiagos"
+description = "Leidžiamos daiktų medžiagos; tuščias sąrašas leidžia suderinamus daiktus."
+
+[setting.transfers.bookName]
+name = "Ištrauktos knygos pavadinimas"
+description = "Jei tuščia, naudojamas vanilla pavadinimas. Palaikomas spalvų formatavimas."
+
+[setting.transfers.bookLore]
+name = "Ištrauktos knygos aprašas"
+description = "Iki 20 eilučių po 512 simbolių. Jei tuščia, aprašas nepridedamas."
+
+[setting.enchantments]
+name = "Užkerėjimų taisyklės"
+description = "Kiekvieno užkerėjimo ištraukimo kaina, valiuta ir įjungimas."
+
+[setting.editor]
+title = "Inscribe / Nustatymai"
+
+[setting.metrics.enabled]
+name = "Naudojimo statistika"
+description = "Įjungti anonimines bStats naudojimo ataskaitas."
+
+[setting.general.updateNotifications]
+name = "Versijų pranešimai"
+description = "Tikrinti naujas versijas ir pranešti žaidėjams, turintiems leidimą. Automatiškai neįdiegiama."
+
+[setting.policy.enabled]
+name = "Įjungta"
+description = "Leisti perkelti šį užkerėjimą."
+
+[setting.policy.cost]
+name = "Kaina"
+description = "Šio užkerėjimo ištraukimo kaina."
+
+[setting.policy.perLevel]
+name = "Už lygį"
+description = "Padauginti kainą iš užkerėjimo lygio."
+
+[setting.policy.currency]
+name = "Valiuta"
+description = "EXPERIENCE naudoja taškus; MONEY naudoja Vault."
+
+[debug.error]
+missing-permission = "Trūksta leidimo: {permission}"
+already-preparing = "{plugin} diagnostikos ataskaita jau ruošiama."
+already-preparing-short = "Diagnostikos ataskaita jau ruošiama."
+schedule-failed = "Nepavyko suplanuoti diagnostikos ataskaitos."
+provider-closed = "Diagnostikos teikėjas uždarytas."
+closed-before-capture = "Diagnostikos teikėjas užsidarė prieš surenkant ataskaitą."
+writer-schedule-failed = "Nepavyko suplanuoti diagnostikos ataskaitos rašymo."
+capture-failed = "Nepavyko surinkti diagnostikos ataskaitos; patikrinkite serverio konsolę."
+closed-before-write = "Diagnostikos teikėjas užsidarė prieš įrašant ataskaitą."
+write-failed = "Nepavyko įrašyti diagnostikos ataskaitos; patikrinkite serverio konsolę."
+
+[debug]
+preparing = "Ruošiama {plugin} diagnostikos ataskaita..."
+saved = "{plugin} diagnostikos ataskaita išsaugota: {path}."
+
+[debug.upload]
+interrupted = "Diagnostikos ataskaitos įkėlimas nutrauktas; vietinė ataskaita išsaugota."
+failed = "Diagnostikos ataskaitos įkelti nepavyko; vietinė ataskaita išsaugota."
+completed = "Įkelta kaip VolmitSoftware - {plugin} - v{version}."
+
+[debug.action]
+open = "Atidaryti: {url}"
+open-description = "Atidaryti įkeltą diagnostikos ataskaitą."
+copy-path = "Kopijuoti vietinį kelią"
+copy-path-description = "Kopijuoti vietinės ataskaitos kelią."
+
+[setting.general]
+name = "Bendra"
+description = "Pagrindinis jungiklis, serverio kalba ir pranešimai apie versijas."
+
+[setting.metrics]
+name = "Metrika"
+description = "Anoniminė bStats naudojimo statistika."
+
+[setting.presentation]
+name = "Pateikimas"
+description = "Paleidimo išvestis."
+
+[setting.hotReload]
+name = "Karštasis perkrovimas"
+description = "Pritaikyti redaguotus failus be paleidimo iš naujo."
+
+[setting.debug]
+name = "Diagnostika"
+description = "Diagnostikos ataskaitos."
+
+[setting.transfers]
+name = "Perkėlimai"
+description = "Kas gali perkelti, tinkami daiktai ir kaip sujungiamos knygos."
+
+[setting.pricing]
+name = "Kainodara"
+description = "Numatytosios kainos ir mokėjimo valiuta."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Tikrinimo intervalas"
+description = "Milisekundės tarp failų patikrinimų, nuo 250 iki 60000."
+
+[setting.hotReload.cooldownMillis]
+name = "Ramybės laikotarpis"
+description = "Milisekundės, kurias failas turi išlikti nepakitęs prieš pritaikymą."
+
+[setting.hotReload.notifyOperators]
+name = "Pranešimai operatoriams"
+description = "Rodyti pritaikytus arba atmestus failų pakeitimus veiksmų juostoje."
+
+[setting.transfers.mergeEqualLevels]
+name = "Sujungti vienodus lygius"
+description = "Sujungti vienodus knygos ir daikto lygius į kitą lygį, kaip priekalas."
+
+[setting.transfers.increaseRepairCost]
+name = "Didinti taisymo kainą"
+description = "Pritaikant knygą didinti daikto taisymo kainą, kaip priekalas."
+
+[status]
+pricing = "&7Valiuta &f{currency}&r &8|&r &7ištraukimo mokestis &f{extraction}&r &8|&r &7pritaikymo mokestis &f{application}&r"
+transfers = "&7Atidarytų meniu &f{menus}&r &8|&r &7lygių sujungimas {merge} &8|&r &7taisymo kaina {repair}"
+configuration = "&7Konfigūracija {enabled} &8|&r &7kalba &f{language}&r &8|&r &7karštasis perkrovimas {hot_reload}"
+services = "&7Metrika {metrics} &8|&r &7versijų pranešimai {updates}"
+compatibility = "&7Suderinamumas &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribe būsena"
+
+[command.feedback]
+files_applied = "&aPritaikyti&7 konfigūracijos ir kalbos failų pakeitimai."
+files_rejected = "&cFailų pakeitimai atmesti; lieka aktyvūs paskutiniai tinkami nustatymai."
+
+[status.state]
+enabled = "&aįjungta&r"
+disabled = "&cišjungta&r"

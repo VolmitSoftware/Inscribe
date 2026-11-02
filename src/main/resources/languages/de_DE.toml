@@ -1,0 +1,426 @@
+# Inscribe de_DE
+
+[director.help]
+no_subcommands = "Auf dieser Seite gibt es keine Unterbefehle."
+no_description = "Keine Beschreibung vorhanden"
+command_group = "Befehlsgruppe. Zum Öffnen klicken."
+category = "Befehlskategorie"
+no_parameters = "Keine Parameter. Klicken, um den Befehl vorab auszufüllen."
+parameters_hover = "Bewege den Mauszeiger über die Parameter, um mehr zu erfahren."
+
+[director.help.navigation]
+back = "Zurück"
+page = "Seite"
+
+[director.help.navigation.parent]
+hover = "Zur übergeordneten Befehlsgruppe zurückkehren"
+
+[director.help.navigation.previous]
+hover = "Vorherige Seite"
+
+[director.help.navigation.next]
+hover = "Nächste Seite"
+
+[director.help.parameter]
+required = "Dieser Parameter ist erforderlich."
+optional = "Dieser Parameter ist optional."
+default = "Standardmäßig \"{value}\", wenn nicht angegeben."
+type = "Dieser Parameter hat den Typ {type}."
+
+[director.runtime.error]
+invalid_origin = "Dieser Befehl kann von diesem Ursprung aus nicht ausgeführt werden."
+unknown_parameter = "Unbekannter Parameterschlüssel: {key}"
+unexpected_argument = "Unerwartetes Argument \"{argument}\". Optionale Parameter müssen mit Schlüssel angegeben werden, z. B. seed=123"
+unclosed_group = "Fehlende schließende Klammer \"]\" für Parameter {key}"
+conversion_failed = "\"{value}\" kann für {parameter} nicht in {type} konvertiert werden"
+default_parse_failed = "Der Standardwert für Parameter {parameter} kann nicht gelesen werden"
+missing_argument = "Fehlendes Argument \"{parameter}\" ({type})"
+execution_failed = "Befehl {command} konnte nicht ausgeführt werden: {reason}"
+
+[language.menu]
+your_language = "Deine Sprache"
+reset_your_language = "Deine Sprache zurücksetzen"
+server_default = "Serverstandard"
+edit_messages = "Sprachnachrichten bearbeiten"
+use_server_default = "Serverstandard verwenden"
+current = "Aktuell: {locale}"
+current_with_personal = "Aktuell: {locale} (Deine: {personal})"
+your_description = "Ändere nur die Nachrichten, die du siehst."
+reset_description = "Verwende die Standardsprache des Servers."
+server_description = "Ändere die Standardsprache des Servers."
+edit_description = "Öffne den Nachrichteneditor für jede Sprache."
+select_description = "Klicken, um diese Sprache auszuwählen."
+remove_personal_description = "Entferne deine persönliche Sprachauswahl."
+no_controls = "Für dich sind keine Spracheinstellungen verfügbar."
+command = "Befehl: {command}"
+selected = "ausgewählt"
+all-volmit-plugins = "alle Volmit-Plugins"
+
+[language.error]
+stopping = "Die Sprachauswahl ist nicht verfügbar, während das Plugin beendet wird."
+editor-player-only = "Öffne den Spracheditor im Spiel."
+no-providers = "Es sind keine Volmit-Sprachanbieter verfügbar."
+numeric-page = "Gib die Seitennummer als Zahl ein."
+personal-player-only = "Persönliche Spracheinstellungen müssen im Spiel ausgewählt werden."
+personal-permission = "Du hast keine Berechtigung, deine Sprache auszuwählen."
+plugin-personal-permission = "Du hast keine Berechtigung, deine Sprache für {plugin} auszuwählen."
+plugin-server-permission = "Du hast keine Berechtigung, die Serversprache für {plugin} zu ändern."
+server-locale-required = "Wähle einen Sprachcode wie en_US als Serverstandard."
+unavailable-for-all = "Die Sprache {locale} ist nicht für alle ausgewählten Plugins verfügbar."
+
+[language.usage]
+editor = "Syntax: /{command} language server edit [locale]"
+selection = "Syntax: /{command} language self [locale|reset] oder server [locale]"
+volmit-selection = "Syntax: /volmit plugins languages [locale]"
+update = "Syntax: /{command} language update"
+
+[language.update]
+checking = "{plugin}: Das Sprach-Repository wird auf Änderungen geprüft..."
+unchanged = "{plugin}: Installierte Sprachen entsprechen bereits dem Repository."
+applied = "{plugin}: {locale} aktualisiert ({added} neu, {updated} geändert, {kept} lokale Änderungen behalten)."
+cooldown = "{plugin}: Das Sprach-Repository wurde kürzlich geprüft; versuche es in {remaining} erneut."
+locale-failed = "{plugin}: {locale} wurde nicht aktualisiert: {reason}"
+failed = "{plugin}: Sprachaktualisierung fehlgeschlagen: {reason}"
+
+[language.selection]
+preparing = "Sprache {locale} wird für {target} vorbereitet..."
+save-failed = "{plugin}: Die Sprachauswahl konnte nicht gespeichert werden; prüfe die Serverkonsole."
+english-fallback = "{plugin}: {locale} ist nicht verfügbar; Englisch (en_US) wird verwendet."
+personal-selected = "{plugin}: Deine Sprache ist jetzt {locale}."
+server-selected = "{plugin}: Die Serversprache ist jetzt {locale}."
+server-default-selected = "{plugin}: Deine Sprache folgt jetzt dem Serverstandard."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "Nachrichten für {locale} werden geladen..."
+
+[language.editor.section]
+languages = "Sprachen"
+search = "Suche"
+search-title = "{locale} / Suche"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Suche nach Nachrichtenschlüsseln oder Text. Gib cancel ein, um zurückzukehren."
+value = "Gib im Chat einen neuen Wert für {key} ein."
+current = "Aktueller Wert: {value}"
+variables = "Variablen: {variables}"
+guidance = "Verwende \\n für Zeilenumbrüche und \\\\ für einen Backslash oder gib cancel ein, um zurückzukehren."
+
+[language.editor.input]
+expired = "Die Eingabe im Spracheditor ist abgelaufen."
+too-long = "Die Eingabe darf höchstens {maximum} Zeichen enthalten."
+unable-to-save = "Speichern fehlgeschlagen: {reason}"
+
+[language.editor.navigation]
+back = "&eZurück&r"
+close = "&cSchließen&r"
+previous-page = "&eVorherige Seite&r"
+next-page = "&eNächste Seite&r"
+
+[language.editor.search]
+messages = "Nachrichten durchsuchen"
+messages-lore = "Klicken, um alle Nachrichten zu durchsuchen."
+clear = "Suche zurücksetzen"
+
+[language.editor.message]
+current-value = "&7Aktueller Wert:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Klicken, um eine Pluralform zu bearbeiten.&r"
+edit-lines = "&7Klicken, um einzelne Zeilen zu bearbeiten.&r"
+edit-chat = "&7Klicken, um im Chat zu bearbeiten.&r"
+
+[language.editor.locale]
+open = "&8Klicken, um diese Sprache zu öffnen.&r"
+
+[language.editor.category]
+message-count = "&7{count} Nachrichten&r"
+open = "&8Klicken, um diese Kategorie zu öffnen.&r"
+
+[language.editor.error]
+no-permission = "Du hast keine Berechtigung, die Sprachen von {plugin} zu bearbeiten."
+unable-to-edit = "Bearbeiten fehlgeschlagen: {reason}"
+
+[language.editor.saved]
+summary = "{locale} gespeichert. Die Sprachauswahl bleibt unverändert."
+change = "{key}: „{before}“ wurde in „{after}“ geändert."
+
+[language.editor.part]
+line = "Zeile {line}"
+
+[language.editor.value]
+none = "Keine"
+empty = "(leer)"
+
+[config.editor]
+title = "{plugin} / Konfiguration"
+section = "Abschnitt: {path}"
+page = "Seite {page} von {pages}"
+entry = "Eintrag {number}"
+current = "Aktuell: {value}"
+open = "Klicken, um diesen Abschnitt zu öffnen."
+toggle = "Klicken, um zwischen true und false umzuschalten."
+edit = "Klicken, um einen neuen Wert im Chat einzugeben."
+prompt = "Gib einen neuen Wert für {path} ein. Gib cancel ein, um zurückzukehren."
+expired = "Die Konfigurationseingabe ist abgelaufen."
+too-long = "Gib höchstens {maximum} Zeichen ein."
+saving = "Konfiguration wird gespeichert..."
+saved = "{path} gespeichert. Änderungen werden automatisch angewendet."
+failed = "Konfiguration konnte nicht bearbeitet werden: {reason}"
+loading = "Konfiguration wird geladen..."
+empty = "Dieser Abschnitt hat keine Einstellungen."
+player-only = "Öffne den Konfigurationseditor im Spiel."
+no-permission = "Du hast keine Berechtigung, diese Konfiguration zu bearbeiten."
+back = "Zurück"
+previous = "Vorherige Seite"
+next = "Nächste Seite"
+refresh = "Aktualisieren"
+close = "Schließen"
+
+[config.editor.type]
+text = "Text; keine umgebenden Anführungszeichen nötig."
+integer = "Eine ganze Zahl eingeben."
+decimal = "Eine Zahl eingeben, zum Beispiel 0.25."
+list = "Eine TOML-Liste verwenden, etwa [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "Das Übertragen von Verzauberungen ist deaktiviert."
+creative = "Wechsle in den Überlebensmodus, um Verzauberungen zu übertragen."
+denied = "Du hast dafür keine Berechtigung."
+empty = "Dieser Gegenstand hat keine übertragbaren Verzauberungen."
+space = "Schaffe Platz für das Buch in deinem Inventar."
+changed = "Deine Gegenstände oder Einstellungen wurden geändert. Starte die Übertragung erneut."
+unaffordable = "Du kannst die Kosten dieser Übertragung nicht bezahlen."
+economy = "Geldzahlungen sind nicht verfügbar."
+failed = "Die Übertragung ist fehlgeschlagen. Kontaktiere einen Administrator."
+success = "Verzauberungen übertragen."
+applied = "Verzauberungen angewendet."
+incompatible = "Dieses Buch hat keine kompatiblen Verbesserungen für diesen Gegenstand."
+select = "Wähle mindestens eine Verzauberung."
+reconciliation = "Die Zahlung ist unerwartet fehlgeschlagen. Bitte einen Administrator, das Wirtschaftssystem zu prüfen, bevor du es erneut versuchst."
+
+[menu]
+title = "Inscribe"
+keep = "Behalten: {name} {level}"
+transfer = "Übertragen: {name} {level}"
+cost = "Kosten: {cost}"
+price = "{experience} EP + {money} Geld"
+experience = "{experience} EP"
+money = "{money} Geld"
+free = "Kostenlos"
+confirm = "Übertragung bestätigen"
+cancel = "Abbrechen"
+previous = "Vorherige Seite"
+next = "Nächste Seite"
+total = "Gesamt: {cost}"
+apply = "Anwenden: {name} {level}"
+skip = "Überspringen: {name} {level}"
+current = "Aktuelle Stufe: {level}"
+confirm_apply = "Verzauberungen anwenden"
+
+[command]
+player = "Öffne diesen Befehl im Spiel."
+failed = "Der Befehl ist fehlgeschlagen. Sieh in der Serverkonsole nach."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Diagnosebericht speichern"
+root = "Inscribe-Hilfe und -Verwaltung"
+language = "Sprachen auswählen oder bearbeiten"
+debug = "Diagnosewerkzeuge"
+version = "Installierte Version anzeigen"
+config = "Inscribe-Einstellungen bearbeiten"
+status = "Einstellungen, offene Menüs und Kompatibilität anzeigen"
+
+[command.parameter]
+upload = "Nur bei ausdrücklicher Freigabe hochladen."
+
+[command.feedback]
+files_applied = "&aÜbernommen:&7 Änderungen an Konfigurations- und Sprachdateien."
+files_rejected = "&cDateiänderungen abgelehnt; die letzten gültigen Einstellungen bleiben aktiv."
+
+[setting.general.enabled]
+name = "Aktiviert"
+description = "Extraktion und Anwendung aktivieren."
+
+[setting.general.language]
+name = "Serversprache"
+description = "Standardsprache; persönliche Auswahl hat Vorrang."
+
+[setting.general.updateNotifications]
+name = "Update-Hinweise"
+description = "Nach neuen Versionen suchen und berechtigte Spieler benachrichtigen. Keine automatische Installation."
+
+[setting.general]
+name = "Allgemein"
+description = "Hauptschalter, Serversprache und Update-Hinweise."
+
+[setting.transfers.allowCreative]
+name = "Kreativmodus"
+description = "Übertragungen im Kreativmodus erlauben."
+
+[setting.transfers.allowUnsafe]
+name = "Stufen über dem Maximum"
+description = "Höhere Stufen behalten; Kompatibilität und Konflikte gelten weiterhin."
+
+[setting.transfers.extractionMaterials]
+name = "Extraktionsmaterialien"
+description = "Erlaubte Materialien; eine leere Liste erlaubt geeignete Gegenstände."
+
+[setting.transfers.applicationMaterials]
+name = "Anwendungsmaterialien"
+description = "Erlaubte Materialien; eine leere Liste erlaubt kompatible Gegenstände."
+
+[setting.transfers.bookName]
+name = "Name extrahierter Bücher"
+description = "Leer verwendet den Vanilla-Namen. Farbformatierung wird unterstützt."
+
+[setting.transfers.bookLore]
+name = "Beschreibung extrahierter Bücher"
+description = "Bis zu 20 Zeilen mit je 512 Zeichen. Leer fügt keine Beschreibung hinzu."
+
+[setting.transfers]
+name = "Übertragungen"
+description = "Wer übertragen darf, zulässige Gegenstände und wie Bücher kombiniert werden."
+
+[setting.transfers.mergeEqualLevels]
+name = "Gleiche Stufen zusammenführen"
+description = "Gleiche Buch- und Gegenstandsstufen wie ein Amboss zur nächsten Stufe kombinieren."
+
+[setting.transfers.increaseRepairCost]
+name = "Reparaturkosten erhöhen"
+description = "Die Reparaturkosten des Gegenstands beim Anwenden eines Buchs wie bei einem Amboss erhöhen."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Geldzahlungen auf Folia"
+description = "Nur aktivieren, wenn dein Wirtschaftsplugin Folia unterstützt."
+
+[setting.pricing.extractionCost]
+name = "Extraktionsgebühr"
+description = "Standardkosten pro gewählter Verzauberung in Punkten oder Geld."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Extraktion nach Stufe"
+description = "Jede Extraktionsgebühr mit der Verzauberungsstufe multiplizieren."
+
+[setting.pricing.applicationCost]
+name = "Anwendungsgebühr"
+description = "Kosten pro Anwendung; 0 ist kostenlos."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Anwendung nach Stufe"
+description = "Die Anwendungsgebühr mit der Summe der angewendeten Stufen multiplizieren."
+
+[setting.pricing.currency]
+name = "Währung"
+description = "EXPERIENCE verwendet reine Erfahrungspunkte. MONEY benötigt Vault."
+
+[setting.pricing]
+name = "Preise"
+description = "Standardpreise und Zahlungswährung."
+
+[setting.hotReload.enabled]
+name = "Automatisches Neuladen"
+description = "Bearbeitete Konfigurations- und Sprachdateien automatisch übernehmen."
+
+[setting.hotReload]
+name = "Hot-Reload"
+description = "Bearbeitete Dateien ohne Neustart übernehmen."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Prüfintervall"
+description = "Millisekunden zwischen Dateiprüfungen, 250 bis 60000."
+
+[setting.hotReload.cooldownMillis]
+name = "Ruhezeit"
+description = "Millisekunden, die eine Datei unverändert bleiben muss, bevor sie übernommen wird."
+
+[setting.hotReload.notifyOperators]
+name = "Hinweise für Operatoren"
+description = "Übernommene oder abgelehnte Dateiänderungen in der Aktionsleiste anzeigen."
+
+[setting.presentation.splashScreen]
+name = "Startbanner"
+description = "Plugin-Banner im Serverprotokoll anzeigen."
+
+[setting.presentation]
+name = "Darstellung"
+description = "Startausgabe."
+
+[setting.debug.uploadEnabled]
+name = "Diagnose-Uploads"
+description = "Uploads nur auf ausdrückliche Anforderung erlauben."
+
+[setting.debug]
+name = "Diagnose"
+description = "Diagnoseberichte."
+
+[setting.enchantments]
+name = "Verzauberungsregeln"
+description = "Extraktionskosten, Währung und Aktivierung pro Verzauberung."
+
+[setting.editor]
+title = "Inscribe / Einstellungen"
+
+[setting.metrics.enabled]
+name = "Nutzungsstatistik"
+description = "Anonyme Nutzungsberichte über bStats aktivieren."
+
+[setting.metrics]
+name = "Metriken"
+description = "Anonyme bStats-Nutzungsstatistiken."
+
+[setting.policy.enabled]
+name = "Aktiviert"
+description = "Übertragung dieser Verzauberung erlauben."
+
+[setting.policy.cost]
+name = "Kosten"
+description = "Extraktionspreis für diese Verzauberung."
+
+[setting.policy.perLevel]
+name = "Pro Stufe"
+description = "Preis mit der Verzauberungsstufe multiplizieren."
+
+[setting.policy.currency]
+name = "Währung"
+description = "EXPERIENCE nutzt Punkte; MONEY nutzt Vault."
+
+[debug.error]
+missing-permission = "Fehlende Berechtigung: {permission}"
+already-preparing = "Ein Bericht für {plugin} wird bereits erstellt."
+already-preparing-short = "Ein Bericht wird bereits erstellt."
+schedule-failed = "Der Bericht konnte nicht eingeplant werden."
+provider-closed = "Der Diagnosedienst ist geschlossen."
+closed-before-capture = "Der Diagnosedienst wurde vor der Erfassung des Berichts geschlossen."
+writer-schedule-failed = "Berichtsschreiber konnte nicht eingeplant werden."
+capture-failed = "Der Bericht konnte nicht erfasst werden; prüfe die Serverkonsole."
+closed-before-write = "Der Diagnosedienst wurde vor dem Speichern des Berichts geschlossen."
+write-failed = "Der Bericht konnte nicht gespeichert werden; prüfe die Serverkonsole."
+
+[debug]
+preparing = "Bericht für {plugin} wird erstellt..."
+saved = "Bericht für {plugin} unter {path} gespeichert."
+
+[debug.upload]
+interrupted = "Der Upload wurde unterbrochen; der lokale Bericht ist gespeichert."
+failed = "Der Upload ist fehlgeschlagen; der lokale Bericht ist gespeichert."
+completed = "Als VolmitSoftware - {plugin} - v{version} hochgeladen."
+
+[debug.action]
+open = "Öffnen: {url}"
+open-description = "Hochgeladenen Bericht öffnen."
+copy-path = "Lokalen Pfad kopieren"
+copy-path-description = "Pfad des lokalen Berichts kopieren."
+
+[status]
+pricing = "&7Währung &f{currency}&r &8|&r &7Extraktionsgebühr &f{extraction}&r &8|&r &7Anwendungsgebühr &f{application}&r"
+transfers = "&7Offene Menüs &f{menus}&r &8|&r &7Stufen zusammenführen {merge} &8|&r &7Reparaturkosten {repair}"
+configuration = "&7Konfiguration {enabled} &8|&r &7Sprache &f{language}&r &8|&r &7Hot-Reload {hot_reload}"
+services = "&7Metriken {metrics} &8|&r &7Update-Hinweise {updates}"
+compatibility = "&7Kompatibilität &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribe-Status"
+
+[status.state]
+enabled = "&aaktiviert&r"
+disabled = "&cdeaktiviert&r"

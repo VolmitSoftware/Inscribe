@@ -1,0 +1,404 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import org.gradle.api.tasks.TaskProvider
+import org.gradle.api.attributes.Usage
+import org.gradle.api.attributes.java.TargetJvmVersion
+import org.gradle.api.tasks.compile.JavaCompile
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+import java.util.zip.ZipFile
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = uri('https://jitpack.io') }
+    }
+    dependencies {
+        classpath('com.github.VolmitSoftware.VolmLib:packaging:master-SNAPSHOT')
+    }
+}
+
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'com.gradleup.shadow' version '9.0.0-rc3'
+    id 'de.crazydev22.slimjar' version '2.1.9'
+}
+
+apply plugin: 'art.arcane.volmit-packaging'
+
+tasks.named('slimJar').get()
+
+group = 'com.volmit'
+version = '2.0.0'
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+    maven { url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/') }
+    maven { url = uri('https://repo.papermc.io/repository/maven-public/') }
+    maven {
+        url = uri('https://jitpack.io')
+        content { includeGroupByRegex('com\\.github\\.VolmitSoftware.*'); includeGroup('com.github.MilkBowl') }
+    }
+}
+
+configurations {
+    runtimeLibraryTest {
+        canBeConsumed = false
+        canBeResolved = true
+        extendsFrom(configurations.slimApi)
+    }
+    currentPaperCompatibility {
+        canBeConsumed = false
+        canBeResolved = true
+        attributes {
+            attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_API))
+            attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 25)
+        }
+    }
+    currentSpigotCompatibility {
+        canBeConsumed = false
+        canBeResolved = true
+        attributes {
+            attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_API))
+            attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 25)
+        }
+    }
+}
+
+dependencies {
+    compileOnly('org.spigotmc:spigot-api:26.1-R0.1-SNAPSHOT')
+    compileOnly('com.github.MilkBowl:VaultAPI:1.7') { transitive = false }
+    implementation(providers.gradleProperty('volmLibCoordinate').orElse('com.github.VolmitSoftware:VolmLib:master-SNAPSHOT').get()) {
+        changing = true
+        transitive = false
+    }
+    implementation('de.crazydev22.slimjar.helper:spigot:2.1.9')
+    slimApi('com.google.code.gson:gson:2.10.1')
+    slimApi('com.moandjiezana.toml:toml4j:0.7.2')
+    slimApi('net.kyori:adventure-api:4.26.1')
+    slimApi('net.kyori:adventure-text-minimessage:4.26.1')
+    slimApi('net.kyori:adventure-text-serializer-legacy:4.26.1')
+    slimApi('net.kyori:adventure-text-serializer-plain:4.26.1')
+    slimApi('net.kyori:adventure-text-serializer-gson:4.26.1')
+    slimApi('net.kyori:adventure-text-serializer-json:4.26.1')
+    currentPaperCompatibility('io.papermc.paper:paper-api:26.2.build.121-stable')
+    currentSpigotCompatibility('org.spigotmc:spigot-api:26.2-R0.1-SNAPSHOT')
+    testImplementation(platform('org.junit:junit-bom:6.1.3'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testImplementation('com.github.MilkBowl:VaultAPI:1.7') { transitive = false }
+    testImplementation('org.assertj:assertj-core:3.27.4')
+    testImplementation('org.ow2.asm:asm:9.9.1')
+    testImplementation('org.mockito:mockito-core:5.20.0')
+    testImplementation('io.papermc.paper:paper-api:26.2.build.121-stable')
+    testImplementation('org.mockbukkit.mockbukkit:mockbukkit-v26.2:4.116.1')
+    testImplementation('org.junit.platform:junit-platform-launcher')
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release.set(25)
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-parameters')
+}
+
+['Paper', 'Spigot'].each { String platform ->
+    tasks.register("compileCurrent${platform}Compatibility", JavaCompile) {
+        source = sourceSets.main.java
+        classpath = configurations.getByName("current${platform}Compatibility") + files(sourceSets.main.compileClasspath.filter { File dependency ->
+            !dependency.name.startsWith('spigot-api-')
+        })
+        destinationDirectory.set(layout.buildDirectory.dir("classes/java/current${platform}Compatibility"))
+        options.release.set(25)
+    }
+}
+
+Map<String, String> additionalApis = [
+    Paper261: 'io.papermc.paper:paper-api:26.1.2.build.74-stable',
+    Paper263: 'io.papermc.paper:paper-api:26.3.build.140-beta',
+    Spigot263: 'org.spigotmc:spigot-api:26.3-R0.1-SNAPSHOT'
+]
+additionalApis.each { String target, String coordinate ->
+    Configuration compatibility = configurations.create("api${target}") {
+        canBeConsumed = false
+        canBeResolved = true
+        attributes {
+            attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage, Usage.JAVA_API))
+            attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 25)
+        }
+    }
+    dependencies.add(compatibility.name, coordinate)
+    TaskProvider<JavaCompile> compilation = tasks.register("compile${target}Compatibility", JavaCompile) {
+        source = sourceSets.main.java
+        classpath = compatibility + files(sourceSets.main.compileClasspath.filter { File dependency ->
+            !dependency.name.startsWith('spigot-api-') && !dependency.name.startsWith('paper-api-')
+        })
+        destinationDirectory.set(layout.buildDirectory.dir("classes/java/${target}"))
+    }
+    tasks.named('check').configure { dependsOn(compilation) }
+}
+tasks.named('processResources').configure {
+    Map<String, String> properties = [name: rootProject.name, version: project.version.toString(), main: 'com.volmit.inscribe.Inscribe', apiVersion: '26.1']
+    inputs.properties(properties)
+    filesMatching('plugin.yml') { expand(properties) }
+}
+
+tasks.named('jar').configure { archiveClassifier.set('thin') }
+
+slimJar {
+    relocate('com.google.gson', 'com.volmit.inscribe.libs.gson')
+    relocate('com.moandjiezana.toml', 'com.volmit.inscribe.libs.toml')
+    relocate('net.kyori', 'com.volmit.inscribe.libs.kyori')
+}
+
+tasks.named('shadowJar').configure {
+    archiveClassifier.set('')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    minimize {
+        exclude(dependency('de.crazydev22.slimjar.helper:.*:.*'))
+    }
+    relocate('io.github.slimjar', 'com.volmit.inscribe.libs.slimjar')
+    relocate('art.arcane.volmlib', 'com.volmit.inscribe.libs.volmlib')
+    relocate('com.google.gson', 'com.volmit.inscribe.libs.gson')
+    relocate('com.moandjiezana.toml', 'com.volmit.inscribe.libs.toml')
+    relocate('net.kyori', 'com.volmit.inscribe.libs.kyori') { skipStringConstants = true }
+}
+
+TaskProvider<ShadowJar> runtimeLibraryTestJar = tasks.register('runtimeLibraryTestJar', ShadowJar) {
+    archiveFileName.set('runtime-libraries.jar')
+    destinationDirectory.set(layout.buildDirectory.dir('test-libraries'))
+    configurations = [project.configurations.runtimeLibraryTest]
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    relocate('com.google.gson', 'com.volmit.inscribe.libs.gson')
+    relocate('com.moandjiezana.toml', 'com.volmit.inscribe.libs.toml')
+    relocate('net.kyori', 'com.volmit.inscribe.libs.kyori')
+}
+
+tasks.named('test').configure {
+    useJUnitPlatform()
+    exclude('com/volmit/inscribe/RuntimeJarTest.class')
+    exclude('art/arcane/volmlib/testing/ServerApiLinkageTest.class')
+}
+
+TaskProvider<Test> packagingTest = tasks.register('packagingTest', Test) {
+    group = 'verification'
+    description = 'Exercises entrypoint loading, configuration, serializers and command reflection from the packaged runtime jars.'
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+    include('com/volmit/inscribe/RuntimeJarTest.class')
+    include('art/arcane/volmlib/testing/ServerApiLinkageTest.class')
+    dependsOn(tasks.named('shadowJar'), runtimeLibraryTestJar)
+    useJUnitPlatform()
+    inputs.file(tasks.named('shadowJar').flatMap { it.archiveFile })
+    inputs.file(runtimeLibraryTestJar.flatMap { it.archiveFile })
+    doFirst {
+        systemProperty('inscribe.runtimeJar', tasks.named('shadowJar').get().archiveFile.get().asFile.absolutePath)
+        systemProperty('inscribe.runtimeTestLibraries', runtimeLibraryTestJar.get().archiveFile.get().asFile.absolutePath)
+    }
+}
+
+String languageSourceRepository = providers.gradleProperty('languageSourceRepository').getOrElse('VolmitSoftware/Inscribe')
+String languageSourceBranch = providers.gradleProperty('languageSourceBranch').orElse(providers.provider {
+    File remoteHead = file('.git/refs/remotes/origin/HEAD')
+    String remotePrefix = 'ref: refs/remotes/origin/'
+    if (remoteHead.isFile()) {
+        String reference = remoteHead.getText('UTF-8').trim()
+        if (reference.startsWith(remotePrefix)) {
+            return reference.substring(remotePrefix.length())
+        }
+    }
+    return 'master'
+}).get()
+if (!(languageSourceRepository ==~ /[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+/)) {
+    throw new GradleException('languageSourceRepository must be a GitHub owner/repository')
+}
+if (!(languageSourceBranch ==~ /[A-Za-z0-9][A-Za-z0-9._\/-]{0,127}/) || languageSourceBranch.contains('..')) {
+    throw new GradleException('languageSourceBranch must be a Git branch name')
+}
+String languageSourcePath = 'src/main/resources/languages'
+List<File> languageSourceFiles = fileTree(languageSourcePath) {
+    include('*.toml')
+}.files.toList().sort { File left, File right -> left.name <=> right.name }
+List<String> languageSourceLocales = languageSourceFiles.collect { File source -> source.name.substring(0, source.name.length() - '.toml'.length()) }
+TaskProvider<WriteProperties> languageSourceManifestTask = tasks.register('generateLanguageSourceManifest', WriteProperties) {
+    inputs.files(languageSourceFiles)
+    destinationFile.set(layout.buildDirectory.file('generated/language-source/inscribe-language-source.properties'))
+    property('repository', languageSourceRepository)
+    property('branch', languageSourceBranch)
+    property('path', languageSourcePath)
+    property('extension', '.toml')
+    property('locales', languageSourceLocales.join(','))
+}
+tasks.named('processResources').configure {
+    exclude('languages/**')
+    from(languageSourceManifestTask)
+}
+tasks.register('verifyJava25Artifact') {
+    dependsOn(tasks.named('shadowJar'))
+    inputs.file(tasks.named('shadowJar').flatMap { it.archiveFile })
+    doLast {
+        ZipFile archive = new ZipFile(tasks.named('shadowJar').get().archiveFile.get().asFile)
+        try {
+            for (String required : ['slimjar.dat', 'slimjar-resolutions.dat', 'inscribe-language-source.properties', 'inscribe-release.properties',
+                                    'com/volmit/inscribe/libs/slimjar/app/builder/SpigotApplicationBuilder.class', 'com/volmit/inscribe/metrics/Metrics.class']) {
+                if (archive.getEntry(required) == null) {
+                    throw new GradleException("Runtime artifact is missing ${required}")
+                }
+            }
+            Properties languageManifest = new Properties()
+            archive.getInputStream(archive.getEntry('inscribe-language-source.properties')).withCloseable { InputStream stream -> languageManifest.load(stream) }
+            if (languageManifest.getProperty('repository') != languageSourceRepository
+                    || languageManifest.getProperty('branch') != languageSourceBranch
+                    || languageManifest.getProperty('path') != languageSourcePath
+                    || languageManifest.getProperty('extension') != '.toml'
+                    || languageManifest.getProperty('locales') != languageSourceLocales.join(',')) {
+                throw new GradleException('Language manifest does not match the build source set')
+            }
+            if (languageManifest.stringPropertyNames().any { String key ->
+                key == 'revision' || key == 'mode' || key == 'configured' || key.startsWith('sha256.')
+            }) {
+                throw new GradleException('Language manifest must track the repository branch, not a pinned revision')
+            }
+            int metadataCount = 0
+            archive.entries().each { java.util.zip.ZipEntry entry ->
+                if (entry.name.startsWith('languages/')) { throw new GradleException('Source catalogs must not be bundled') }
+                if (entry.name == 'plugin.yml') { metadataCount++ }
+                if (entry.name.startsWith('art/arcane/volmlib/')) {
+                    throw new GradleException("Unrelocated VolmLib class: ${entry.name}")
+                }
+                if (entry.name.startsWith('com/volmit/inscribe/libs/gson/')
+                        || entry.name.startsWith('com/volmit/inscribe/libs/toml/')
+                        || entry.name.startsWith('com/volmit/inscribe/libs/kyori/')) {
+                    throw new GradleException("Runtime-downloaded library is bundled in artifact: ${entry.name}")
+                }
+                if (entry.name.endsWith('.class')) {
+                    archive.getInputStream(entry).withCloseable { InputStream stream ->
+                        DataInputStream input = new DataInputStream(stream)
+                        input.readInt()
+                        input.readUnsignedShort()
+                        int major = input.readUnsignedShort()
+                        if (major > 69) { throw new GradleException("Java 25 incompatible class ${entry.name}: ${major}") }
+                        if (entry.name.startsWith('com/volmit/inscribe/') && !entry.name.startsWith('com/volmit/inscribe/libs/') && major != 69) {
+                            throw new GradleException("Inscribe class must target Java 25: ${entry.name}: ${major}")
+                        }
+                    }
+                }
+            }
+            if (metadataCount != 1) { throw new GradleException("Expected one plugin.yml, found ${metadataCount}") }
+        } finally {
+            archive.close()
+        }
+    }
+}
+
+tasks.named('check').configure {
+    dependsOn(packagingTest)
+    dependsOn('compileCurrentPaperCompatibility', 'compileCurrentSpigotCompatibility', 'verifyJava25Artifact')
+}
+
+tasks.register('buildSwiftSwamp', Copy) {
+    group = 'development'
+    description = 'Builds, verifies, and stages Inscribe in the workspace BUILDS directory.'
+    outputs.upToDateWhen { false }
+    dependsOn('check', 'shadowJar')
+    from(tasks.named('shadowJar').flatMap { it.archiveFile })
+    into(providers.gradleProperty('buildsDirectory').orElse('../BUILDS'))
+    rename { String ignored -> 'Inscribe.jar' }
+}
+
+tasks.named('build').configure { dependsOn('buildSwiftSwamp') }
+
+publishing {
+    publications {
+        inscribe(MavenPublication) {
+            artifactId = 'inscribe'
+            artifact(tasks.named('shadowJar'))
+            artifact(tasks.named('sourcesJar'))
+        }
+    }
+}
+
+sourceSets.test.resources.srcDir('src/main/resources')
+
+tasks.named('processTestResources').configure { exclude('plugin.yml') }
+
+pluginPackaging {
+    artifacts {
+        create('distribution') {
+            taskName = 'shadowJar'
+            maximumBytes = 7500000
+            prunePrefixes = ['com/volmit/inscribe/libs/volmlib/']
+            keepPrefixes = []
+            requiredEntries = ['plugin.yml', 'com/volmit/inscribe/Inscribe.class', 'inscribe-language-source.properties', 'inscribe-release.properties',
+                               'slimjar.dat', 'slimjar-resolutions.dat',
+                               'com/volmit/inscribe/libs/slimjar/app/builder/SpigotApplicationBuilder.class', 'com/volmit/inscribe/metrics/Metrics.class']
+            forbiddenPrefixes = ['org/bstats/', 'org/bukkit/', 'org/spigotmc/', 'io/papermc/', 'net/minecraft/', 'org/gradle/', 'net/milkbowl/vault/',
+                                 'art/arcane/volmit/packaging/', 'art/arcane/volmlib/', 'io/github/slimjar/',
+                                 'com/google/gson/', 'com/moandjiezana/toml/', 'net/kyori/',
+                                 'com/volmit/inscribe/libs/gson/', 'com/volmit/inscribe/libs/toml/',
+                                 'com/volmit/inscribe/libs/kyori/']
+            shrinkRules = [file('packaging/shrink.pro')]
+            shrinkRelocations = ['com.google.gson': 'com.volmit.inscribe.libs.gson',
+                                 'com.moandjiezana.toml': 'com.volmit.inscribe.libs.toml',
+                                 'net.kyori': 'com.volmit.inscribe.libs.kyori']
+        }
+    }
+}
+
+sourceSets.test.java.srcDir('../build-support/src/linkageTest/java')
+tasks.named('packagingTest', Test).configure {
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(25) }
+    classpath = files(sourceSets.test.runtimeClasspath.filter { File dependency ->
+        !dependency.name.startsWith('paper-api-') && !dependency.name.startsWith('mockbukkit-')
+    }) + configurations.apiPaper261
+    inputs.files(configurations.apiPaper263, configurations.apiSpigot263, configurations.apiPaper261, configurations.currentPaperCompatibility, configurations.currentSpigotCompatibility)
+    doFirst {
+        Map<String, File> apiJars = [
+            'serverLinkage.api.spigot.baseline': sourceSets.main.compileClasspath.files.find { File dependency -> dependency.name.startsWith('spigot-api-') },
+            'serverLinkage.api.paper.261': configurations.apiPaper261.files.find { File dependency -> dependency.name.startsWith('paper-api-') },
+            'serverLinkage.api.paper.262': configurations.currentPaperCompatibility.files.find { File dependency -> dependency.name.startsWith('paper-api-') },
+            'serverLinkage.api.spigot.262': configurations.currentSpigotCompatibility.files.find { File dependency -> dependency.name.startsWith('spigot-api-') },
+            'serverLinkage.api.paper.current': configurations.apiPaper263.files.find { File dependency -> dependency.name.startsWith('paper-api-') },
+            'serverLinkage.api.spigot.current': configurations.apiSpigot263.files.find { File dependency -> dependency.name.startsWith('spigot-api-') }
+        ]
+        apiJars.each { String property, File api ->
+            if (api == null) { throw new GradleException("Missing server API: ${property}") }
+            systemProperty(property, api.absolutePath)
+        }
+        systemProperty('serverLinkage.artifact', tasks.named('shadowJar').get().archiveFile.get().asFile.absolutePath)
+    }
+}
+tasks.register('verifyDownloadedJava25Libraries') {
+    dependsOn(runtimeLibraryTestJar)
+    inputs.file(runtimeLibraryTestJar.flatMap { it.archiveFile })
+    doLast {
+        new ZipFile(runtimeLibraryTestJar.get().archiveFile.get().asFile).withCloseable { ZipFile archive ->
+            archive.entries().each { java.util.zip.ZipEntry entry ->
+                if (entry.name.endsWith('.class')) {
+                    archive.getInputStream(entry).withCloseable { InputStream stream ->
+                        DataInputStream input = new DataInputStream(stream)
+                        input.readInt()
+                        input.readUnsignedShort()
+                        int major = input.readUnsignedShort()
+                        if (major > 69) { throw new GradleException("Downloaded library needs newer Java: ${entry.name}: ${major}") }
+                    }
+                }
+            }
+        }
+    }
+}
+tasks.named('check').configure { dependsOn('verifyDownloadedJava25Libraries') }
+
+[configurations.testCompileClasspath, configurations.testRuntimeClasspath].each { Configuration testConfiguration ->
+    testConfiguration.attributes.attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 25)
+}
+String updateRepository = providers.gradleProperty('updateRepository').getOrElse('VolmitSoftware/Inscribe')
+boolean updateConfigured = updateRepository ==~ /[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+/
+TaskProvider<WriteProperties> releaseManifest = tasks.register('generateReleaseManifest', WriteProperties) {
+    destinationFile.set(layout.buildDirectory.file('generated/release/inscribe-release.properties'))
+    property('repository', updateRepository)
+    property('configured', updateConfigured)
+}
+tasks.named('processResources').configure { from(releaseManifest) }

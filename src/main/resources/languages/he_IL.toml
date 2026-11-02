@@ -1,0 +1,426 @@
+# Inscribe he_IL
+
+[director.help]
+no_subcommands = "אין פקודות משנה בעמוד זה."
+no_description = "לא סופק תיאור"
+command_group = "קבוצת פקודות. לחיצה לפתיחה."
+category = "קטגוריית פקודות"
+no_parameters = "אין פרמטרים. לחיצה למילוי הפקודה מראש."
+parameters_hover = "יש לרחף מעל הפרמטרים כדי לקבל מידע נוסף."
+
+[director.help.navigation]
+back = "חזרה"
+page = "עמוד"
+
+[director.help.navigation.parent]
+hover = "חזרה לקבוצת פקודות האב"
+
+[director.help.navigation.previous]
+hover = "העמוד הקודם"
+
+[director.help.navigation.next]
+hover = "העמוד הבא"
+
+[director.help.parameter]
+required = "פרמטר זה הוא חובה."
+optional = "פרמטר זה הוא אופציונלי."
+default = "ברירת המחדל היא \"{value}\" אם לא הוגדר."
+type = "פרמטר זה הוא מסוג {type}."
+
+[director.runtime.error]
+invalid_origin = "לא ניתן להריץ פקודה זו ממקור זה."
+unknown_parameter = "מפתח פרמטר לא ידוע: {key}"
+unexpected_argument = "ארגומנט לא צפוי \"{argument}\". פרמטרים אופציונליים חייבים להינתן עם מפתח, לדוגמה seed=123"
+unclosed_group = "חסר סוגר \"]\" עבור הפרמטר {key}"
+conversion_failed = "לא ניתן להמיר את \"{value}\" ל-{type} עבור {parameter}"
+default_parse_failed = "לא ניתן לנתח את ערך ברירת המחדל של הפרמטר {parameter}"
+missing_argument = "חסר ארגומנט \"{parameter}\" ({type})"
+execution_failed = "הפעלת הפקודה {command} נכשלה: {reason}"
+
+[language.menu]
+your_language = "השפה שלך"
+reset_your_language = "איפוס השפה שלך"
+server_default = "ברירת המחדל של השרת"
+edit_messages = "עריכת הודעות השפה"
+use_server_default = "שימוש בברירת המחדל של השרת"
+current = "נוכחית: {locale}"
+current_with_personal = "נוכחית: {locale} (שלך: {personal})"
+your_description = "שינוי ההודעות שמוצגות לך בלבד."
+reset_description = "שימוש בשפת ברירת המחדל של השרת."
+server_description = "שינוי שפת ברירת המחדל של השרת."
+edit_description = "פתיחת עורך ההודעות לפי שפה."
+select_description = "לחיצה לבחירת שפה זו."
+remove_personal_description = "הסרת בחירת השפה האישית שלך."
+no_controls = "אין לך גישה להגדרות שפה."
+command = "פקודה: {command}"
+selected = "נבחרה"
+all-volmit-plugins = "כל תוספי Volmit"
+
+[language.error]
+stopping = "בחירת שפה אינה זמינה בזמן שהתוסף נעצר."
+editor-player-only = "יש לפתוח את עורך השפה במשחק."
+no-providers = "אין ספקי שפה זמינים של Volmit."
+numeric-page = "יש להזין מספר עמוד."
+personal-player-only = "יש לבחור העדפות שפה של שחקן במשחק."
+personal-permission = "אין לך הרשאה לבחור את השפה שלך."
+plugin-personal-permission = "אין לך הרשאה לבחור את השפה שלך עבור {plugin}."
+plugin-server-permission = "אין לך הרשאה לשנות את שפת השרת עבור {plugin}."
+server-locale-required = "יש לבחור קוד שפה כגון en_US כשפת ברירת המחדל של השרת."
+unavailable-for-all = "השפה {locale} אינה זמינה לכל התוספים שנבחרו."
+
+[language.usage]
+editor = "שימוש: /{command} language server edit [locale]"
+selection = "שימוש: /{command} language self [locale|reset] או server [locale]"
+volmit-selection = "שימוש: /volmit plugins languages [locale]"
+update = "שימוש: /{command} language update"
+
+[language.update]
+checking = "{plugin}: מתבצעת בדיקת שינויים במאגר השפות..."
+unchanged = "{plugin}: השפות המותקנות כבר תואמות למאגר."
+applied = "{plugin}: {locale} עודכן ({added} נוספו, {updated} שונו, {kept} עריכות מקומיות נשמרו)."
+cooldown = "{plugin}: מאגר השפות נבדק לאחרונה; יש לנסות שוב בעוד {remaining}."
+locale-failed = "{plugin}: {locale} לא עודכן: {reason}"
+failed = "{plugin}: עדכון השפות נכשל: {reason}"
+
+[language.selection]
+preparing = "מכין את השפה {locale} עבור {target}..."
+save-failed = "{plugin}: לא ניתן לשמור את בחירת השפה; יש לבדוק את מסוף השרת."
+english-fallback = "{plugin}: {locale} אינה זמינה; נעשה שימוש באנגלית (en_US)."
+personal-selected = "{plugin}: השפה שלך היא כעת {locale}."
+server-selected = "{plugin}: שפת השרת היא כעת {locale}."
+server-default-selected = "{plugin}: השפה שלך משתמשת כעת בברירת המחדל של השרת."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "טוען הודעות עבור {locale}..."
+
+[language.editor.section]
+languages = "שפות"
+search = "חיפוש"
+search-title = "{locale} / חיפוש"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "יש לחפש מפתח הודעה או טקסט. לחזרה, יש להקליד cancel."
+value = "יש להקליד בצ׳אט ערך חדש עבור {key}."
+current = "ערך נוכחי: {value}"
+variables = "משתנים: {variables}"
+guidance = "יש להשתמש ב־\\n לשורה חדשה וב־\\\\ ללוכסן הפוך, או להקליד cancel כדי לחזור."
+
+[language.editor.input]
+expired = "זמן ההזנה בעורך השפה פג."
+too-long = "הקלט יכול להכיל לכל היותר {maximum} תווים."
+unable-to-save = "לא ניתן לשמור: {reason}"
+
+[language.editor.navigation]
+back = "&eחזרה&r"
+close = "&cסגירה&r"
+previous-page = "&eהעמוד הקודם&r"
+next-page = "&eהעמוד הבא&r"
+
+[language.editor.search]
+messages = "חיפוש הודעות"
+messages-lore = "לחיצה לחיפוש בכל ההודעות."
+clear = "ניקוי החיפוש"
+
+[language.editor.message]
+current-value = "&7ערך נוכחי:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7לחיצה לעריכת צורת רבים.&r"
+edit-lines = "&7לחיצה לעריכת שורות בודדות.&r"
+edit-chat = "&7לחיצה לעריכה בצ׳אט.&r"
+
+[language.editor.locale]
+open = "&8לחיצה לפתיחת שפה זו.&r"
+
+[language.editor.category]
+message-count = "&7{count} הודעות&r"
+open = "&8לחיצה לפתיחת קטגוריה זו.&r"
+
+[language.editor.error]
+no-permission = "אין לך הרשאה לערוך את השפות של {plugin}."
+unable-to-edit = "לא ניתן לערוך: {reason}"
+
+[language.editor.saved]
+summary = "{locale} נשמרה. בחירות השפה לא השתנו."
+change = "{key}: הערך ״{before}״ הוחלף ב־״{after}״."
+
+[language.editor.part]
+line = "שורה {line}"
+
+[language.editor.value]
+none = "אין"
+empty = "(ריק)"
+
+[config.editor]
+title = "{plugin} / הגדרות"
+section = "מקטע: {path}"
+page = "עמוד {page} מתוך {pages}"
+entry = "רשומה {number}"
+current = "נוכחי: {value}"
+open = "לחיצה לפתיחת המקטע."
+toggle = "לחיצה להחלפה בין true ל־false."
+edit = "לחיצה להזנת ערך חדש בצ׳אט."
+prompt = "יש להזין ערך חדש עבור {path}. לחזרה, יש להקליד cancel."
+expired = "פג תוקף הזנת ההגדרות."
+too-long = "יש להזין עד {maximum} תווים."
+saving = "שומר הגדרות..."
+saved = "{path} נשמר. השינויים מוחלים אוטומטית."
+failed = "לא ניתן לערוך הגדרות: {reason}"
+loading = "טוען הגדרות..."
+empty = "אין הגדרות במקטע זה."
+player-only = "יש לפתוח את עורך ההגדרות בתוך המשחק."
+no-permission = "אין לך הרשאה לערוך הגדרות אלה."
+back = "חזרה"
+previous = "העמוד הקודם"
+next = "העמוד הבא"
+refresh = "רענון"
+close = "סגירה"
+
+[config.editor.type]
+text = "טקסט; אין צורך במרכאות מסביב."
+integer = "יש להזין מספר שלם."
+decimal = "יש להזין מספר, כגון 0.25."
+list = "יש להשתמש ברשימת TOML, כגון [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "העברת כישופים מושבתת."
+creative = "יש לעבור למצב הישרדות כדי להעביר כישופים."
+denied = "אין לך הרשאה לבצע פעולה זו."
+empty = "אין בפריט זה כישופים שניתן להעביר."
+space = "יש לפנות מקום בתיק עבור הספר."
+changed = "הפריטים או ההגדרות השתנו. יש להתחיל את ההעברה מחדש."
+unaffordable = "אין לך אפשרות לשלם את עלות ההעברה."
+economy = "תשלומים בכסף אינם זמינים."
+failed = "ההעברה נכשלה. יש לפנות למנהל."
+success = "הכישופים הועברו."
+applied = "הכישופים הוחלו."
+incompatible = "בספר זה אין שדרוגים תואמים לפריט זה."
+select = "יש לבחור כישוף אחד לפחות."
+reconciliation = "התשלום נכשל באופן בלתי צפוי. יש לבקש ממנהל לבדוק את מערכת הכלכלה לפני ניסיון נוסף."
+
+[menu]
+title = "Inscribe"
+keep = "שמירה: {name} {level}"
+transfer = "העברה: {name} {level}"
+cost = "עלות: {cost}"
+price = "{experience} ניסיון + {money} כסף"
+experience = "{experience} ניסיון"
+money = "{money} כסף"
+free = "חינם"
+confirm = "אישור העברה"
+cancel = "ביטול"
+previous = "העמוד הקודם"
+next = "העמוד הבא"
+total = "סך הכול: {cost}"
+apply = "החלה: {name} {level}"
+skip = "דילוג: {name} {level}"
+current = "רמה נוכחית: {level}"
+confirm_apply = "החלת כישופים"
+
+[command]
+player = "יש להשתמש בפקודה זו בתוך המשחק."
+failed = "הפקודה נכשלה. יש לבדוק את מסוף השרת."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "שמירת דוח אבחון"
+root = "עזרה וניהול של Inscribe"
+language = "בחירה או עריכה של שפות"
+debug = "כלי אבחון"
+version = "הצגת הגרסה המותקנת"
+config = "עריכת הגדרות Inscribe"
+status = "הצגת הגדרות, תפריטים פתוחים ותאימות"
+
+[command.parameter]
+upload = "העלאה רק כשהיא מופעלת במפורש."
+
+[setting.general.enabled]
+name = "פעיל"
+description = "הפעלת חילוץ והחלה."
+
+[setting.transfers.allowCreative]
+name = "מצב יצירתי"
+description = "לאפשר העברות במצב יצירתי."
+
+[setting.transfers.allowUnsafe]
+name = "רמות מעל המקסימום"
+description = "לשמור רמות גבוהות; תאימות והתנגשויות עדיין נבדקות."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "תשלומי כסף ב־Folia"
+description = "להפעיל רק אם ספק הכלכלה שלך תומך ב־Folia."
+
+[setting.pricing.extractionCost]
+name = "עמלת חילוץ"
+description = "עלות ברירת מחדל לכל כישוף שנבחר, בנקודות או בכסף."
+
+[setting.pricing.extractionCostPerLevel]
+name = "חילוץ לפי רמה"
+description = "להכפיל כל עמלת חילוץ ברמת הכישוף."
+
+[setting.pricing.applicationCost]
+name = "עמלת החלה"
+description = "עלות לכל החלה; אפס פירושו חינם."
+
+[setting.pricing.applicationCostPerLevel]
+name = "החלה לפי רמה"
+description = "להכפיל את עמלת ההחלה בסכום הרמות המוחלות."
+
+[setting.pricing.currency]
+name = "מטבע"
+description = "EXPERIENCE משתמש בנקודות ניסיון גולמיות. MONEY דורש Vault."
+
+[setting.general.language]
+name = "שפת השרת"
+description = "שפת ברירת המחדל; לבחירות אישיות יש עדיפות."
+
+[setting.hotReload.enabled]
+name = "טעינה אוטומטית"
+description = "החלה אוטומטית של קבצי תצורה ושפה שנערכו."
+
+[setting.presentation.splashScreen]
+name = "כרזת פתיחה"
+description = "להציג את כרזת התוסף ביומן השרת."
+
+[setting.debug.uploadEnabled]
+name = "העלאת אבחון"
+description = "לאפשר העלאות רק לפי בקשה מפורשת."
+
+[setting.transfers.extractionMaterials]
+name = "חומרי חילוץ"
+description = "חומרים מותרים; רשימה ריקה מאפשרת פריטים מתאימים."
+
+[setting.transfers.applicationMaterials]
+name = "חומרי החלה"
+description = "חומרים מותרים; רשימה ריקה מאפשרת פריטים תואמים."
+
+[setting.transfers.bookName]
+name = "שם הספר שחולץ"
+description = "ערך ריק משתמש בשם המקורי. עיצוב צבעים נתמך."
+
+[setting.transfers.bookLore]
+name = "תיאור הספר שחולץ"
+description = "עד 20 שורות של 512 תווים כל אחת. ערך ריק אינו מוסיף תיאור."
+
+[setting.enchantments]
+name = "כללי כישופים"
+description = "עלות חילוץ, מטבע ומצב הפעלה לכל כישוף."
+
+[setting.editor]
+title = "Inscribe / הגדרות"
+
+[setting.metrics.enabled]
+name = "נתוני שימוש"
+description = "הפעלת דיווח שימוש אנונימי באמצעות bStats."
+
+[setting.general.updateNotifications]
+name = "התראות גרסה"
+description = "בדיקת גרסאות חדשות והודעה לשחקנים מורשים. ללא התקנה אוטומטית."
+
+[setting.policy.enabled]
+name = "פעיל"
+description = "לאפשר העברה של כישוף זה."
+
+[setting.policy.cost]
+name = "עלות"
+description = "מחיר חילוץ כישוף זה."
+
+[setting.policy.perLevel]
+name = "לכל רמה"
+description = "להכפיל את המחיר ברמת הכישוף."
+
+[setting.policy.currency]
+name = "מטבע"
+description = "EXPERIENCE משתמש בנקודות; MONEY משתמש ב־Vault."
+
+[debug.error]
+missing-permission = "חסרה הרשאה: {permission}"
+already-preparing = "דוח ניפוי באגים עבור {plugin} כבר נמצא בהכנה."
+already-preparing-short = "דוח ניפוי באגים כבר נמצא בהכנה."
+schedule-failed = "לא ניתן לתזמן את דוח ניפוי הבאגים."
+provider-closed = "ספק ניפוי הבאגים סגור."
+closed-before-capture = "ספק ניפוי הבאגים נסגר לפני שהדוח נאסף."
+writer-schedule-failed = "לא ניתן לתזמן את כותב דוח ניפוי הבאגים."
+capture-failed = "לא ניתן לאסוף את דוח ניפוי הבאגים; יש לבדוק את מסוף השרת."
+closed-before-write = "ספק ניפוי הבאגים נסגר לפני שהדוח נכתב."
+write-failed = "לא ניתן לכתוב את דוח ניפוי הבאגים; יש לבדוק את מסוף השרת."
+
+[debug]
+preparing = "מכין דוח ניפוי באגים עבור {plugin}..."
+saved = "דוח ניפוי הבאגים של {plugin} נשמר בנתיב {path}."
+
+[debug.upload]
+interrupted = "העלאת דוח ניפוי הבאגים הופסקה; הדוח המקומי נשמר."
+failed = "העלאת דוח ניפוי הבאגים נכשלה; הדוח המקומי נשמר."
+completed = "הועלה בשם VolmitSoftware - {plugin} - v{version}."
+
+[debug.action]
+open = "פתיחה: {url}"
+open-description = "פתיחת דוח האבחון שהועלה."
+copy-path = "העתקת הנתיב המקומי"
+copy-path-description = "העתקת נתיב הדוח המקומי."
+
+[setting.general]
+name = "כללי"
+description = "מתג ראשי, שפת השרת והתראות על גרסאות."
+
+[setting.metrics]
+name = "מדדים"
+description = "סטטיסטיקות שימוש אנונימיות של bStats."
+
+[setting.presentation]
+name = "תצוגה"
+description = "פלט בעת ההפעלה."
+
+[setting.hotReload]
+name = "טעינה חמה"
+description = "החלת קבצים ערוכים ללא הפעלה מחדש."
+
+[setting.debug]
+name = "אבחון"
+description = "דוחות אבחון."
+
+[setting.transfers]
+name = "העברות"
+description = "מי יכול להעביר, אילו פריטים מתאימים ואיך ספרים משתלבים."
+
+[setting.pricing]
+name = "תמחור"
+description = "מחירי ברירת מחדל ומטבע התשלום."
+
+[setting.hotReload.pollIntervalMillis]
+name = "מרווח בדיקה"
+description = "אלפיות שנייה בין בדיקות קבצים, 250 עד 60000."
+
+[setting.hotReload.cooldownMillis]
+name = "זמן שקט"
+description = "אלפיות שנייה שבהן קובץ חייב להישאר ללא שינוי לפני שיוחל."
+
+[setting.hotReload.notifyOperators]
+name = "התראות למפעילים"
+description = "הצגת שינויי קבצים שהוחלו או נדחו בשורת הפעולה."
+
+[setting.transfers.mergeEqualLevels]
+name = "מיזוג רמות זהות"
+description = "שילוב רמות זהות של ספר ופריט לרמה הבאה, כמו בסדן."
+
+[setting.transfers.increaseRepairCost]
+name = "העלאת עלות תיקון"
+description = "העלאת עלות התיקון של הפריט בעת החלת ספר, כמו בסדן."
+
+[status]
+pricing = "&7מטבע &f{currency}&r &8|&r &7עמלת חילוץ &f{extraction}&r &8|&r &7עמלת החלה &f{application}&r"
+transfers = "&7תפריטים פתוחים &f{menus}&r &8|&r &7מיזוג רמות {merge} &8|&r &7עלות תיקון {repair}"
+configuration = "&7הגדרות {enabled} &8|&r &7שפה &f{language}&r &8|&r &7טעינה חמה {hot_reload}"
+services = "&7מדדים {metrics} &8|&r &7הודעות עדכון {updates}"
+compatibility = "&7תאימות &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "מצב Inscribe"
+
+[command.feedback]
+files_applied = "&aהוחלו&7 שינויים בקובצי ההגדרות והשפה."
+files_rejected = "&cשינויי הקבצים נדחו; ההגדרות התקינות האחרונות נשארות פעילות."
+
+[status.state]
+enabled = "&aמופעל&r"
+disabled = "&cמושבת&r"

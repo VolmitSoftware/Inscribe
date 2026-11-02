@@ -1,0 +1,426 @@
+# Inscribe pl_PL
+
+[director.help]
+no_subcommands = "Na tej stronie nie ma podpoleceń."
+no_description = "Nie podano opisu"
+command_group = "Grupa poleceń. Kliknij, aby otworzyć."
+category = "Kategoria poleceń"
+no_parameters = "Brak parametrów. Kliknij, aby uzupełnić polecenie."
+parameters_hover = "Najedź kursorem na parametry, aby dowiedzieć się więcej."
+
+[director.help.navigation]
+back = "Wstecz"
+page = "Strona"
+
+[director.help.navigation.parent]
+hover = "Wróć do nadrzędnej grupy poleceń"
+
+[director.help.navigation.previous]
+hover = "Poprzednia strona"
+
+[director.help.navigation.next]
+hover = "Następna strona"
+
+[director.help.parameter]
+required = "Ten parametr jest wymagany."
+optional = "Ten parametr jest opcjonalny."
+default = "Domyślnie \"{value}\", jeśli nie określono."
+type = "Ten parametr jest typu {type}."
+
+[director.runtime.error]
+invalid_origin = "Tego polecenia nie można wykonać z tego źródła."
+unknown_parameter = "Nieznany klucz parametru: {key}"
+unexpected_argument = "Nieoczekiwany argument \"{argument}\". Parametry opcjonalne muszą mieć klucz, np. seed=123"
+unclosed_group = "Brak zamykającego \"]\" dla parametru {key}"
+conversion_failed = "Nie można przekonwertować \"{value}\" na {type} dla {parameter}"
+default_parse_failed = "Nie można odczytać wartości domyślnej parametru {parameter}"
+missing_argument = "Brak argumentu \"{parameter}\" ({type})"
+execution_failed = "Nie udało się wykonać polecenia {command}: {reason}"
+
+[language.menu]
+your_language = "Twój język"
+reset_your_language = "Zresetuj swój język"
+server_default = "Domyślny język serwera"
+edit_messages = "Edytuj komunikaty językowe"
+use_server_default = "Użyj domyślnego języka serwera"
+current = "Bieżący: {locale}"
+current_with_personal = "Bieżący: {locale} (Twój: {personal})"
+your_description = "Zmień tylko komunikaty, które widzisz."
+reset_description = "Użyj domyślnego języka serwera."
+server_description = "Zmień domyślny język serwera."
+edit_description = "Otwórz edytor komunikatów dla każdego języka."
+select_description = "Kliknij, aby wybrać ten język."
+remove_personal_description = "Usuń swój osobisty wybór języka."
+no_controls = "Nie masz dostępu do ustawień języka."
+command = "Polecenie: {command}"
+selected = "wybrany"
+all-volmit-plugins = "wszystkich wtyczek Volmit"
+
+[language.error]
+stopping = "Wybór języka jest niedostępny podczas zatrzymywania wtyczki."
+editor-player-only = "Otwórz edytor języka w grze."
+no-providers = "Brak dostępnych dostawców języków Volmit."
+numeric-page = "Podaj numer strony."
+personal-player-only = "Preferencje językowe gracza muszą być wybrane w grze."
+personal-permission = "Nie masz uprawnień do wyboru swojego języka."
+plugin-personal-permission = "Nie masz uprawnień do wyboru swojego języka we wtyczce {plugin}."
+plugin-server-permission = "Nie masz uprawnień do zmiany języka serwera we wtyczce {plugin}."
+server-locale-required = "Wybierz kod języka, np. en_US, jako domyślny język serwera."
+unavailable-for-all = "Język {locale} nie jest dostępny we wszystkich wybranych wtyczkach."
+
+[language.usage]
+editor = "Użycie: /{command} language server edit [locale]"
+selection = "Użycie: /{command} language self [locale|reset] lub server [locale]"
+volmit-selection = "Użycie: /volmit plugins languages [locale]"
+update = "Użycie: /{command} language update"
+
+[language.update]
+checking = "{plugin}: sprawdzanie zmian w repozytorium języków..."
+unchanged = "{plugin}: zainstalowane języki są już zgodne z repozytorium."
+applied = "{plugin}: zaktualizowano {locale} (dodano: {added}, zmieniono: {updated}, zachowano lokalnych edycji: {kept})."
+cooldown = "{plugin}: repozytorium języków było niedawno sprawdzane; spróbuj ponownie za {remaining}."
+locale-failed = "{plugin}: nie zaktualizowano {locale}: {reason}"
+failed = "{plugin}: aktualizacja języków nie powiodła się: {reason}"
+
+[language.selection]
+preparing = "Przygotowywanie języka {locale} dla {target}..."
+save-failed = "{plugin}: nie udało się zapisać wyboru języka; sprawdź konsolę serwera."
+english-fallback = "{plugin}: {locale} jest niedostępny; używany jest angielski (en_US)."
+personal-selected = "{plugin}: twój język to teraz {locale}."
+server-selected = "{plugin}: język serwera to teraz {locale}."
+server-default-selected = "{plugin}: twój język korzysta teraz z domyślnego języka serwera."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "Wczytywanie komunikatów w języku {locale}..."
+
+[language.editor.section]
+languages = "Języki"
+search = "Wyszukiwanie"
+search-title = "{locale} / Wyszukiwanie"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Wyszukaj klucze lub tekst komunikatów. Wpisz cancel, aby wrócić."
+value = "Wpisz na czacie nową wartość dla {key}."
+current = "Bieżąca wartość: {value}"
+variables = "Zmienne: {variables}"
+guidance = "Użyj \\n dla nowej linii, \\\\ dla odwrotnego ukośnika lub wpisz cancel, aby wrócić."
+
+[language.editor.input]
+expired = "Czas na wpisanie tekstu w edytorze języka minął."
+too-long = "Wpisany tekst może mieć najwyżej {maximum} znaków."
+unable-to-save = "Nie udało się zapisać: {reason}"
+
+[language.editor.navigation]
+back = "&eWstecz&r"
+close = "&cZamknij&r"
+previous-page = "&ePoprzednia strona&r"
+next-page = "&eNastępna strona&r"
+
+[language.editor.search]
+messages = "Wyszukaj komunikaty"
+messages-lore = "Kliknij, aby przeszukać wszystkie komunikaty."
+clear = "Wyczyść wyszukiwanie"
+
+[language.editor.message]
+current-value = "&7Bieżąca wartość:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Kliknij, aby edytować formę liczby mnogiej.&r"
+edit-lines = "&7Kliknij, aby edytować poszczególne linie.&r"
+edit-chat = "&7Kliknij, aby edytować na czacie.&r"
+
+[language.editor.locale]
+open = "&8Kliknij, aby otworzyć ten język.&r"
+
+[language.editor.category]
+message-count = "&7Komunikaty: {count}&r"
+open = "&8Kliknij, aby otworzyć tę kategorię.&r"
+
+[language.editor.error]
+no-permission = "Nie masz uprawnień do edycji języków wtyczki {plugin}."
+unable-to-edit = "Nie udało się edytować: {reason}"
+
+[language.editor.saved]
+summary = "Zapisano {locale}. Wybory języka pozostały bez zmian."
+change = "{key}: „{before}” zmieniono na „{after}”."
+
+[language.editor.part]
+line = "Linia {line}"
+
+[language.editor.value]
+none = "Brak"
+empty = "(pusty)"
+
+[config.editor]
+title = "{plugin} / Konfiguracja"
+section = "Sekcja: {path}"
+page = "Strona {page} z {pages}"
+entry = "Wpis {number}"
+current = "Obecnie: {value}"
+open = "Kliknij, aby otworzyć tę sekcję."
+toggle = "Kliknij, aby przełączyć między true a false."
+edit = "Kliknij, aby wpisać nową wartość na czacie."
+prompt = "Wpisz nową wartość dla {path}. Wpisz cancel, aby wrócić."
+expired = "Czas wprowadzania konfiguracji minął."
+too-long = "Wpisz najwyżej {maximum} znaków."
+saving = "Zapisywanie konfiguracji..."
+saved = "Zapisano {path}. Zmiany są stosowane automatycznie."
+failed = "Nie można edytować konfiguracji: {reason}"
+loading = "Wczytywanie konfiguracji..."
+empty = "Ta sekcja nie ma ustawień."
+player-only = "Otwórz edytor konfiguracji w grze."
+no-permission = "Nie masz uprawnień do edycji tej konfiguracji."
+back = "Wstecz"
+previous = "Poprzednia strona"
+next = "Następna strona"
+refresh = "Odśwież"
+close = "Zamknij"
+
+[config.editor.type]
+text = "Tekst; cudzysłowy nie są potrzebne."
+integer = "Wpisz liczbę całkowitą."
+decimal = "Wpisz liczbę, na przykład 0.25."
+list = "Użyj listy TOML, na przykład [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "Przenoszenie zaklęć jest wyłączone."
+creative = "Przełącz się na tryb przetrwania, aby przenosić zaklęcia."
+denied = "Nie masz uprawnień do tej czynności."
+empty = "Ten przedmiot nie ma zaklęć do przeniesienia."
+space = "Zrób miejsce w ekwipunku na księgę."
+changed = "Twoje przedmioty lub ustawienia uległy zmianie. Rozpocznij przenoszenie ponownie."
+unaffordable = "Nie możesz zapłacić kosztu tego przeniesienia."
+economy = "Płatności pieniężne są niedostępne."
+failed = "Przeniesienie nie powiodło się. Skontaktuj się z administratorem."
+success = "Zaklęcia przeniesione."
+applied = "Zaklęcia zastosowane."
+incompatible = "Ta księga nie ma ulepszeń zgodnych z tym przedmiotem."
+select = "Wybierz co najmniej jedno zaklęcie."
+reconciliation = "Płatność niespodziewanie nie powiodła się. Poproś administratora o sprawdzenie ekonomii przed ponowną próbą."
+
+[menu]
+title = "Inscribe"
+keep = "Zachowaj: {name} {level}"
+transfer = "Przenieś: {name} {level}"
+cost = "Koszt: {cost}"
+price = "{experience} PD + {money} pieniędzy"
+experience = "{experience} PD"
+money = "{money} pieniędzy"
+free = "Za darmo"
+confirm = "Potwierdź przeniesienie"
+cancel = "Anuluj"
+previous = "Poprzednia strona"
+next = "Następna strona"
+total = "Razem: {cost}"
+apply = "Nałóż: {name} {level}"
+skip = "Pomiń: {name} {level}"
+current = "Obecny poziom: {level}"
+confirm_apply = "Nałóż zaklęcia"
+
+[command]
+player = "Użyj tego polecenia w grze."
+failed = "Polecenie nie powiodło się. Sprawdź konsolę serwera."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Zapisz raport diagnostyczny"
+root = "Pomoc i administracja Inscribe"
+language = "Wybierz lub edytuj języki"
+debug = "Narzędzia diagnostyczne"
+version = "Pokaż zainstalowaną wersję"
+config = "Edytuj ustawienia Inscribe"
+status = "Pokaż ustawienia, otwarte menu i zgodność"
+
+[command.parameter]
+upload = "Prześlij tylko po wyraźnym zezwoleniu."
+
+[setting.general.enabled]
+name = "Włączone"
+description = "Włącz wyodrębnianie i nakładanie."
+
+[setting.transfers.allowCreative]
+name = "Tryb kreatywny"
+description = "Zezwalaj na przenoszenie w trybie kreatywnym."
+
+[setting.transfers.allowUnsafe]
+name = "Poziomy ponad maksimum"
+description = "Zachowuj wyższe poziomy; zgodność i konflikty nadal obowiązują."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Płatności pieniężne (Folia)"
+description = "Włącz tylko, gdy dostawca ekonomii obsługuje Folia."
+
+[setting.pricing.extractionCost]
+name = "Opłata za wyodrębnianie"
+description = "Domyślny koszt za wybrane zaklęcie, w punktach lub pieniądzach."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Wyodrębnianie według poziomu"
+description = "Pomnóż opłatę za wyodrębnianie przez poziom zaklęcia."
+
+[setting.pricing.applicationCost]
+name = "Opłata za nakładanie"
+description = "Koszt za nałożenie; zero oznacza brak opłaty."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Nakładanie według poziomu"
+description = "Pomnóż opłatę za nakładanie przez sumę nakładanych poziomów."
+
+[setting.pricing.currency]
+name = "Waluta"
+description = "EXPERIENCE używa punktów doświadczenia. MONEY wymaga Vault."
+
+[setting.general.language]
+name = "Język serwera"
+description = "Język domyślny; osobiste wybory mają pierwszeństwo."
+
+[setting.hotReload.enabled]
+name = "Automatyczne przeładowanie"
+description = "Automatycznie stosuj edytowane pliki konfiguracji i języka."
+
+[setting.presentation.splashScreen]
+name = "Baner startowy"
+description = "Pokazuj baner wtyczki w dzienniku serwera."
+
+[setting.debug.uploadEnabled]
+name = "Przesyłanie diagnostyki"
+description = "Zezwalaj na przesyłanie tylko na wyraźne żądanie."
+
+[setting.transfers.extractionMaterials]
+name = "Materiały wyodrębniania"
+description = "Dozwolone materiały przedmiotów; pusta lista dopuszcza odpowiednie przedmioty."
+
+[setting.transfers.applicationMaterials]
+name = "Materiały nakładania"
+description = "Dozwolone materiały przedmiotów; pusta lista dopuszcza zgodne przedmioty."
+
+[setting.transfers.bookName]
+name = "Nazwa wyodrębnionej księgi"
+description = "Pusta wartość oznacza nazwę z vanilli. Obsługuje formatowanie kolorów."
+
+[setting.transfers.bookLore]
+name = "Opis wyodrębnionej księgi"
+description = "Do 20 wierszy po 512 znaków. Pusta lista nie dodaje opisu."
+
+[setting.enchantments]
+name = "Zasady zaklęć"
+description = "Koszt wyodrębniania, waluta i włączenie każdego zaklęcia."
+
+[setting.editor]
+title = "Inscribe / Ustawienia"
+
+[setting.metrics.enabled]
+name = "Statystyki użycia"
+description = "Włącz anonimowe raporty użycia bStats."
+
+[setting.general.updateNotifications]
+name = "Powiadomienia o wersjach"
+description = "Sprawdzaj nowe wersje i powiadamiaj uprawnionych graczy. Bez automatycznej instalacji."
+
+[setting.policy.enabled]
+name = "Włączone"
+description = "Zezwól na przenoszenie tego zaklęcia."
+
+[setting.policy.cost]
+name = "Koszt"
+description = "Cena wyodrębniania tego zaklęcia."
+
+[setting.policy.perLevel]
+name = "Za poziom"
+description = "Pomnóż cenę przez poziom zaklęcia."
+
+[setting.policy.currency]
+name = "Waluta"
+description = "EXPERIENCE używa punktów; MONEY używa Vault."
+
+[debug.error]
+missing-permission = "Brak uprawnienia: {permission}"
+already-preparing = "Raport diagnostyczny dla {plugin} jest już przygotowywany."
+already-preparing-short = "Raport diagnostyczny jest już przygotowywany."
+schedule-failed = "Nie można zaplanować raportu diagnostycznego."
+provider-closed = "Dostawca diagnostyki jest zamknięty."
+closed-before-capture = "Dostawca diagnostyki został zamknięty przed zebraniem raportu."
+writer-schedule-failed = "Nie można zaplanować zapisu raportu diagnostycznego."
+capture-failed = "Nie można zebrać raportu diagnostycznego; sprawdź konsolę serwera."
+closed-before-write = "Dostawca diagnostyki został zamknięty przed zapisaniem raportu."
+write-failed = "Nie można zapisać raportu diagnostycznego; sprawdź konsolę serwera."
+
+[debug]
+preparing = "Przygotowywanie raportu diagnostycznego dla {plugin}..."
+saved = "Zapisano raport diagnostyczny dla {plugin} w {path}."
+
+[debug.upload]
+interrupted = "Przesyłanie raportu diagnostycznego zostało przerwane; raport lokalny jest zapisany."
+failed = "Przesyłanie raportu diagnostycznego nie powiodło się; raport lokalny jest zapisany."
+completed = "Przesłano jako VolmitSoftware - {plugin} - v{version}."
+
+[debug.action]
+open = "Otwórz: {url}"
+open-description = "Otwórz przesłany raport diagnostyczny."
+copy-path = "Kopiuj ścieżkę lokalną"
+copy-path-description = "Kopiuj ścieżkę lokalnego raportu."
+
+[setting.general]
+name = "Ogólne"
+description = "Główny przełącznik, język serwera i powiadomienia o wersjach."
+
+[setting.metrics]
+name = "Statystyki"
+description = "Anonimowe statystyki użycia bStats."
+
+[setting.presentation]
+name = "Prezentacja"
+description = "Komunikaty startowe."
+
+[setting.hotReload]
+name = "Przeładowanie na gorąco"
+description = "Stosuj edytowane pliki bez restartu."
+
+[setting.debug]
+name = "Diagnostyka"
+description = "Raporty diagnostyczne."
+
+[setting.transfers]
+name = "Przenoszenie"
+description = "Kto może przenosić, dozwolone przedmioty i łączenie ksiąg."
+
+[setting.pricing]
+name = "Ceny"
+description = "Domyślne ceny i waluta płatności."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Odstęp sprawdzania"
+description = "Milisekundy między sprawdzeniami plików, od 250 do 60000."
+
+[setting.hotReload.cooldownMillis]
+name = "Okres spokoju"
+description = "Milisekundy, przez które plik musi pozostać niezmieniony przed zastosowaniem."
+
+[setting.hotReload.notifyOperators]
+name = "Powiadomienia dla operatorów"
+description = "Pokazuj zastosowane lub odrzucone zmiany plików na pasku akcji."
+
+[setting.transfers.mergeEqualLevels]
+name = "Łącz równe poziomy"
+description = "Łącz równe poziomy księgi i przedmiotu w następny poziom, jak kowadło."
+
+[setting.transfers.increaseRepairCost]
+name = "Zwiększaj koszt naprawy"
+description = "Zwiększaj koszt naprawy przedmiotu po nałożeniu księgi, jak kowadło."
+
+[status]
+pricing = "&7Waluta &f{currency}&r &8|&r &7opłata za wyodrębnianie &f{extraction}&r &8|&r &7opłata za nakładanie &f{application}&r"
+transfers = "&7Otwarte menu &f{menus}&r &8|&r &7łączenie poziomów {merge} &8|&r &7koszt naprawy {repair}"
+configuration = "&7Konfiguracja {enabled} &8|&r &7język &f{language}&r &8|&r &7przeładowanie na gorąco {hot_reload}"
+services = "&7Statystyki {metrics} &8|&r &7powiadomienia o wersjach {updates}"
+compatibility = "&7Zgodność &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Stan Inscribe"
+
+[command.feedback]
+files_applied = "&aZastosowano&7 zmiany w plikach konfiguracji i języka."
+files_rejected = "&cOdrzucono zmiany plików; nadal obowiązują ostatnie poprawne ustawienia."
+
+[status.state]
+enabled = "&awłączone&r"
+disabled = "&cwyłączone&r"

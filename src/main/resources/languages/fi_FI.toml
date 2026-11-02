@@ -1,0 +1,426 @@
+# Inscribe fi_FI
+
+[director.help]
+no_subcommands = "Tällä sivulla ei ole alikomentoja."
+no_description = "Kuvausta ei ole annettu"
+command_group = "Komentoryhmä. Avaa napsauttamalla."
+category = "Komentokategoria"
+no_parameters = "Ei parametreja. Esitäytä komento napsauttamalla."
+parameters_hover = "Vie hiiri parametrien päälle saadaksesi lisätietoja."
+
+[director.help.navigation]
+back = "Takaisin"
+page = "Sivu"
+
+[director.help.navigation.parent]
+hover = "Palaa ylempään komentoryhmään"
+
+[director.help.navigation.previous]
+hover = "Edellinen sivu"
+
+[director.help.navigation.next]
+hover = "Seuraava sivu"
+
+[director.help.parameter]
+required = "Tämä parametri on pakollinen."
+optional = "Tämä parametri on valinnainen."
+default = "Oletusarvo on \"{value}\", jos sitä ei määritetä."
+type = "Tämän parametrin tyyppi on {type}."
+
+[director.runtime.error]
+invalid_origin = "Tätä komentoa ei voi suorittaa tästä lähteestä."
+unknown_parameter = "Tuntematon parametriavain: {key}"
+unexpected_argument = "Odottamaton argumentti \"{argument}\". Valinnaiset parametrit on annettava avaimella, esim. seed=123"
+unclosed_group = "Sulkeva \"]\" puuttuu parametrilta {key}"
+conversion_failed = "Arvoa \"{value}\" ei voi muuntaa tyypiksi {type} parametrille {parameter}"
+default_parse_failed = "Parametrin {parameter} oletusarvoa ei voi jäsentää"
+missing_argument = "Puuttuva argumentti \"{parameter}\" ({type})"
+execution_failed = "Komennon {command} suoritus epäonnistui: {reason}"
+
+[language.menu]
+your_language = "Oma kielesi"
+reset_your_language = "Palauta oma kielesi"
+server_default = "Palvelimen oletuskieli"
+edit_messages = "Muokkaa kieliviestejä"
+use_server_default = "Käytä palvelimen oletuskieltä"
+current = "Nykyinen: {locale}"
+current_with_personal = "Nykyinen: {locale} (Omasi: {personal})"
+your_description = "Vaihda vain näkemäsi viestit."
+reset_description = "Käytä palvelimen oletuskieltä."
+server_description = "Vaihda palvelimen oletuskieli."
+edit_description = "Avaa kielikohtainen viestieditori."
+select_description = "Napsauta valitaksesi tämän kielen."
+remove_personal_description = "Poista henkilökohtainen kielivalintasi."
+no_controls = "Sinulla ei ole käytettävissä kieliasetuksia."
+command = "Komento: {command}"
+selected = "valittu"
+all-volmit-plugins = "kaikki Volmit-lisäosat"
+
+[language.error]
+stopping = "Kielivalinta ei ole käytettävissä, kun lisäosa pysähtyy."
+editor-player-only = "Avaa kielieditori pelissä."
+no-providers = "Yhtään Volmit-kielipalvelua ei ole saatavilla."
+numeric-page = "Anna sivunumero numerona."
+personal-player-only = "Pelaajan kieliasetukset on valittava pelissä."
+personal-permission = "Sinulla ei ole oikeutta valita kieltäsi."
+plugin-personal-permission = "Sinulla ei ole oikeutta valita kieltäsi lisäosassa {plugin}."
+plugin-server-permission = "Sinulla ei ole oikeutta vaihtaa palvelimen kieltä lisäosassa {plugin}."
+server-locale-required = "Valitse palvelimen oletuskieleksi kielikoodi, kuten en_US."
+unavailable-for-all = "Kieli {locale} ei ole saatavilla kaikille valituille lisäosille."
+
+[language.usage]
+editor = "Käyttö: /{command} language server edit [locale]"
+selection = "Käyttö: /{command} language self [locale|reset] tai server [locale]"
+volmit-selection = "Käyttö: /volmit plugins languages [locale]"
+update = "Käyttö: /{command} language update"
+
+[language.update]
+checking = "{plugin}: tarkistetaan kielivaraston muutoksia..."
+unchanged = "{plugin}: asennetut kielet vastaavat jo varastoa."
+applied = "{plugin}: {locale} päivitetty ({added} lisätty, {updated} muutettu, {kept} paikallista muokkausta säilytetty)."
+cooldown = "{plugin}: kielivarasto tarkistettiin äskettäin; yritä uudelleen {remaining} kuluttua."
+locale-failed = "{plugin}: {locale} ei päivittynyt: {reason}"
+failed = "{plugin}: kielipäivitys epäonnistui: {reason}"
+
+[language.selection]
+preparing = "Valmistellaan kieltä {locale}: {target}..."
+save-failed = "{plugin}: kielivalinnan tallennus epäonnistui; tarkista palvelimen konsoli."
+english-fallback = "{plugin}: {locale} ei ole saatavilla; käytetään englantia (en_US)."
+personal-selected = "{plugin}: kielesi on nyt {locale}."
+server-selected = "{plugin}: palvelimen kieli on nyt {locale}."
+server-default-selected = "{plugin}: kielesi käyttää nyt palvelimen oletuskieltä."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "Ladataan kielen {locale} viestejä..."
+
+[language.editor.section]
+languages = "Kielet"
+search = "Haku"
+search-title = "{locale} / Haku"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Hae viestien avaimia tai tekstiä. Palaa kirjoittamalla cancel."
+value = "Kirjoita avaimen {key} uusi arvo chattiin."
+current = "Nykyinen arvo: {value}"
+variables = "Muuttujat: {variables}"
+guidance = "Käytä \\n rivinvaihtoon ja \\\\ kenoviivaan tai palaa kirjoittamalla cancel."
+
+[language.editor.input]
+expired = "Kielieditorin syöttöaika päättyi."
+too-long = "Syöte saa sisältää enintään {maximum} merkkiä."
+unable-to-save = "Tallennus epäonnistui: {reason}"
+
+[language.editor.navigation]
+back = "&eTakaisin&r"
+close = "&cSulje&r"
+previous-page = "&eEdellinen sivu&r"
+next-page = "&eSeuraava sivu&r"
+
+[language.editor.search]
+messages = "Hae viestejä"
+messages-lore = "Napsauta hakeaksesi kaikista viesteistä."
+clear = "Tyhjennä haku"
+
+[language.editor.message]
+current-value = "&7Nykyinen arvo:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Muokkaa monikkomuotoa napsauttamalla.&r"
+edit-lines = "&7Muokkaa yksittäisiä rivejä napsauttamalla.&r"
+edit-chat = "&7Muokkaa chatissa napsauttamalla.&r"
+
+[language.editor.locale]
+open = "&8Avaa tämä kieli napsauttamalla.&r"
+
+[language.editor.category]
+message-count = "&7{count} viestiä&r"
+open = "&8Avaa tämä luokka napsauttamalla.&r"
+
+[language.editor.error]
+no-permission = "Sinulla ei ole oikeutta muokata lisäosan {plugin} kieliä."
+unable-to-edit = "Muokkaus epäonnistui: {reason}"
+
+[language.editor.saved]
+summary = "{locale} tallennettu. Kielivalinnat säilyvät ennallaan."
+change = "{key}: ”{before}” muutettiin arvoon ”{after}”."
+
+[language.editor.part]
+line = "Rivi {line}"
+
+[language.editor.value]
+none = "Ei mitään"
+empty = "(tyhjä)"
+
+[config.editor]
+title = "{plugin} / Asetukset"
+section = "Osio: {path}"
+page = "Sivu {page}/{pages}"
+entry = "Kohde {number}"
+current = "Nykyinen: {value}"
+open = "Avaa osio napsauttamalla."
+toggle = "Vaihda arvoksi true tai false napsauttamalla."
+edit = "Napsauta ja kirjoita uusi arvo chattiin."
+prompt = "Kirjoita uusi arvo kohteelle {path}. Palaa kirjoittamalla cancel."
+expired = "Asetusten syöttö vanheni."
+too-long = "Kirjoita enintään {maximum} merkkiä."
+saving = "Tallennetaan asetuksia..."
+saved = "{path} tallennettu. Muutokset tulevat voimaan automaattisesti."
+failed = "Asetusten muokkaaminen epäonnistui: {reason}"
+loading = "Ladataan asetuksia..."
+empty = "Tässä osiossa ei ole asetuksia."
+player-only = "Avaa asetuseditori pelissä."
+no-permission = "Sinulla ei ole oikeutta muokata näitä asetuksia."
+back = "Takaisin"
+previous = "Edellinen sivu"
+next = "Seuraava sivu"
+refresh = "Päivitä"
+close = "Sulje"
+
+[config.editor.type]
+text = "Tekstiä; lainausmerkkejä ei tarvita."
+integer = "Kirjoita kokonaisluku."
+decimal = "Kirjoita luku, esimerkiksi 0.25."
+list = "Käytä TOML-listaa, esimerkiksi [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "Lumousten siirto on poistettu käytöstä."
+creative = "Vaihda selviytymistilaan siirtääksesi lumouksia."
+denied = "Sinulla ei ole tähän oikeutta."
+empty = "Esineessä ei ole siirrettäviä lumouksia."
+space = "Tee tavaraluetteloosi tilaa kirjalle."
+changed = "Esineesi tai asetukset muuttuivat. Aloita siirto uudelleen."
+unaffordable = "Et voi maksaa tämän siirron hintaa."
+economy = "Rahamaksut eivät ole käytettävissä."
+failed = "Siirto epäonnistui. Ota yhteyttä ylläpitäjään."
+success = "Lumoukset siirretty."
+applied = "Lumoukset lisätty."
+incompatible = "Kirjassa ei ole tähän esineeseen sopivia parannuksia."
+select = "Valitse vähintään yksi lumous."
+reconciliation = "Maksu epäonnistui odottamatta. Pyydä ylläpitäjää tarkistamaan talousjärjestelmä ennen uutta yritystä."
+
+[menu]
+title = "Inscribe"
+keep = "Säilytä: {name} {level}"
+transfer = "Siirrä: {name} {level}"
+cost = "Hinta: {cost}"
+price = "{experience} XP + {money} rahaa"
+experience = "{experience} XP"
+money = "{money} rahaa"
+free = "Ilmainen"
+confirm = "Vahvista siirto"
+cancel = "Peruuta"
+previous = "Edellinen sivu"
+next = "Seuraava sivu"
+total = "Yhteensä: {cost}"
+apply = "Lisää: {name} {level}"
+skip = "Ohita: {name} {level}"
+current = "Nykyinen taso: {level}"
+confirm_apply = "Lisää lumoukset"
+
+[command]
+player = "Käytä tätä komentoa pelissä."
+failed = "Komento epäonnistui. Tarkista palvelimen konsoli."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Tallenna diagnostiikkaraportti"
+root = "Inscriben ohje ja hallinta"
+language = "Valitse tai muokkaa kieliä"
+debug = "Diagnostiikkatyökalut"
+version = "Näytä asennettu versio"
+config = "Muokkaa Inscriben asetuksia"
+status = "Näytä asetukset, avoimet valikot ja yhteensopivuus"
+
+[command.parameter]
+upload = "Lähetä vain erikseen sallittaessa."
+
+[setting.general.enabled]
+name = "Käytössä"
+description = "Ota erottaminen ja lisääminen käyttöön."
+
+[setting.transfers.allowCreative]
+name = "Luova tila"
+description = "Salli siirrot luovassa tilassa."
+
+[setting.transfers.allowUnsafe]
+name = "Enimmäistason ylittävät tasot"
+description = "Säilytä korkeammat tasot; yhteensopivuus ja ristiriidat tarkistetaan silti."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Rahamaksut Folialla"
+description = "Ota käyttöön vain, jos talousjärjestelmä tukee Foliaa."
+
+[setting.pricing.extractionCost]
+name = "Erottamismaksu"
+description = "Oletushinta valittua lumousta kohti pisteinä tai rahana."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Erottaminen tason mukaan"
+description = "Kerro jokainen erottamismaksu lumouksen tasolla."
+
+[setting.pricing.applicationCost]
+name = "Lisäämismaksu"
+description = "Hinta lisäämiskertaa kohti; nolla on ilmainen."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Lisääminen tason mukaan"
+description = "Kerro lisäämismaksu lisättyjen tasojen summalla."
+
+[setting.pricing.currency]
+name = "Valuutta"
+description = "EXPERIENCE käyttää kokemuspisteitä. MONEY vaatii Vaultin."
+
+[setting.general.language]
+name = "Palvelimen kieli"
+description = "Oletuskieli; henkilökohtaiset valinnat ovat etusijalla."
+
+[setting.hotReload.enabled]
+name = "Automaattinen uudelleenlataus"
+description = "Ota muokatut asetus- ja kielitiedostot käyttöön automaattisesti."
+
+[setting.presentation.splashScreen]
+name = "Käynnistysbanneri"
+description = "Näytä lisäosan banneri palvelimen lokissa."
+
+[setting.debug.uploadEnabled]
+name = "Diagnostiikan lähetys"
+description = "Salli lähetykset vain nimenomaisesta pyynnöstä."
+
+[setting.transfers.extractionMaterials]
+name = "Erottamismateriaalit"
+description = "Sallitut esinemateriaalit; tyhjä lista sallii soveltuvat esineet."
+
+[setting.transfers.applicationMaterials]
+name = "Lisäämismateriaalit"
+description = "Sallitut esinemateriaalit; tyhjä lista sallii yhteensopivat esineet."
+
+[setting.transfers.bookName]
+name = "Erotetun kirjan nimi"
+description = "Tyhjänä käytetään vanillan nimeä. Värimuotoilu on tuettu."
+
+[setting.transfers.bookLore]
+name = "Erotetun kirjan kuvaus"
+description = "Enintään 20 riviä, 512 merkkiä kullakin. Tyhjänä kuvausta ei lisätä."
+
+[setting.enchantments]
+name = "Lumoussäännöt"
+description = "Lumouskohtainen erottamishinta, valuutta ja käyttöönotto."
+
+[setting.editor]
+title = "Inscribe / Asetukset"
+
+[setting.metrics.enabled]
+name = "Käyttötilastot"
+description = "Ota anonyymi bStats-käyttöraportointi käyttöön."
+
+[setting.general.updateNotifications]
+name = "Versioilmoitukset"
+description = "Tarkista uudet versiot ja ilmoita oikeutetuille pelaajille. Ei automaattista asennusta."
+
+[setting.policy.enabled]
+name = "Käytössä"
+description = "Salli tämän lumouksen siirto."
+
+[setting.policy.cost]
+name = "Hinta"
+description = "Tämän lumouksen erottamishinta."
+
+[setting.policy.perLevel]
+name = "Tasoa kohti"
+description = "Kerro hinta lumouksen tasolla."
+
+[setting.policy.currency]
+name = "Valuutta"
+description = "EXPERIENCE käyttää pisteitä; MONEY käyttää Vaultia."
+
+[debug.error]
+missing-permission = "Puuttuva oikeus: {permission}"
+already-preparing = "Lisäosan {plugin} diagnostiikkaraporttia valmistellaan jo."
+already-preparing-short = "Diagnostiikkaraporttia valmistellaan jo."
+schedule-failed = "Diagnostiikkaraportin ajoitus epäonnistui."
+provider-closed = "Diagnostiikan tarjoaja on suljettu."
+closed-before-capture = "Diagnostiikan tarjoaja suljettiin ennen raportin keräämistä."
+writer-schedule-failed = "Diagnostiikkaraportin kirjoituksen ajoitus epäonnistui."
+capture-failed = "Diagnostiikkaraportin kerääminen epäonnistui; tarkista palvelimen konsoli."
+closed-before-write = "Diagnostiikan tarjoaja suljettiin ennen raportin kirjoittamista."
+write-failed = "Diagnostiikkaraportin kirjoittaminen epäonnistui; tarkista palvelimen konsoli."
+
+[debug]
+preparing = "Valmistellaan lisäosan {plugin} diagnostiikkaraporttia..."
+saved = "Lisäosan {plugin} diagnostiikkaraportti tallennettiin: {path}."
+
+[debug.upload]
+interrupted = "Diagnostiikkaraportin lähetys keskeytyi; paikallinen raportti on tallennettu."
+failed = "Diagnostiikkaraportin lähetys epäonnistui; paikallinen raportti on tallennettu."
+completed = "Lähetetty nimellä VolmitSoftware - {plugin} - v{version}."
+
+[debug.action]
+open = "Avaa: {url}"
+open-description = "Avaa lähetetty diagnostiikkaraportti."
+copy-path = "Kopioi paikallinen polku"
+copy-path-description = "Kopioi paikallisen raportin polku."
+
+[setting.general]
+name = "Yleiset"
+description = "Pääkytkin, palvelimen kieli ja versioilmoitukset."
+
+[setting.metrics]
+name = "Mittarit"
+description = "Nimettömät bStats-käyttötilastot."
+
+[setting.presentation]
+name = "Esitys"
+description = "Käynnistystuloste."
+
+[setting.hotReload]
+name = "Kuumalataus"
+description = "Ota muokatut tiedostot käyttöön ilman uudelleenkäynnistystä."
+
+[setting.debug]
+name = "Diagnostiikka"
+description = "Diagnostiikkaraportit."
+
+[setting.transfers]
+name = "Siirrot"
+description = "Kuka voi siirtää, sopivat esineet ja miten kirjat yhdistyvät."
+
+[setting.pricing]
+name = "Hinnoittelu"
+description = "Oletushinnat ja maksuvaluutta."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Tarkistusväli"
+description = "Millisekunteja tiedostotarkistusten välillä, 250–60000."
+
+[setting.hotReload.cooldownMillis]
+name = "Odotusaika"
+description = "Millisekunteja, jotka tiedoston on pysyttävä muuttumattomana ennen käyttöönottoa."
+
+[setting.hotReload.notifyOperators]
+name = "Operaattori-ilmoitukset"
+description = "Näytä käyttöön otetut tai hylätyt tiedostomuutokset toimintopalkissa."
+
+[setting.transfers.mergeEqualLevels]
+name = "Yhdistä samat tasot"
+description = "Yhdistä samat kirjan ja esineen tasot seuraavaksi tasoksi alasimen tapaan."
+
+[setting.transfers.increaseRepairCost]
+name = "Nosta korjauskustannusta"
+description = "Nosta esineen korjauskustannusta, kun kirja lisätään, alasimen tapaan."
+
+[status]
+pricing = "&7Valuutta &f{currency}&r &8|&r &7erottamismaksu &f{extraction}&r &8|&r &7lisäämismaksu &f{application}&r"
+transfers = "&7Avoimet valikot &f{menus}&r &8|&r &7tasojen yhdistäminen {merge} &8|&r &7korjauskustannus {repair}"
+configuration = "&7Asetukset {enabled} &8|&r &7kieli &f{language}&r &8|&r &7kuumalataus {hot_reload}"
+services = "&7Mittarit {metrics} &8|&r &7versioilmoitukset {updates}"
+compatibility = "&7Yhteensopivuus &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribein tila"
+
+[command.feedback]
+files_applied = "&aOtettu käyttöön&7 asetus- ja kielitiedostojen muutokset."
+files_rejected = "&cTiedostomuutokset hylättiin; viimeisimmät toimivat asetukset ovat yhä käytössä."
+
+[status.state]
+enabled = "&apäällä&r"
+disabled = "&cpois&r"

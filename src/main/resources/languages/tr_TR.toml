@@ -1,0 +1,426 @@
+# Inscribe tr_TR
+
+[director.help]
+no_subcommands = "Bu sayfada alt komut yok."
+no_description = "Açıklama sağlanmadı"
+command_group = "Komut grubu. Açmak için tıkla."
+category = "Komut kategorisi"
+no_parameters = "Parametre yok. Komutu önceden doldurmak için tıkla."
+parameters_hover = "Daha fazla bilgi için imleci parametrelerin üzerine getir."
+
+[director.help.navigation]
+back = "Geri"
+page = "Sayfa"
+
+[director.help.navigation.parent]
+hover = "Üst komut grubuna dön"
+
+[director.help.navigation.previous]
+hover = "Önceki sayfa"
+
+[director.help.navigation.next]
+hover = "Sonraki sayfa"
+
+[director.help.parameter]
+required = "Bu parametre zorunludur."
+optional = "Bu parametre isteğe bağlıdır."
+default = "Belirtilmezse varsayılan değer \"{value}\" olur."
+type = "Bu parametrenin türü {type}."
+
+[director.runtime.error]
+invalid_origin = "Bu komut bu kaynaktan çalıştırılamaz."
+unknown_parameter = "Bilinmeyen parametre anahtarı: {key}"
+unexpected_argument = "Beklenmeyen bağımsız değişken \"{argument}\". İsteğe bağlı parametreler anahtarla belirtilmelidir, ör. seed=123"
+unclosed_group = "{key} parametresi için kapanış \"]\" karakteri eksik"
+conversion_failed = "\"{value}\", {parameter} için {type} türüne dönüştürülemiyor"
+default_parse_failed = "{parameter} parametresinin varsayılan değeri ayrıştırılamıyor"
+missing_argument = "Eksik bağımsız değişken \"{parameter}\" ({type})"
+execution_failed = "{command} komutu çalıştırılamadı: {reason}"
+
+[language.menu]
+your_language = "Dilin"
+reset_your_language = "Dil seçimini sıfırla"
+server_default = "Sunucu varsayılanı"
+edit_messages = "Dil mesajlarını düzenle"
+use_server_default = "Sunucu varsayılanını kullan"
+current = "Geçerli: {locale}"
+current_with_personal = "Geçerli: {locale} (Senin: {personal})"
+your_description = "Yalnızca gördüğün mesajları değiştir."
+reset_description = "Sunucunun varsayılan dilini kullan."
+server_description = "Sunucunun varsayılan dilini değiştir."
+edit_description = "Her dil için mesaj düzenleyicisini aç."
+select_description = "Bu dili seçmek için tıkla."
+remove_personal_description = "Kişisel dil seçimini kaldır."
+no_controls = "Kullanabileceğin dil ayarı yok."
+command = "Komut: {command}"
+selected = "seçili"
+all-volmit-plugins = "Tüm Volmit eklentileri"
+
+[language.error]
+stopping = "Eklenti durdurulurken dil seçimi kullanılamaz."
+editor-player-only = "Dil düzenleyicisini oyun içinde aç."
+no-providers = "Kullanılabilir Volmit dil sağlayıcısı yok."
+numeric-page = "Dil sayfası için bir sayı gir."
+personal-player-only = "Oyuncu dili tercihleri oyunda seçilmelidir."
+personal-permission = "Dilini seçme iznin yok."
+plugin-personal-permission = "{plugin} için dilini seçme iznin yok."
+plugin-server-permission = "{plugin} için sunucu dilini değiştirme iznin yok."
+server-locale-required = "Sunucu varsayılanı için en_US gibi bir dil kodu seç."
+unavailable-for-all = "{locale} dili, seçilen eklentilerin tümünde kullanılamıyor."
+
+[language.usage]
+editor = "Kullanım: /{command} language server edit [locale]"
+selection = "Kullanım: /{command} language self [locale|reset] veya server [locale]"
+volmit-selection = "Kullanım: /volmit plugins languages [locale]"
+update = "Kullanım: /{command} language update"
+
+[language.update]
+checking = "{plugin}: Dil deposundaki değişiklikler denetleniyor..."
+unchanged = "{plugin}: Yüklü diller zaten depoyla eşleşiyor."
+applied = "{plugin}: {locale} güncellendi ({added} eklendi, {updated} değiştirildi, {kept} yerel düzenleme korundu)."
+cooldown = "{plugin}: Dil deposu kısa süre önce denetlendi; {remaining} sonra yeniden dene."
+locale-failed = "{plugin}: {locale} güncellenmedi: {reason}"
+failed = "{plugin}: Dil güncellemesi başarısız oldu: {reason}"
+
+[language.selection]
+preparing = "{target} için {locale} dili hazırlanıyor..."
+save-failed = "{plugin}: Dil seçimi kaydedilemedi; sunucu konsolunu kontrol et."
+english-fallback = "{plugin}: {locale} kullanılamıyor; İngilizce (en_US) kullanılıyor."
+personal-selected = "{plugin}: Dilin artık {locale}."
+server-selected = "{plugin}: Sunucu dili artık {locale}."
+server-default-selected = "{plugin}: Dilin artık sunucu varsayılanını kullanıyor."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "{locale} mesajları yükleniyor..."
+
+[language.editor.section]
+languages = "Diller"
+search = "Arama"
+search-title = "{locale} / Arama"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Mesaj anahtarlarında veya metinlerinde ara. Geri dönmek için cancel yaz."
+value = "Sohbete {key} için yeni bir değer yaz."
+current = "Geçerli değer: {value}"
+variables = "Değişkenler: {variables}"
+guidance = "Yeni satır için \\n, ters eğik çizgi için \\\\ kullan veya geri dönmek için cancel yaz."
+
+[language.editor.input]
+expired = "Dil düzenleyicisinin giriş süresi doldu."
+too-long = "Düzenleyici girdisi en fazla {maximum} karakter olabilir."
+unable-to-save = "Kaydedilemedi: {reason}"
+
+[language.editor.navigation]
+back = "&eGeri&r"
+close = "&cKapat&r"
+previous-page = "&eÖnceki sayfa&r"
+next-page = "&eSonraki sayfa&r"
+
+[language.editor.search]
+messages = "Mesajları ara"
+messages-lore = "Tüm mesajlarda aramak için tıkla."
+clear = "Aramayı temizle"
+
+[language.editor.message]
+current-value = "&7Geçerli değer:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Bir çoğul biçimini düzenlemek için tıkla.&r"
+edit-lines = "&7Satırları ayrı ayrı düzenlemek için tıkla.&r"
+edit-chat = "&7Sohbette düzenlemek için tıkla.&r"
+
+[language.editor.locale]
+open = "&8Bu dili açmak için tıkla.&r"
+
+[language.editor.category]
+message-count = "&7{count} mesaj&r"
+open = "&8Bu kategoriyi açmak için tıkla.&r"
+
+[language.editor.error]
+no-permission = "{plugin} dillerini düzenleme iznin yok."
+unable-to-edit = "Düzenlenemedi: {reason}"
+
+[language.editor.saved]
+summary = "{locale} kaydedildi. Dil seçimleri değişmedi."
+change = "{key}: “{before}” değeri “{after}” olarak değiştirildi."
+
+[language.editor.part]
+line = "Satır {line}"
+
+[language.editor.value]
+none = "Yok"
+empty = "(boş)"
+
+[config.editor]
+title = "{plugin} / Yapılandırma"
+section = "Bölüm: {path}"
+page = "Sayfa {page}/{pages}"
+entry = "Öğe {number}"
+current = "Geçerli: {value}"
+open = "Bu bölümü açmak için tıkla."
+toggle = "true ve false arasında geçiş yapmak için tıkla."
+edit = "Sohbette yeni değer girmek için tıkla."
+prompt = "{path} için yeni değer gir. Dönmek için cancel yaz."
+expired = "Yapılandırma girişinin süresi doldu."
+too-long = "En fazla {maximum} karakter gir."
+saving = "Yapılandırma kaydediliyor..."
+saved = "{path} kaydedildi. Değişiklikler otomatik uygulanır."
+failed = "Yapılandırma düzenlenemedi: {reason}"
+loading = "Yapılandırma yükleniyor..."
+empty = "Bu bölümde ayar yok."
+player-only = "Yapılandırma düzenleyicisini oyun içinde aç."
+no-permission = "Bu yapılandırmayı düzenleme iznin yok."
+back = "Geri"
+previous = "Önceki sayfa"
+next = "Sonraki sayfa"
+refresh = "Yenile"
+close = "Kapat"
+
+[config.editor.type]
+text = "Metin; çevreleyen tırnak işareti gerekmez."
+integer = "Bir tam sayı gir."
+decimal = "0.25 gibi bir sayı gir."
+list = "[\"stone\", \"deepslate\"] gibi bir TOML listesi kullan."
+
+[transfer]
+disabled = "Büyü aktarımları devre dışı."
+creative = "Büyü aktarmak için hayatta kalma moduna geç."
+denied = "Bunu yapmak için iznin yok."
+empty = "Bu eşyada aktarılabilir büyü yok."
+space = "Kitap için envanterinde yer aç."
+changed = "Eşyaların veya ayarlar değişti. Aktarımı yeniden başlat."
+unaffordable = "Bu aktarımın ücretini ödeyemiyorsun."
+economy = "Para ödemeleri kullanılamıyor."
+failed = "Aktarım başarısız oldu. Bir yöneticiyle iletişime geç."
+success = "Büyüler aktarıldı."
+applied = "Büyüler uygulandı."
+incompatible = "Bu kitapta o eşya için uyumlu yükseltme yok."
+select = "En az bir büyü seç."
+reconciliation = "Ödeme beklenmedik şekilde başarısız oldu. Tekrar denemeden önce bir yöneticiden ekonomiyi kontrol etmesini iste."
+
+[menu]
+title = "Inscribe"
+keep = "Koru: {name} {level}"
+transfer = "Aktar: {name} {level}"
+cost = "Ücret: {cost}"
+price = "{experience} XP + {money} para"
+experience = "{experience} XP"
+money = "{money} para"
+free = "Ücretsiz"
+confirm = "Aktarımı onayla"
+cancel = "İptal"
+previous = "Önceki sayfa"
+next = "Sonraki sayfa"
+total = "Toplam: {cost}"
+apply = "Uygula: {name} {level}"
+skip = "Atla: {name} {level}"
+current = "Mevcut seviye: {level}"
+confirm_apply = "Büyüleri uygula"
+
+[command]
+player = "Bu komutu oyun içinde kullan."
+failed = "Komut başarısız oldu. Sunucu konsoluna bak."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Tanılama raporu kaydet"
+root = "Inscribe yardım ve yönetim"
+language = "Dil seç veya düzenle"
+debug = "Tanılama araçları"
+version = "Yüklü sürümü göster"
+config = "Inscribe ayarlarını düzenle"
+status = "Ayarları, açık menüleri ve uyumluluğu göster"
+
+[command.parameter]
+upload = "Yalnızca açıkça izin verilirse yükle."
+
+[setting.general.enabled]
+name = "Etkin"
+description = "Çıkarma ve uygulamayı etkinleştir."
+
+[setting.transfers.allowCreative]
+name = "Yaratıcı mod"
+description = "Yaratıcı modda aktarımlara izin ver."
+
+[setting.transfers.allowUnsafe]
+name = "Azami üstü seviyeler"
+description = "Yüksek seviyeleri koru; uyumluluk ve çakışma denetimleri devam eder."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Folia para ödemeleri"
+description = "Yalnızca ekonomi sağlayıcın Folia'yı destekliyorsa etkinleştir."
+
+[setting.pricing.extractionCost]
+name = "Çıkarma ücreti"
+description = "Seçilen büyü başına varsayılan puan veya para ücreti."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Seviyeye göre çıkarma"
+description = "Her çıkarma ücretini büyü seviyesiyle çarp."
+
+[setting.pricing.applicationCost]
+name = "Uygulama ücreti"
+description = "Uygulama başına ücret; sıfır ücretsizdir."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Seviyeye göre uygulama"
+description = "Uygulama ücretini uygulanan seviyelerin toplamıyla çarp."
+
+[setting.pricing.currency]
+name = "Para birimi"
+description = "EXPERIENCE ham tecrübe puanı kullanır. MONEY Vault gerektirir."
+
+[setting.general.language]
+name = "Sunucu dili"
+description = "Varsayılan dil; kişisel seçimler önceliklidir."
+
+[setting.hotReload.enabled]
+name = "Otomatik yeniden yükleme"
+description = "Düzenlenen yapılandırma ve dil dosyalarını otomatik olarak uygula."
+
+[setting.presentation.splashScreen]
+name = "Başlangıç afişi"
+description = "Eklenti afişini sunucu günlüğünde göster."
+
+[setting.debug.uploadEnabled]
+name = "Tanılama yüklemeleri"
+description = "Yüklemelere yalnızca açıkça istendiğinde izin ver."
+
+[setting.transfers.extractionMaterials]
+name = "Çıkarma malzemeleri"
+description = "İzin verilen malzemeler; boş liste uygun eşyalara izin verir."
+
+[setting.transfers.applicationMaterials]
+name = "Uygulama malzemeleri"
+description = "İzin verilen malzemeler; boş liste uyumlu eşyalara izin verir."
+
+[setting.transfers.bookName]
+name = "Çıkarılan kitap adı"
+description = "Boş bırakılırsa özgün ad kullanılır. Renk biçimlendirmesi desteklenir."
+
+[setting.transfers.bookLore]
+name = "Çıkarılan kitap açıklaması"
+description = "Her biri 512 karakterlik en fazla 20 satır. Boş liste açıklama eklemez."
+
+[setting.enchantments]
+name = "Büyü kuralları"
+description = "Büyü başına çıkarma ücreti, para birimi ve etkinlik durumu."
+
+[setting.editor]
+title = "Inscribe / Ayarlar"
+
+[setting.metrics.enabled]
+name = "Kullanım istatistikleri"
+description = "Anonim bStats kullanım raporlamasını etkinleştir."
+
+[setting.general.updateNotifications]
+name = "Sürüm bildirimleri"
+description = "Yeni sürümleri denetle ve izinli oyunculara bildir. Otomatik kurulum yapılmaz."
+
+[setting.policy.enabled]
+name = "Etkin"
+description = "Bu büyünün aktarılmasına izin ver."
+
+[setting.policy.cost]
+name = "Ücret"
+description = "Bu büyünün çıkarma ücreti."
+
+[setting.policy.perLevel]
+name = "Seviye başına"
+description = "Ücreti büyü seviyesiyle çarp."
+
+[setting.policy.currency]
+name = "Para birimi"
+description = "EXPERIENCE puan; MONEY Vault kullanır."
+
+[debug.error]
+missing-permission = "Eksik izin: {permission}"
+already-preparing = "{plugin} için zaten bir hata ayıklama dökümü hazırlanıyor."
+already-preparing-short = "Zaten bir hata ayıklama dökümü hazırlanıyor."
+schedule-failed = "Hata ayıklama dökümü planlanamadı."
+provider-closed = "Hata ayıklama sağlayıcısı kapalı."
+closed-before-capture = "Hata ayıklama sağlayıcısı, rapor toplanmadan önce kapandı."
+writer-schedule-failed = "Hata ayıklama dökümü yazıcısı planlanamadı."
+capture-failed = "Hata ayıklama dökümü alınamadı; sunucu konsolunu kontrol et."
+closed-before-write = "Hata ayıklama sağlayıcısı, rapor yazılmadan önce kapandı."
+write-failed = "Hata ayıklama dökümü yazılamadı; sunucu konsolunu kontrol et."
+
+[debug]
+preparing = "{plugin} hata ayıklama dökümü hazırlanıyor..."
+saved = "{plugin} hata ayıklama dökümü {path} konumuna kaydedildi."
+
+[debug.upload]
+interrupted = "Hata ayıklama dökümü yüklemesi kesildi; yerel rapor kaydedildi."
+failed = "Hata ayıklama dökümü yüklenemedi; yerel rapor kaydedildi."
+completed = "VolmitSoftware - {plugin} - v{version} olarak yüklendi."
+
+[debug.action]
+open = "Aç: {url}"
+open-description = "Yüklenen tanılama raporunu aç."
+copy-path = "Yerel yolu kopyala"
+copy-path-description = "Yerel raporun yolunu kopyala."
+
+[setting.general]
+name = "Genel"
+description = "Ana anahtar, sunucu dili ve sürüm bildirimleri."
+
+[setting.metrics]
+name = "Ölçümler"
+description = "Anonim bStats kullanım istatistikleri."
+
+[setting.presentation]
+name = "Sunum"
+description = "Başlangıç çıktısı."
+
+[setting.hotReload]
+name = "Canlı yeniden yükleme"
+description = "Düzenlenen dosyaları yeniden başlatmadan uygula."
+
+[setting.debug]
+name = "Tanılama"
+description = "Tanılama raporları."
+
+[setting.transfers]
+name = "Aktarımlar"
+description = "Kimin aktarabileceği, uygun eşyalar ve kitapların nasıl birleştiği."
+
+[setting.pricing]
+name = "Fiyatlandırma"
+description = "Varsayılan fiyatlar ve ödeme para birimi."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Kontrol aralığı"
+description = "Dosya kontrolleri arasındaki milisaniye, 250 ile 60000 arası."
+
+[setting.hotReload.cooldownMillis]
+name = "Bekleme süresi"
+description = "Bir dosyanın uygulanmadan önce değişmeden kalması gereken milisaniye."
+
+[setting.hotReload.notifyOperators]
+name = "Operatör bildirimleri"
+description = "Uygulanan veya reddedilen dosya değişikliklerini eylem çubuğunda göster."
+
+[setting.transfers.mergeEqualLevels]
+name = "Eşit seviyeleri birleştir"
+description = "Eşit kitap ve eşya seviyelerini örs gibi bir sonraki seviyede birleştir."
+
+[setting.transfers.increaseRepairCost]
+name = "Onarım maliyetini artır"
+description = "Bir kitap uygulandığında eşyanın onarım maliyetini örs gibi artır."
+
+[status]
+pricing = "&7Para birimi &f{currency}&r &8|&r &7çıkarma ücreti &f{extraction}&r &8|&r &7uygulama ücreti &f{application}&r"
+transfers = "&7Açık menüler &f{menus}&r &8|&r &7seviye birleştirme {merge} &8|&r &7onarım maliyeti {repair}"
+configuration = "&7Yapılandırma {enabled} &8|&r &7dil &f{language}&r &8|&r &7canlı yeniden yükleme {hot_reload}"
+services = "&7Ölçümler {metrics} &8|&r &7güncelleme bildirimleri {updates}"
+compatibility = "&7Uyumluluk &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribe durumu"
+
+[command.feedback]
+files_applied = "&aUygulandı:&7 yapılandırma ve dil dosyası değişiklikleri."
+files_rejected = "&cDosya değişiklikleri reddedildi; son geçerli ayarlar etkin kalıyor."
+
+[status.state]
+enabled = "&aetkin&r"
+disabled = "&cdevre dışı&r"

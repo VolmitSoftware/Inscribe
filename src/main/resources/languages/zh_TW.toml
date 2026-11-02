@@ -1,0 +1,426 @@
+# Inscribe zh_TW
+
+[director.help]
+no_subcommands = "此頁面沒有子指令。"
+no_description = "未提供說明"
+command_group = "指令群組。點擊以開啟。"
+category = "指令類別"
+no_parameters = "無參數。點擊以預先填入指令。"
+parameters_hover = "將滑鼠懸停在參數上以瞭解更多。"
+
+[director.help.navigation]
+back = "返回"
+page = "頁面"
+
+[director.help.navigation.parent]
+hover = "返回上層指令群組"
+
+[director.help.navigation.previous]
+hover = "上一頁"
+
+[director.help.navigation.next]
+hover = "下一頁"
+
+[director.help.parameter]
+required = "此參數為必填。"
+optional = "此參數為選填。"
+default = "未指定時預設為 \"{value}\"。"
+type = "此參數的型別為 {type}。"
+
+[director.runtime.error]
+invalid_origin = "無法從此來源執行該指令。"
+unknown_parameter = "未知參數鍵：{key}"
+unexpected_argument = "非預期的引數 \"{argument}\"。選用參數必須使用鍵指定，例如 seed=123"
+unclosed_group = "參數 {key} 缺少閉合的 \"]\""
+conversion_failed = "無法將 \"{value}\" 轉換為 {parameter} 所需的 {type}"
+default_parse_failed = "無法解析參數 {parameter} 的預設值"
+missing_argument = "缺少引數 \"{parameter}\"（{type}）"
+execution_failed = "執行指令 {command} 失敗：{reason}"
+
+[language.menu]
+your_language = "您的語言"
+reset_your_language = "重設您的語言"
+server_default = "伺服器預設語言"
+edit_messages = "編輯語言訊息"
+use_server_default = "使用伺服器預設語言"
+current = "目前：{locale}"
+current_with_personal = "目前：{locale}（您的：{personal}）"
+your_description = "只變更您看到的訊息。"
+reset_description = "使用伺服器預設語言。"
+server_description = "變更伺服器預設語言。"
+edit_description = "開啟各語言的訊息編輯器。"
+select_description = "點擊以選擇此語言。"
+remove_personal_description = "移除您的個人語言選擇。"
+no_controls = "您無權使用語言設定。"
+command = "指令：{command}"
+selected = "已選擇"
+all-volmit-plugins = "所有 Volmit 外掛"
+
+[language.error]
+stopping = "外掛停止期間無法選擇語言。"
+editor-player-only = "請在遊戲中開啟語言編輯器。"
+no-providers = "沒有可用的 Volmit 語言提供程式。"
+numeric-page = "請輸入數字頁碼。"
+personal-player-only = "玩家必須在遊戲中選擇個人語言。"
+personal-permission = "您沒有權限選擇個人語言。"
+plugin-personal-permission = "您沒有權限為 {plugin} 選擇個人語言。"
+plugin-server-permission = "您沒有權限變更 {plugin} 的伺服器語言。"
+server-locale-required = "請選擇 en_US 等語言代碼作為伺服器預設語言。"
+unavailable-for-all = "並非所有選取的外掛都支援語言 {locale}。"
+
+[language.usage]
+editor = "用法：/{command} language server edit [locale]"
+selection = "用法：/{command} language self [locale|reset] 或 server [locale]"
+volmit-selection = "用法：/volmit plugins languages [locale]"
+update = "用法：/{command} language update"
+
+[language.update]
+checking = "{plugin}: 正在檢查語言儲存庫的變更..."
+unchanged = "{plugin}: 已安裝的語言已與儲存庫一致。"
+applied = "{plugin}: 已更新 {locale}（新增 {added}，變更 {updated}，保留本機修改 {kept}）。"
+cooldown = "{plugin}: 最近已檢查過語言儲存庫，請在 {remaining} 後重試。"
+locale-failed = "{plugin}: {locale} 未更新：{reason}"
+failed = "{plugin}: 語言更新失敗：{reason}"
+
+[language.selection]
+preparing = "正在為 {target} 準備語言 {locale}..."
+save-failed = "{plugin}: 無法儲存語言選擇，請查看伺服器主控台。"
+english-fallback = "{plugin}: 無法使用 {locale}，將改用英文（en_US）。"
+personal-selected = "{plugin}: 您的語言已設為 {locale}。"
+server-selected = "{plugin}: 伺服器語言已設為 {locale}。"
+server-default-selected = "{plugin}: 您的語言現在使用伺服器預設語言。"
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "正在載入 {locale} 的訊息..."
+
+[language.editor.section]
+languages = "語言"
+search = "搜尋"
+search-title = "{locale} / 搜尋"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "搜尋訊息鍵或內容。輸入 cancel 返回。"
+value = "請在聊天中輸入 {key} 的新值。"
+current = "目前值：{value}"
+variables = "變數：{variables}"
+guidance = "使用 \\n 表示換行，\\\\ 表示反斜線，或輸入 cancel 返回。"
+
+[language.editor.input]
+expired = "語言編輯器輸入已逾時。"
+too-long = "輸入最多可包含 {maximum} 個字元。"
+unable-to-save = "無法儲存：{reason}"
+
+[language.editor.navigation]
+back = "&e返回&r"
+close = "&c關閉&r"
+previous-page = "&e上一頁&r"
+next-page = "&e下一頁&r"
+
+[language.editor.search]
+messages = "搜尋訊息"
+messages-lore = "點擊搜尋所有訊息。"
+clear = "清除搜尋"
+
+[language.editor.message]
+current-value = "&7目前值：&r"
+variables = "&8{variables}&r"
+edit-plural = "&7點擊編輯複數形式。&r"
+edit-lines = "&7點擊逐行編輯。&r"
+edit-chat = "&7點擊在聊天中編輯。&r"
+
+[language.editor.locale]
+open = "&8點擊開啟此語言。&r"
+
+[language.editor.category]
+message-count = "&7{count} 則訊息&r"
+open = "&8點擊開啟此類別。&r"
+
+[language.editor.error]
+no-permission = "您沒有編輯 {plugin} 語言的權限。"
+unable-to-edit = "無法編輯：{reason}"
+
+[language.editor.saved]
+summary = "已儲存 {locale}。語言選擇保持不變。"
+change = "{key}：已將「{before}」改為「{after}」。"
+
+[language.editor.part]
+line = "第 {line} 行"
+
+[language.editor.value]
+none = "無"
+empty = "（空）"
+
+[config.editor]
+title = "{plugin} / 設定"
+section = "區段：{path}"
+page = "第 {page} 頁，共 {pages} 頁"
+entry = "項目 {number}"
+current = "目前：{value}"
+open = "點擊開啟此區段。"
+toggle = "點擊在 true 和 false 之間切換。"
+edit = "點擊在聊天中輸入新值。"
+prompt = "輸入 {path} 的新值。輸入 cancel 返回。"
+expired = "設定輸入已逾時。"
+too-long = "最多輸入 {maximum} 個字元。"
+saving = "正在儲存設定..."
+saved = "已儲存 {path}。變更將自動套用。"
+failed = "無法編輯設定：{reason}"
+loading = "正在載入設定..."
+empty = "此區段沒有設定。"
+player-only = "請在遊戲中開啟設定編輯器。"
+no-permission = "您沒有編輯此設定的權限。"
+back = "返回"
+previous = "上一頁"
+next = "下一頁"
+refresh = "重新整理"
+close = "關閉"
+
+[config.editor.type]
+text = "文字不需要外層引號。"
+integer = "請輸入整數。"
+decimal = "請輸入數字，例如 0.25。"
+list = "使用 TOML 清單，例如 [\"stone\", \"deepslate\"]。"
+
+[transfer]
+disabled = "附魔轉移已停用。"
+creative = "請切換到生存模式以轉移附魔。"
+denied = "您沒有執行此操作的權限。"
+empty = "此物品沒有可轉移的附魔。"
+space = "請在物品欄中為附魔書騰出空間。"
+changed = "您的物品或設定已變更，請重新開始轉移。"
+unaffordable = "您無法支付此次轉移的費用。"
+economy = "金錢支付無法使用。"
+failed = "轉移失敗，請聯絡管理員。"
+success = "附魔已轉移。"
+applied = "附魔已套用。"
+incompatible = "此附魔書沒有適用於該物品的相容升級。"
+select = "請至少選擇一項附魔。"
+reconciliation = "付款意外失敗。重試前請讓管理員檢查經濟系統。"
+
+[menu]
+title = "Inscribe"
+keep = "保留：{name} {level}"
+transfer = "轉移：{name} {level}"
+cost = "費用：{cost}"
+price = "{experience} 經驗值 + {money} 金錢"
+experience = "{experience} 經驗值"
+money = "{money} 金錢"
+free = "免費"
+confirm = "確認轉移"
+cancel = "取消"
+previous = "上一頁"
+next = "下一頁"
+total = "總計：{cost}"
+apply = "套用：{name} {level}"
+skip = "略過：{name} {level}"
+current = "目前等級：{level}"
+confirm_apply = "套用附魔"
+
+[command]
+player = "請在遊戲中使用此指令。"
+failed = "指令失敗，請查看伺服器主控台。"
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "儲存診斷報告"
+root = "Inscribe 說明和管理"
+language = "選擇或編輯語言"
+debug = "診斷工具"
+version = "顯示已安裝的版本"
+config = "編輯 Inscribe 設定"
+status = "顯示設定、開啟的選單和相容性"
+
+[command.parameter]
+upload = "僅在明確允許時上傳。"
+
+[setting.general.enabled]
+name = "啟用"
+description = "啟用提取和套用。"
+
+[setting.transfers.allowCreative]
+name = "創造模式"
+description = "允許在創造模式中轉移。"
+
+[setting.transfers.allowUnsafe]
+name = "超出上限的等級"
+description = "保留更高等級；仍檢查相容性和衝突。"
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Folia 金錢付款"
+description = "僅在經濟外掛支援 Folia 時啟用。"
+
+[setting.pricing.extractionCost]
+name = "提取費用"
+description = "每個所選附魔的預設費用，以經驗值或金錢計。"
+
+[setting.pricing.extractionCostPerLevel]
+name = "依等級提取"
+description = "將每項提取費用乘以附魔等級。"
+
+[setting.pricing.applicationCost]
+name = "套用費用"
+description = "每次套用的費用；零表示免費。"
+
+[setting.pricing.applicationCostPerLevel]
+name = "依等級套用"
+description = "將套用費用乘以所套用等級的總和。"
+
+[setting.pricing.currency]
+name = "貨幣"
+description = "EXPERIENCE 使用原始經驗值。MONEY 需要 Vault。"
+
+[setting.general.language]
+name = "伺服器語言"
+description = "預設語言；個人選擇優先。"
+
+[setting.hotReload.enabled]
+name = "自動重新載入"
+description = "自動套用已編輯的設定和語言檔案。"
+
+[setting.presentation.splashScreen]
+name = "啟動橫幅"
+description = "在伺服器記錄檔中顯示外掛橫幅。"
+
+[setting.debug.uploadEnabled]
+name = "診斷上傳"
+description = "僅在明確要求時允許上傳。"
+
+[setting.transfers.extractionMaterials]
+name = "提取材料"
+description = "允許的物品材料；空清單允許符合條件的物品。"
+
+[setting.transfers.applicationMaterials]
+name = "套用材料"
+description = "允許的物品材料；空清單允許相容物品。"
+
+[setting.transfers.bookName]
+name = "提取的附魔書名稱"
+description = "留空使用原版名稱。支援色彩格式。"
+
+[setting.transfers.bookLore]
+name = "提取的附魔書描述"
+description = "最多 20 行，每行 512 個字元。留空不新增描述。"
+
+[setting.enchantments]
+name = "附魔規則"
+description = "每項附魔的提取費用、貨幣和啟用狀態。"
+
+[setting.editor]
+title = "Inscribe / 設定"
+
+[setting.metrics.enabled]
+name = "使用統計"
+description = "啟用匿名 bStats 使用報告。"
+
+[setting.general.updateNotifications]
+name = "版本通知"
+description = "檢查新版本並通知有權限的玩家。不會自動安裝。"
+
+[setting.policy.enabled]
+name = "啟用"
+description = "允許轉移此附魔。"
+
+[setting.policy.cost]
+name = "費用"
+description = "此附魔的提取費用。"
+
+[setting.policy.perLevel]
+name = "依等級"
+description = "將費用乘以附魔等級。"
+
+[setting.policy.currency]
+name = "貨幣"
+description = "EXPERIENCE 使用經驗值；MONEY 使用 Vault。"
+
+[debug.error]
+missing-permission = "缺少權限：{permission}"
+already-preparing = "{plugin} 的報告已在準備中。"
+already-preparing-short = "報告已在準備中。"
+schedule-failed = "無法安排報告工作。"
+provider-closed = "診斷服務已關閉。"
+closed-before-capture = "診斷服務在收集前關閉。"
+writer-schedule-failed = "無法安排寫入工作。"
+capture-failed = "收集失敗；請查看伺服器主控台。"
+closed-before-write = "診斷服務在儲存前關閉。"
+write-failed = "儲存失敗；請查看伺服器主控台。"
+
+[debug]
+preparing = "正在準備 {plugin} 的診斷報告..."
+saved = "已將 {plugin} 的報告儲存到 {path}。"
+
+[debug.upload]
+interrupted = "上傳中斷；本機報告已儲存。"
+failed = "上傳失敗；本機報告已儲存。"
+completed = "已上傳為 VolmitSoftware - {plugin} - v{version}。"
+
+[debug.action]
+open = "開啟：{url}"
+open-description = "開啟已上傳的報告。"
+copy-path = "複製本機路徑"
+copy-path-description = "複製本機報告的路徑。"
+
+[setting.general]
+name = "一般"
+description = "總開關、伺服器語言和版本通知。"
+
+[setting.metrics]
+name = "統計"
+description = "匿名 bStats 使用統計。"
+
+[setting.presentation]
+name = "顯示"
+description = "啟動輸出。"
+
+[setting.hotReload]
+name = "熱重新載入"
+description = "無需重新啟動即可套用已編輯的檔案。"
+
+[setting.debug]
+name = "診斷"
+description = "診斷報告。"
+
+[setting.transfers]
+name = "轉移"
+description = "誰可以轉移、適用物品以及附魔書如何合併。"
+
+[setting.pricing]
+name = "費用"
+description = "預設費用和付款貨幣。"
+
+[setting.hotReload.pollIntervalMillis]
+name = "檢查間隔"
+description = "檔案檢查之間的毫秒數，250 至 60000。"
+
+[setting.hotReload.cooldownMillis]
+name = "靜置時間"
+description = "檔案在套用前必須保持不變的毫秒數。"
+
+[setting.hotReload.notifyOperators]
+name = "管理員通知"
+description = "在動作列顯示已套用或已拒絕的檔案變更。"
+
+[setting.transfers.mergeEqualLevels]
+name = "合併相同等級"
+description = "像鐵砧一樣，將附魔書與物品的相同等級合併為下一級。"
+
+[setting.transfers.increaseRepairCost]
+name = "提高修理費用"
+description = "套用附魔書時，像鐵砧一樣提高物品的修理費用。"
+
+[status]
+pricing = "&7貨幣 &f{currency}&r &8|&r &7提取費用 &f{extraction}&r &8|&r &7套用費用 &f{application}&r"
+transfers = "&7開啟的選單 &f{menus}&r &8|&r &7合併等級 {merge} &8|&r &7修理費用 {repair}"
+configuration = "&7設定 {enabled} &8|&r &7語言 &f{language}&r &8|&r &7熱重新載入 {hot_reload}"
+services = "&7統計 {metrics} &8|&r &7版本通知 {updates}"
+compatibility = "&7相容性 &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribe 狀態"
+
+[command.feedback]
+files_applied = "&a已套用&7設定檔與語言檔的變更。"
+files_rejected = "&c已拒絕檔案變更；上一次有效的設定仍然生效。"
+
+[status.state]
+enabled = "&a已啟用&r"
+disabled = "&c已停用&r"

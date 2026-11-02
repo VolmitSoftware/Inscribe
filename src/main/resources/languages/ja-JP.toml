@@ -1,0 +1,426 @@
+# Inscribe ja-JP
+
+[director.help]
+no_subcommands = "このページにサブコマンドはありません。"
+no_description = "説明はありません"
+command_group = "コマンドグループ。クリックして開きます。"
+category = "コマンドのカテゴリ"
+no_parameters = "パラメーターはありません。クリックしてコマンドを入力します。"
+parameters_hover = "パラメーターにカーソルを合わせると詳細が表示されます。"
+
+[director.help.navigation]
+back = "戻る"
+page = "ページ"
+
+[director.help.navigation.parent]
+hover = "親コマンドグループに戻る"
+
+[director.help.navigation.previous]
+hover = "前のページ"
+
+[director.help.navigation.next]
+hover = "次のページ"
+
+[director.help.parameter]
+required = "このパラメーターは必須です。"
+optional = "このパラメーターは任意です。"
+default = "未指定の場合は \"{value}\" になります。"
+type = "このパラメーターの型は {type} です。"
+
+[director.runtime.error]
+invalid_origin = "この実行元からはコマンドを実行できません。"
+unknown_parameter = "不明なパラメーターキー: {key}"
+unexpected_argument = "予期しない引数 \"{argument}\"。任意のパラメーターはキーを付けて指定してください。例: seed=123"
+unclosed_group = "パラメーター {key} の閉じかっこ \"]\" がありません"
+conversion_failed = "\"{value}\" を {parameter} 用の {type} に変換できません"
+default_parse_failed = "パラメーター {parameter} のデフォルト値を解析できません"
+missing_argument = "引数 \"{parameter}\" ({type}) が必要です"
+execution_failed = "コマンド {command} の実行に失敗しました: {reason}"
+
+[language.menu]
+your_language = "自分の言語"
+reset_your_language = "自分の言語をリセット"
+server_default = "サーバーのデフォルト"
+edit_messages = "言語メッセージを編集"
+use_server_default = "サーバーのデフォルトを使用"
+current = "現在: {locale}"
+current_with_personal = "現在: {locale} (自分の言語: {personal})"
+your_description = "表示されるメッセージだけを変更します。"
+reset_description = "サーバーのデフォルト言語を使用します。"
+server_description = "サーバーのデフォルト言語を変更します。"
+edit_description = "言語ごとのメッセージエディターを開きます。"
+select_description = "クリックしてこの言語を選択します。"
+remove_personal_description = "個人の言語選択を削除します。"
+no_controls = "利用できる言語設定はありません。"
+command = "コマンド: {command}"
+selected = "選択済み"
+all-volmit-plugins = "すべてのVolmitプラグイン"
+
+[language.error]
+stopping = "プラグインを停止している間は言語を選択できません。"
+editor-player-only = "ゲーム内で言語エディターを開いてください。"
+no-providers = "利用できるVolmit言語プロバイダーがありません。"
+numeric-page = "ページ番号を数字で入力してください。"
+personal-player-only = "プレイヤーの個人言語はゲーム内で選択してください。"
+personal-permission = "自分の言語を選択する権限がありません。"
+plugin-personal-permission = "{plugin}で自分の言語を選択する権限がありません。"
+plugin-server-permission = "{plugin}のサーバー言語を変更する権限がありません。"
+server-locale-required = "サーバーのデフォルト言語にはen_USなどの言語コードを選択してください。"
+unavailable-for-all = "選択したすべてのプラグインで言語{locale}を利用できるわけではありません。"
+
+[language.usage]
+editor = "使い方: /{command} language server edit [locale]"
+selection = "使い方: /{command} language self [locale|reset] または server [locale]"
+volmit-selection = "使い方: /volmit plugins languages [locale]"
+update = "使い方: /{command} language update"
+
+[language.update]
+checking = "{plugin}: 言語リポジトリの変更を確認しています..."
+unchanged = "{plugin}: インストール済みの言語はすでにリポジトリと一致しています。"
+applied = "{plugin}: {locale}を更新しました(追加 {added}、変更 {updated}、保持したローカル編集 {kept})。"
+cooldown = "{plugin}: 言語リポジトリは最近確認されたばかりです。{remaining}後にもう一度お試しください。"
+locale-failed = "{plugin}: {locale}は更新されませんでした: {reason}"
+failed = "{plugin}: 言語の更新に失敗しました: {reason}"
+
+[language.selection]
+preparing = "{target}の言語{locale}を準備しています..."
+save-failed = "{plugin}: 言語の選択を保存できませんでした。サーバーコンソールを確認してください。"
+english-fallback = "{plugin}: {locale}は利用できないため、英語(en_US)を使用します。"
+personal-selected = "{plugin}: 自分の言語を{locale}に変更しました。"
+server-selected = "{plugin}: サーバー言語を{locale}に変更しました。"
+server-default-selected = "{plugin}: 自分の言語はサーバーのデフォルトに従うようになりました。"
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "{locale}のメッセージを読み込んでいます..."
+
+[language.editor.section]
+languages = "言語"
+search = "検索"
+search-title = "{locale} / 検索"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "メッセージキーまたは本文を検索してください。cancelと入力すると戻ります。"
+value = "{key}の新しい値をチャットに入力してください。"
+current = "現在の値: {value}"
+variables = "変数: {variables}"
+guidance = "改行には\\n、バックスラッシュには\\\\を使ってください。cancelと入力すると戻ります。"
+
+[language.editor.input]
+expired = "言語エディターの入力時間が切れました。"
+too-long = "入力は{maximum}文字以内にしてください。"
+unable-to-save = "保存できませんでした: {reason}"
+
+[language.editor.navigation]
+back = "&e戻る&r"
+close = "&c閉じる&r"
+previous-page = "&e前のページ&r"
+next-page = "&e次のページ&r"
+
+[language.editor.search]
+messages = "メッセージを検索"
+messages-lore = "クリックしてすべてのメッセージを検索します。"
+clear = "検索をクリア"
+
+[language.editor.message]
+current-value = "&7現在の値:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7クリックして複数形を編集します。&r"
+edit-lines = "&7クリックして各行を編集します。&r"
+edit-chat = "&7クリックしてチャットで編集します。&r"
+
+[language.editor.locale]
+open = "&8クリックしてこの言語を開きます。&r"
+
+[language.editor.category]
+message-count = "&7{count}件のメッセージ&r"
+open = "&8クリックしてこのカテゴリを開きます。&r"
+
+[language.editor.error]
+no-permission = "{plugin}の言語を編集する権限がありません。"
+unable-to-edit = "編集できませんでした: {reason}"
+
+[language.editor.saved]
+summary = "{locale}を保存しました。言語の選択は変更されていません。"
+change = "{key}: 「{before}」を「{after}」に変更しました。"
+
+[language.editor.part]
+line = "{line}行目"
+
+[language.editor.value]
+none = "なし"
+empty = "(空)"
+
+[config.editor]
+title = "{plugin} / 設定"
+section = "セクション: {path}"
+page = "{page}/{pages} ページ"
+entry = "項目 {number}"
+current = "現在: {value}"
+open = "クリックしてこのセクションを開きます。"
+toggle = "クリックして true と false を切り替えます。"
+edit = "クリックしてチャットに新しい値を入力します。"
+prompt = "{path} の新しい値を入力してください。cancel と入力すると戻ります。"
+expired = "設定の入力時間が切れました。"
+too-long = "{maximum} 文字以内で入力してください。"
+saving = "設定を保存中..."
+saved = "{path} を保存しました。変更は自動的に適用されます。"
+failed = "設定を編集できません: {reason}"
+loading = "設定を読み込み中..."
+empty = "このセクションには設定がありません。"
+player-only = "ゲーム内で設定エディターを開いてください。"
+no-permission = "この設定を編集する権限がありません。"
+back = "戻る"
+previous = "前のページ"
+next = "次のページ"
+refresh = "更新"
+close = "閉じる"
+
+[config.editor.type]
+text = "テキスト。引用符で囲む必要はありません。"
+integer = "整数を入力してください。"
+decimal = "0.25 のような数値を入力してください。"
+list = "[\"stone\", \"deepslate\"] のような TOML リストを使ってください。"
+
+[transfer]
+disabled = "エンチャントの移動は無効です。"
+creative = "エンチャントを移動するにはサバイバルモードに切り替えてください。"
+denied = "この操作の権限がありません。"
+empty = "このアイテムに移動できるエンチャントはありません。"
+space = "本を受け取るためにインベントリに空きを作ってください。"
+changed = "アイテムまたは設定が変更されました。移動をやり直してください。"
+unaffordable = "この移動の料金を支払えません。"
+economy = "通貨での支払いは利用できません。"
+failed = "移動に失敗しました。管理者に連絡してください。"
+success = "エンチャントを移動しました。"
+applied = "エンチャントを適用しました。"
+incompatible = "この本に対象アイテムと互換性のある強化はありません。"
+select = "エンチャントを一つ以上選んでください。"
+reconciliation = "支払いで予期しない問題が発生しました。再試行する前に管理者に経済システムの確認を依頼してください。"
+
+[menu]
+title = "Inscribe"
+keep = "維持: {name} {level}"
+transfer = "移動: {name} {level}"
+cost = "料金: {cost}"
+price = "{experience} 経験値 + {money} 通貨"
+experience = "{experience} 経験値"
+money = "{money} 通貨"
+free = "無料"
+confirm = "移動を確定"
+cancel = "キャンセル"
+previous = "前のページ"
+next = "次のページ"
+total = "合計: {cost}"
+apply = "適用: {name} {level}"
+skip = "スキップ: {name} {level}"
+current = "現在のレベル: {level}"
+confirm_apply = "エンチャントを適用"
+
+[command]
+player = "ゲーム内でこのコマンドを使用してください。"
+failed = "コマンドに失敗しました。サーバーコンソールを確認してください。"
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "診断レポートを保存"
+root = "Inscribe ヘルプと管理"
+language = "言語を選択または編集"
+debug = "診断ツール"
+version = "インストール済みのバージョンを表示"
+config = "Inscribe の設定を編集"
+status = "設定、開いているメニュー、互換性を表示"
+
+[command.parameter]
+upload = "明示的に許可された場合のみアップロードします。"
+
+[setting.general.enabled]
+name = "有効"
+description = "抽出と適用を有効にします。"
+
+[setting.transfers.allowCreative]
+name = "クリエイティブモード"
+description = "クリエイティブモードでの移動を許可します。"
+
+[setting.transfers.allowUnsafe]
+name = "最大を超えるレベル"
+description = "高いレベルを維持します。互換性と競合は引き続き確認します。"
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Folia の通貨支払い"
+description = "経済プラグインが Folia に対応している場合のみ有効にしてください。"
+
+[setting.pricing.extractionCost]
+name = "抽出料金"
+description = "選択したエンチャントごとのデフォルト料金(経験値ポイントまたは通貨)。"
+
+[setting.pricing.extractionCostPerLevel]
+name = "レベル別の抽出料金"
+description = "抽出料金にエンチャントレベルを掛けます。"
+
+[setting.pricing.applicationCost]
+name = "適用料金"
+description = "適用ごとの料金。ゼロは無料です。"
+
+[setting.pricing.applicationCostPerLevel]
+name = "レベル別の適用料金"
+description = "適用料金に適用レベルの合計を掛けます。"
+
+[setting.pricing.currency]
+name = "通貨"
+description = "EXPERIENCE は経験値ポイントをそのまま使います。MONEY には Vault が必要です。"
+
+[setting.general.language]
+name = "サーバー言語"
+description = "デフォルトの言語。個人の選択が優先されます。"
+
+[setting.hotReload.enabled]
+name = "自動リロード"
+description = "編集した設定ファイルと言語ファイルを自動的に適用します。"
+
+[setting.presentation.splashScreen]
+name = "起動バナー"
+description = "サーバーログにプラグインのバナーを表示します。"
+
+[setting.debug.uploadEnabled]
+name = "診断のアップロード"
+description = "明示的に要求された場合のみアップロードを許可します。"
+
+[setting.transfers.extractionMaterials]
+name = "抽出対象の素材"
+description = "許可する素材。空のリストは対象となるアイテムを許可します。"
+
+[setting.transfers.applicationMaterials]
+name = "適用対象の素材"
+description = "許可する素材。空のリストは互換性のあるアイテムを許可します。"
+
+[setting.transfers.bookName]
+name = "抽出した本の名前"
+description = "空欄なら元の名前を使用します。色書式に対応しています。"
+
+[setting.transfers.bookLore]
+name = "抽出した本の説明"
+description = "最大20行、各512文字。空欄なら説明を追加しません。"
+
+[setting.enchantments]
+name = "エンチャント規則"
+description = "エンチャントごとの抽出料金、通貨、有効状態。"
+
+[setting.editor]
+title = "Inscribe / 設定"
+
+[setting.metrics.enabled]
+name = "利用統計"
+description = "bStats による匿名の利用状況レポートを有効にします。"
+
+[setting.general.updateNotifications]
+name = "リリース通知"
+description = "新しいリリースを確認し、権限のあるプレイヤーに通知します。自動インストールは行いません。"
+
+[setting.policy.enabled]
+name = "有効"
+description = "このエンチャントの移動を許可します。"
+
+[setting.policy.cost]
+name = "料金"
+description = "このエンチャントの抽出料金。"
+
+[setting.policy.perLevel]
+name = "レベルごと"
+description = "料金にエンチャントのレベルを掛けます。"
+
+[setting.policy.currency]
+name = "通貨"
+description = "EXPERIENCE は経験値ポイント、MONEY は Vault を使用します。"
+
+[debug.error]
+missing-permission = "権限がありません: {permission}"
+already-preparing = "{plugin} のレポートはすでに準備中です。"
+already-preparing-short = "レポートはすでに準備中です。"
+schedule-failed = "レポートを予約できませんでした。"
+provider-closed = "診断サービスは終了しています。"
+closed-before-capture = "収集前に診断サービスが終了しました。"
+writer-schedule-failed = "レポートの書き込みを予約できませんでした。"
+capture-failed = "レポートを収集できませんでした。サーバーコンソールを確認してください。"
+closed-before-write = "保存前に診断サービスが終了しました。"
+write-failed = "レポートを書き込めませんでした。サーバーコンソールを確認してください。"
+
+[debug]
+preparing = "{plugin} のレポートを準備中..."
+saved = "{plugin} のレポートを {path} に保存しました。"
+
+[debug.upload]
+interrupted = "アップロードが中断されました。ローカルレポートは保存済みです。"
+failed = "アップロードに失敗しました。ローカルレポートは保存済みです。"
+completed = "VolmitSoftware - {plugin} - v{version} としてアップロードしました。"
+
+[debug.action]
+open = "開く: {url}"
+open-description = "アップロードしたレポートを開きます。"
+copy-path = "ローカルパスをコピー"
+copy-path-description = "ローカルレポートのパスをコピーします。"
+
+[setting.general]
+name = "一般"
+description = "マスタースイッチ、サーバー言語、リリース通知。"
+
+[setting.metrics]
+name = "メトリクス"
+description = "匿名の bStats 利用統計。"
+
+[setting.presentation]
+name = "表示"
+description = "起動時の出力。"
+
+[setting.hotReload]
+name = "ホットリロード"
+description = "編集したファイルを再起動せずに適用します。"
+
+[setting.debug]
+name = "診断"
+description = "診断レポート。"
+
+[setting.transfers]
+name = "移動"
+description = "移動できるプレイヤー、対象アイテム、本の合成方法。"
+
+[setting.pricing]
+name = "料金"
+description = "デフォルトの料金と支払い通貨。"
+
+[setting.hotReload.pollIntervalMillis]
+name = "確認間隔"
+description = "ファイル確認の間隔(ミリ秒、250～60000)。"
+
+[setting.hotReload.cooldownMillis]
+name = "待機時間"
+description = "ファイルが適用されるまで変更されずにいる必要がある時間(ミリ秒)。"
+
+[setting.hotReload.notifyOperators]
+name = "オペレーター通知"
+description = "適用または拒否されたファイル変更をアクションバーに表示します。"
+
+[setting.transfers.mergeEqualLevels]
+name = "同じレベルを合成"
+description = "本とアイテムの同じレベルを金床のように次のレベルへ合成します。"
+
+[setting.transfers.increaseRepairCost]
+name = "修理コストを上げる"
+description = "本を適用したとき、金床と同様にアイテムの修理コストを上げます。"
+
+[status]
+pricing = "&7通貨 &f{currency}&r &8|&r &7抽出料金 &f{extraction}&r &8|&r &7適用料金 &f{application}&r"
+transfers = "&7開いているメニュー &f{menus}&r &8|&r &7レベル合成 {merge} &8|&r &7修理コスト {repair}"
+configuration = "&7設定 {enabled} &8|&r &7言語 &f{language}&r &8|&r &7ホットリロード {hot_reload}"
+services = "&7メトリクス {metrics} &8|&r &7リリース通知 {updates}"
+compatibility = "&7互換性 &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribe の状態"
+
+[command.feedback]
+files_applied = "&a適用しました&7: 設定ファイルと言語ファイルの変更。"
+files_rejected = "&cファイルの変更を拒否しました。最後に有効だった設定が引き続き使われます。"
+
+[status.state]
+enabled = "&a有効&r"
+disabled = "&c無効&r"

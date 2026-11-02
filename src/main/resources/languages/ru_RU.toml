@@ -1,0 +1,426 @@
+# Inscribe ru_RU
+
+[director.help]
+no_subcommands = "На этой странице нет подкоманд."
+no_description = "Описание не указано"
+command_group = "Группа команд. Нажмите, чтобы открыть."
+category = "Категория команд"
+no_parameters = "Параметров нет. Нажмите, чтобы предварительно заполнить команду."
+parameters_hover = "Наведите курсор на параметры, чтобы узнать больше."
+
+[director.help.navigation]
+back = "Назад"
+page = "Страница"
+
+[director.help.navigation.parent]
+hover = "Вернуться к родительской группе команд"
+
+[director.help.navigation.previous]
+hover = "Предыдущая страница"
+
+[director.help.navigation.next]
+hover = "Следующая страница"
+
+[director.help.parameter]
+required = "Этот параметр является обязательным."
+optional = "Этот параметр является необязательным."
+default = "Если не задан, используется значение \"{value}\"."
+type = "Этот параметр имеет тип {type}."
+
+[director.runtime.error]
+invalid_origin = "Эту команду нельзя выполнить из данного источника."
+unknown_parameter = "Неизвестный ключ параметра: {key}"
+unexpected_argument = "Неожиданный аргумент \"{argument}\". Необязательные параметры должны задаваться с ключом, например seed=123"
+unclosed_group = "Отсутствует закрывающая скобка \"]\" для параметра {key}"
+conversion_failed = "Невозможно преобразовать \"{value}\" в {type} для {parameter}"
+default_parse_failed = "Невозможно разобрать значение по умолчанию параметра {parameter}"
+missing_argument = "Отсутствует аргумент \"{parameter}\" ({type})"
+execution_failed = "Не удалось выполнить команду {command}: {reason}"
+
+[language.menu]
+your_language = "Ваш язык"
+reset_your_language = "Сбросить выбор языка"
+server_default = "Язык сервера по умолчанию"
+edit_messages = "Изменить языковые сообщения"
+use_server_default = "Использовать язык сервера по умолчанию"
+current = "Текущий: {locale}"
+current_with_personal = "Текущий: {locale} (Ваш: {personal})"
+your_description = "Изменить только сообщения, которые видите вы."
+reset_description = "Использовать язык сервера по умолчанию."
+server_description = "Изменить язык сервера по умолчанию."
+edit_description = "Открыть редактор сообщений для каждого языка."
+select_description = "Нажмите, чтобы выбрать этот язык."
+remove_personal_description = "Удалить ваш личный выбор языка."
+no_controls = "У вас нет доступа к настройкам языка."
+command = "Команда: {command}"
+selected = "выбран"
+all-volmit-plugins = "всех плагинов Volmit"
+
+[language.error]
+stopping = "Выбор языка недоступен, пока плагин останавливается."
+editor-player-only = "Откройте редактор языка в игре."
+no-providers = "Нет доступных языковых провайдеров Volmit."
+numeric-page = "Введите номер страницы числом."
+personal-player-only = "Личный язык игрока нужно выбрать в игре."
+personal-permission = "У вас нет разрешения на выбор языка."
+plugin-personal-permission = "У вас нет разрешения на выбор языка для {plugin}."
+plugin-server-permission = "У вас нет разрешения на изменение языка сервера для {plugin}."
+server-locale-required = "Выберите код языка, например en_US, для языка сервера по умолчанию."
+unavailable-for-all = "Язык {locale} доступен не для всех выбранных плагинов."
+
+[language.usage]
+editor = "Использование: /{command} language server edit [locale]"
+selection = "Использование: /{command} language self [locale|reset] или server [locale]"
+volmit-selection = "Использование: /volmit plugins languages [locale]"
+update = "Использование: /{command} language update"
+
+[language.update]
+checking = "{plugin}: проверка изменений в репозитории языков..."
+unchanged = "{plugin}: установленные языки уже соответствуют репозиторию."
+applied = "{plugin}: язык {locale} обновлён (добавлено: {added}, изменено: {updated}, сохранено локальных правок: {kept})."
+cooldown = "{plugin}: репозиторий языков проверялся недавно; повторите попытку через {remaining}."
+locale-failed = "{plugin}: язык {locale} не обновлён: {reason}"
+failed = "{plugin}: не удалось обновить языки: {reason}"
+
+[language.selection]
+preparing = "Подготовка языка {locale} для {target}..."
+save-failed = "{plugin}: не удалось сохранить выбор языка; проверьте консоль сервера."
+english-fallback = "{plugin}: язык {locale} недоступен; используется английский (en_US)."
+personal-selected = "{plugin}: теперь ваш язык — {locale}."
+server-selected = "{plugin}: теперь язык сервера — {locale}."
+server-default-selected = "{plugin}: теперь для вас используется язык сервера по умолчанию."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "Загрузка сообщений для {locale}..."
+
+[language.editor.section]
+languages = "Языки"
+search = "Поиск"
+search-title = "{locale} / Поиск"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Найдите ключ или текст сообщения. Введите cancel, чтобы вернуться."
+value = "Введите в чат новое значение для {key}."
+current = "Текущее значение: {value}"
+variables = "Переменные: {variables}"
+guidance = "Используйте \\n для новой строки, \\\\ для обратной косой черты или введите cancel, чтобы вернуться."
+
+[language.editor.input]
+expired = "Время ввода в редакторе языка истекло."
+too-long = "Ввод должен содержать не более {maximum} символов."
+unable-to-save = "Не удалось сохранить: {reason}"
+
+[language.editor.navigation]
+back = "&eНазад&r"
+close = "&cЗакрыть&r"
+previous-page = "&eПредыдущая страница&r"
+next-page = "&eСледующая страница&r"
+
+[language.editor.search]
+messages = "Поиск сообщений"
+messages-lore = "Нажмите для поиска среди всех сообщений."
+clear = "Сбросить поиск"
+
+[language.editor.message]
+current-value = "&7Текущее значение:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Нажмите, чтобы изменить форму множественного числа.&r"
+edit-lines = "&7Нажмите, чтобы изменить отдельные строки.&r"
+edit-chat = "&7Нажмите, чтобы изменить текст в чате.&r"
+
+[language.editor.locale]
+open = "&8Нажмите, чтобы открыть этот язык.&r"
+
+[language.editor.category]
+message-count = "&7Сообщений: {count}&r"
+open = "&8Нажмите, чтобы открыть эту категорию.&r"
+
+[language.editor.error]
+no-permission = "У вас нет разрешения на редактирование языков {plugin}."
+unable-to-edit = "Не удалось отредактировать: {reason}"
+
+[language.editor.saved]
+summary = "{locale} сохранён. Выбранные языки не изменились."
+change = "{key}: «{before}» заменено на «{after}»."
+
+[language.editor.part]
+line = "Строка {line}"
+
+[language.editor.value]
+none = "Нет"
+empty = "(пусто)"
+
+[config.editor]
+title = "{plugin} / Настройки"
+section = "Раздел: {path}"
+page = "Страница {page} из {pages}"
+entry = "Запись {number}"
+current = "Сейчас: {value}"
+open = "Нажмите, чтобы открыть раздел."
+toggle = "Нажмите, чтобы переключить true или false."
+edit = "Нажмите, чтобы ввести новое значение в чат."
+prompt = "Введите новое значение для {path}. Введите cancel, чтобы вернуться."
+expired = "Время ввода настроек истекло."
+too-long = "Введите не более {maximum} символов."
+saving = "Сохранение настроек..."
+saved = "{path} сохранено. Изменения применяются автоматически."
+failed = "Не удалось изменить настройки: {reason}"
+loading = "Загрузка настроек..."
+empty = "В этом разделе нет настроек."
+player-only = "Откройте редактор настроек в игре."
+no-permission = "У вас нет разрешения изменять эти настройки."
+back = "Назад"
+previous = "Предыдущая страница"
+next = "Следующая страница"
+refresh = "Обновить"
+close = "Закрыть"
+
+[config.editor.type]
+text = "Текст; кавычки вокруг не нужны."
+integer = "Введите целое число."
+decimal = "Введите число, например 0.25."
+list = "Используйте список TOML, например [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "Перенос зачарований отключён."
+creative = "Переключитесь в режим выживания для переноса зачарований."
+denied = "У вас нет разрешения на это действие."
+empty = "На этом предмете нет доступных для переноса зачарований."
+space = "Освободите место в инвентаре для книги."
+changed = "Предметы или настройки изменились. Начните перенос заново."
+unaffordable = "Вы не можете оплатить этот перенос."
+economy = "Денежные платежи недоступны."
+failed = "Перенос не удался. Обратитесь к администратору."
+success = "Зачарования перенесены."
+applied = "Зачарования применены."
+incompatible = "В этой книге нет совместимых улучшений для этого предмета."
+select = "Выберите хотя бы одно зачарование."
+reconciliation = "Неожиданная ошибка оплаты. Попросите администратора проверить экономику перед повторной попыткой."
+
+[menu]
+title = "Inscribe"
+keep = "Оставить: {name} {level}"
+transfer = "Перенести: {name} {level}"
+cost = "Стоимость: {cost}"
+price = "{experience} опыта + {money} денег"
+experience = "{experience} опыта"
+money = "{money} денег"
+free = "Бесплатно"
+confirm = "Подтвердить перенос"
+cancel = "Отмена"
+previous = "Предыдущая страница"
+next = "Следующая страница"
+total = "Итого: {cost}"
+apply = "Применить: {name} {level}"
+skip = "Пропустить: {name} {level}"
+current = "Текущий уровень: {level}"
+confirm_apply = "Применить зачарования"
+
+[command]
+player = "Используйте эту команду в игре."
+failed = "Ошибка команды. Проверьте консоль сервера."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Сохранить диагностический отчёт"
+root = "Помощь и управление Inscribe"
+language = "Выбрать или изменить языки"
+debug = "Средства диагностики"
+version = "Показать установленную версию"
+config = "Изменить настройки Inscribe"
+status = "Показать настройки, открытые меню и совместимость"
+
+[command.parameter]
+upload = "Загружать только при явном разрешении."
+
+[setting.general.enabled]
+name = "Включено"
+description = "Включить извлечение и применение."
+
+[setting.transfers.allowCreative]
+name = "Творческий режим"
+description = "Разрешить перенос в творческом режиме."
+
+[setting.transfers.allowUnsafe]
+name = "Уровни выше максимума"
+description = "Сохранять высокие уровни; совместимость и конфликты по-прежнему проверяются."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Денежные платежи на Folia"
+description = "Включайте, только если ваш плагин экономики поддерживает Folia."
+
+[setting.pricing.extractionCost]
+name = "Плата за извлечение"
+description = "Стоимость по умолчанию за каждое выбранное зачарование, в очках опыта или деньгах."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Извлечение по уровню"
+description = "Умножать каждую плату за извлечение на уровень зачарования."
+
+[setting.pricing.applicationCost]
+name = "Плата за применение"
+description = "Стоимость одного применения; ноль — бесплатно."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Применение по уровню"
+description = "Умножать плату за применение на сумму применяемых уровней."
+
+[setting.pricing.currency]
+name = "Валюта"
+description = "EXPERIENCE использует очки опыта напрямую. MONEY требует Vault."
+
+[setting.general.language]
+name = "Язык сервера"
+description = "Язык по умолчанию; личный выбор имеет приоритет."
+
+[setting.hotReload.enabled]
+name = "Автоперезагрузка"
+description = "Автоматически применять изменённые файлы конфигурации и языков."
+
+[setting.presentation.splashScreen]
+name = "Баннер запуска"
+description = "Показывать баннер плагина в журнале сервера."
+
+[setting.debug.uploadEnabled]
+name = "Отправка диагностики"
+description = "Разрешать отправку только по явному запросу."
+
+[setting.transfers.extractionMaterials]
+name = "Материалы для извлечения"
+description = "Разрешённые материалы; пустой список допускает подходящие предметы."
+
+[setting.transfers.applicationMaterials]
+name = "Материалы для применения"
+description = "Разрешённые материалы; пустой список допускает совместимые предметы."
+
+[setting.transfers.bookName]
+name = "Название извлечённой книги"
+description = "Если пусто, используется стандартное название. Поддерживается цветовое форматирование."
+
+[setting.transfers.bookLore]
+name = "Описание извлечённой книги"
+description = "До 20 строк по 512 символов. Если пусто, описание не добавляется."
+
+[setting.enchantments]
+name = "Правила зачарований"
+description = "Стоимость извлечения, валюта и включение для каждого зачарования."
+
+[setting.editor]
+title = "Inscribe / Настройки"
+
+[setting.metrics.enabled]
+name = "Статистика использования"
+description = "Включить анонимную статистику использования bStats."
+
+[setting.general.updateNotifications]
+name = "Уведомления о выпусках"
+description = "Проверять новые выпуски и уведомлять игроков с разрешением. Без автоматической установки."
+
+[setting.policy.enabled]
+name = "Включено"
+description = "Разрешить перенос этого зачарования."
+
+[setting.policy.cost]
+name = "Стоимость"
+description = "Цена извлечения этого зачарования."
+
+[setting.policy.perLevel]
+name = "За уровень"
+description = "Умножать цену на уровень зачарования."
+
+[setting.policy.currency]
+name = "Валюта"
+description = "EXPERIENCE использует очки опыта; MONEY использует Vault."
+
+[debug.error]
+missing-permission = "Отсутствует разрешение: {permission}"
+already-preparing = "Отладочный дамп для {plugin} уже готовится."
+already-preparing-short = "Отладочный дамп уже готовится."
+schedule-failed = "Не удалось запланировать отладочный дамп."
+provider-closed = "Служба диагностики закрыта."
+closed-before-capture = "Служба диагностики закрылась до сбора отчёта."
+writer-schedule-failed = "Не удалось запланировать запись отладочного дампа."
+capture-failed = "Не удалось собрать отладочный дамп; проверьте консоль сервера."
+closed-before-write = "Служба диагностики закрылась до записи отчёта."
+write-failed = "Не удалось записать отладочный дамп; проверьте консоль сервера."
+
+[debug]
+preparing = "Подготовка отладочного дампа {plugin}..."
+saved = "Отладочный дамп {plugin} сохранён в {path}."
+
+[debug.upload]
+interrupted = "Загрузка отладочного дампа прервана; локальный отчёт сохранён."
+failed = "Не удалось загрузить отладочный дамп; локальный отчёт сохранён."
+completed = "Загружено как VolmitSoftware - {plugin} - v{version}."
+
+[debug.action]
+open = "Открыть: {url}"
+open-description = "Открыть загруженный диагностический отчёт."
+copy-path = "Копировать локальный путь"
+copy-path-description = "Копировать путь локального отчёта."
+
+[setting.general]
+name = "Общие"
+description = "Главный переключатель, язык сервера и уведомления о выпусках."
+
+[setting.metrics]
+name = "Метрики"
+description = "Анонимная статистика использования bStats."
+
+[setting.presentation]
+name = "Оформление"
+description = "Вывод при запуске."
+
+[setting.hotReload]
+name = "Горячая перезагрузка"
+description = "Применять изменённые файлы без перезапуска."
+
+[setting.debug]
+name = "Диагностика"
+description = "Диагностические отчёты."
+
+[setting.transfers]
+name = "Перенос"
+description = "Кто может переносить, подходящие предметы и объединение книг."
+
+[setting.pricing]
+name = "Цены"
+description = "Цены по умолчанию и валюта оплаты."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Интервал проверки"
+description = "Миллисекунды между проверками файлов, от 250 до 60000."
+
+[setting.hotReload.cooldownMillis]
+name = "Период ожидания"
+description = "Миллисекунды, в течение которых файл должен оставаться неизменным перед применением."
+
+[setting.hotReload.notifyOperators]
+name = "Уведомления для операторов"
+description = "Показывать применённые или отклонённые изменения файлов на панели действий."
+
+[setting.transfers.mergeEqualLevels]
+name = "Объединять равные уровни"
+description = "Объединять равные уровни книги и предмета в следующий уровень, как наковальня."
+
+[setting.transfers.increaseRepairCost]
+name = "Повышать стоимость ремонта"
+description = "Повышать стоимость ремонта предмета при применении книги, как наковальня."
+
+[status]
+pricing = "&7Валюта &f{currency}&r &8|&r &7плата за извлечение &f{extraction}&r &8|&r &7плата за применение &f{application}&r"
+transfers = "&7Открытые меню &f{menus}&r &8|&r &7объединение уровней {merge} &8|&r &7стоимость ремонта {repair}"
+configuration = "&7Конфигурация {enabled} &8|&r &7язык &f{language}&r &8|&r &7горячая перезагрузка {hot_reload}"
+services = "&7Статистика {metrics} &8|&r &7уведомления об обновлениях {updates}"
+compatibility = "&7Совместимость &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Состояние Inscribe"
+
+[command.feedback]
+files_applied = "&aПрименены&7 изменения файлов конфигурации и языков."
+files_rejected = "&cИзменения файлов отклонены; действуют последние корректные настройки."
+
+[status.state]
+enabled = "&aвключено&r"
+disabled = "&cвыключено&r"

@@ -1,0 +1,426 @@
+# Inscribe nl_NL
+
+[director.help]
+no_subcommands = "Geen subopdrachten op deze pagina."
+no_description = "Geen beschrijving opgegeven"
+command_group = "Opdrachtgroep. Klik om te openen."
+category = "Opdrachtcategorie"
+no_parameters = "Geen parameters. Klik om de opdracht vooraf in te vullen."
+parameters_hover = "Beweeg de muis over de parameters voor meer informatie."
+
+[director.help.navigation]
+back = "Terug"
+page = "Pagina"
+
+[director.help.navigation.parent]
+hover = "Terug naar de bovenliggende opdrachtgroep"
+
+[director.help.navigation.previous]
+hover = "Vorige pagina"
+
+[director.help.navigation.next]
+hover = "Volgende pagina"
+
+[director.help.parameter]
+required = "Deze parameter is verplicht."
+optional = "Deze parameter is optioneel."
+default = "Standaard \"{value}\" indien niet opgegeven."
+type = "Deze parameter is van het type {type}."
+
+[director.runtime.error]
+invalid_origin = "Deze opdracht kan niet vanuit deze bron worden uitgevoerd."
+unknown_parameter = "Onbekende parametersleutel: {key}"
+unexpected_argument = "Onverwacht argument \"{argument}\". Optionele parameters moeten met een sleutel worden opgegeven, bijv. seed=123"
+unclosed_group = "Ontbrekende sluitende \"]\" voor parameter {key}"
+conversion_failed = "Kan \"{value}\" voor {parameter} niet naar {type} converteren"
+default_parse_failed = "Kan de standaardwaarde voor parameter {parameter} niet verwerken"
+missing_argument = "Ontbrekend argument \"{parameter}\" ({type})"
+execution_failed = "Opdracht {command} kon niet worden uitgevoerd: {reason}"
+
+[language.menu]
+your_language = "Jouw taal"
+reset_your_language = "Jouw taalkeuze resetten"
+server_default = "Standaardtaal van de server"
+edit_messages = "Taalberichten bewerken"
+use_server_default = "Standaardtaal van de server gebruiken"
+current = "Huidig: {locale}"
+current_with_personal = "Huidig: {locale} (Jouw keuze: {personal})"
+your_description = "Wijzig alleen de berichten die jij ziet."
+reset_description = "Gebruik de standaardtaal van de server."
+server_description = "Wijzig de standaardtaal van de server."
+edit_description = "Open de berichteneditor voor elke taal."
+select_description = "Klik om deze taal te selecteren."
+remove_personal_description = "Verwijder jouw persoonlijke taalkeuze."
+no_controls = "Er zijn geen taalinstellingen voor jou beschikbaar."
+command = "Opdracht: {command}"
+selected = "geselecteerd"
+all-volmit-plugins = "alle Volmit-plugins"
+
+[language.error]
+stopping = "De taalkeuze is niet beschikbaar terwijl de plugin stopt."
+editor-player-only = "Open de taaleditor in het spel."
+no-providers = "Er zijn geen Volmit-taalaanbieders beschikbaar."
+numeric-page = "Voer een paginanummer in cijfers in."
+personal-player-only = "Persoonlijke taalvoorkeuren moeten in het spel worden gekozen."
+personal-permission = "Je hebt geen toestemming om je taal te kiezen."
+plugin-personal-permission = "Je hebt geen toestemming om je taal voor {plugin} te kiezen."
+plugin-server-permission = "Je hebt geen toestemming om de servertaal voor {plugin} te wijzigen."
+server-locale-required = "Kies een taalcode zoals en_US voor de standaardtaal van de server."
+unavailable-for-all = "De taal {locale} is niet voor alle geselecteerde plugins beschikbaar."
+
+[language.usage]
+editor = "Gebruik: /{command} language server edit [locale]"
+selection = "Gebruik: /{command} language self [locale|reset] of server [locale]"
+volmit-selection = "Gebruik: /volmit plugins languages [locale]"
+update = "Gebruik: /{command} language update"
+
+[language.update]
+checking = "{plugin}: De taalrepository wordt gecontroleerd op wijzigingen..."
+unchanged = "{plugin}: Geïnstalleerde talen komen al overeen met de repository."
+applied = "{plugin}: {locale} bijgewerkt ({added} toegevoegd, {updated} gewijzigd, {kept} lokale bewerkingen behouden)."
+cooldown = "{plugin}: De taalrepository is onlangs gecontroleerd; probeer het over {remaining} opnieuw."
+locale-failed = "{plugin}: {locale} is niet bijgewerkt: {reason}"
+failed = "{plugin}: Taalupdate mislukt: {reason}"
+
+[language.selection]
+preparing = "Taal {locale} wordt voorbereid voor {target}..."
+save-failed = "{plugin}: De taalkeuze kan niet worden opgeslagen; bekijk de serverconsole."
+english-fallback = "{plugin}: {locale} is niet beschikbaar; Engels (en_US) wordt gebruikt."
+personal-selected = "{plugin}: Je taal is nu {locale}."
+server-selected = "{plugin}: De servertaal is nu {locale}."
+server-default-selected = "{plugin}: Je taal volgt nu de standaardtaal van de server."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "Berichten voor {locale} laden..."
+
+[language.editor.section]
+languages = "Talen"
+search = "Zoeken"
+search-title = "{locale} / Zoeken"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Zoek op berichtsleutels of tekst. Typ cancel om terug te gaan."
+value = "Typ in de chat een nieuwe waarde voor {key}."
+current = "Huidige waarde: {value}"
+variables = "Variabelen: {variables}"
+guidance = "Gebruik \\n voor een nieuwe regel, \\\\ voor een backslash, of typ cancel om terug te gaan."
+
+[language.editor.input]
+expired = "De invoer voor de taaleditor is verlopen."
+too-long = "De invoer mag maximaal {maximum} tekens bevatten."
+unable-to-save = "Opslaan mislukt: {reason}"
+
+[language.editor.navigation]
+back = "&eTerug&r"
+close = "&cSluiten&r"
+previous-page = "&eVorige pagina&r"
+next-page = "&eVolgende pagina&r"
+
+[language.editor.search]
+messages = "Berichten doorzoeken"
+messages-lore = "Klik om alle berichten te doorzoeken."
+clear = "Zoekopdracht wissen"
+
+[language.editor.message]
+current-value = "&7Huidige waarde:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Klik om een meervoudsvorm te bewerken.&r"
+edit-lines = "&7Klik om afzonderlijke regels te bewerken.&r"
+edit-chat = "&7Klik om in de chat te bewerken.&r"
+
+[language.editor.locale]
+open = "&8Klik om deze taal te openen.&r"
+
+[language.editor.category]
+message-count = "&7{count} berichten&r"
+open = "&8Klik om deze categorie te openen.&r"
+
+[language.editor.error]
+no-permission = "Je hebt geen toestemming om de talen van {plugin} te bewerken."
+unable-to-edit = "Bewerken mislukt: {reason}"
+
+[language.editor.saved]
+summary = "{locale} opgeslagen. De taalkeuzes blijven ongewijzigd."
+change = "{key}: “{before}” is gewijzigd in “{after}”."
+
+[language.editor.part]
+line = "Regel {line}"
+
+[language.editor.value]
+none = "Geen"
+empty = "(leeg)"
+
+[config.editor]
+title = "{plugin} / Configuratie"
+section = "Sectie: {path}"
+page = "Pagina {page} van {pages}"
+entry = "Element {number}"
+current = "Huidig: {value}"
+open = "Klik om deze sectie te openen."
+toggle = "Klik om tussen true en false te wisselen."
+edit = "Klik om een nieuwe waarde in de chat in te voeren."
+prompt = "Voer een nieuwe waarde voor {path} in. Typ cancel om terug te gaan."
+expired = "De configuratie-invoer is verlopen."
+too-long = "Voer maximaal {maximum} tekens in."
+saving = "Configuratie opslaan..."
+saved = "{path} opgeslagen. Wijzigingen worden automatisch toegepast."
+failed = "Configuratie kan niet worden bewerkt: {reason}"
+loading = "Configuratie laden..."
+empty = "Deze sectie heeft geen instellingen."
+player-only = "Open de configuratie-editor in het spel."
+no-permission = "Je hebt geen toestemming om deze configuratie te bewerken."
+back = "Terug"
+previous = "Vorige pagina"
+next = "Volgende pagina"
+refresh = "Vernieuwen"
+close = "Sluiten"
+
+[config.editor.type]
+text = "Tekst; aanhalingstekens eromheen zijn niet nodig."
+integer = "Voer een geheel getal in."
+decimal = "Voer een getal in, bijvoorbeeld 0.25."
+list = "Gebruik een TOML-lijst, zoals [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "Het overdragen van betoveringen is uitgeschakeld."
+creative = "Schakel over naar de overlevingsmodus om betoveringen over te dragen."
+denied = "Je hebt hiervoor geen toestemming."
+empty = "Dit voorwerp heeft geen overdraagbare betoveringen."
+space = "Maak ruimte in je inventaris voor het boek."
+changed = "Je voorwerpen of instellingen zijn veranderd. Start de overdracht opnieuw."
+unaffordable = "Je kunt de kosten van deze overdracht niet betalen."
+economy = "Geldbetalingen zijn niet beschikbaar."
+failed = "De overdracht is mislukt. Neem contact op met een beheerder."
+success = "Betoveringen overgedragen."
+applied = "Betoveringen toegepast."
+incompatible = "Dit boek heeft geen geschikte verbeteringen voor dat voorwerp."
+select = "Selecteer minstens één betovering."
+reconciliation = "De betaling is onverwacht mislukt. Vraag een beheerder de economie te controleren voordat je het opnieuw probeert."
+
+[menu]
+title = "Inscribe"
+keep = "Behouden: {name} {level}"
+transfer = "Overdragen: {name} {level}"
+cost = "Kosten: {cost}"
+price = "{experience} XP + {money} geld"
+experience = "{experience} XP"
+money = "{money} geld"
+free = "Gratis"
+confirm = "Overdracht bevestigen"
+cancel = "Annuleren"
+previous = "Vorige pagina"
+next = "Volgende pagina"
+total = "Totaal: {cost}"
+apply = "Toepassen: {name} {level}"
+skip = "Overslaan: {name} {level}"
+current = "Huidig niveau: {level}"
+confirm_apply = "Betoveringen toepassen"
+
+[command]
+player = "Open deze opdracht in het spel."
+failed = "De opdracht is mislukt. Bekijk de serverconsole."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Diagnostisch rapport opslaan"
+root = "Hulp en beheer voor Inscribe"
+language = "Talen kiezen of bewerken"
+debug = "Diagnostische hulpmiddelen"
+version = "Geïnstalleerde versie tonen"
+config = "Inscribe-instellingen bewerken"
+status = "Instellingen, open menu's en compatibiliteit tonen"
+
+[command.parameter]
+upload = "Alleen uploaden als dit uitdrukkelijk is toegestaan."
+
+[setting.general.enabled]
+name = "Ingeschakeld"
+description = "Extractie en toepassing inschakelen."
+
+[setting.transfers.allowCreative]
+name = "Creatieve modus"
+description = "Overdrachten in de creatieve modus toestaan."
+
+[setting.transfers.allowUnsafe]
+name = "Niveaus boven het maximum"
+description = "Hogere niveaus behouden; compatibiliteit en conflicten blijven gelden."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Geldbetalingen op Folia"
+description = "Alleen inschakelen als je economieprovider Folia ondersteunt."
+
+[setting.pricing.extractionCost]
+name = "Extractiekosten"
+description = "Standaardkosten per gekozen betovering, in punten of geld."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Extractie per niveau"
+description = "De extractiekosten van elke betovering vermenigvuldigen met het betoveringsniveau."
+
+[setting.pricing.applicationCost]
+name = "Toepassingskosten"
+description = "Kosten per toepassing; nul is gratis."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Toepassing per niveau"
+description = "De toepassingskosten vermenigvuldigen met de som van de toegepaste niveaus."
+
+[setting.pricing.currency]
+name = "Valuta"
+description = "EXPERIENCE gebruikt losse ervaringspunten. MONEY vereist Vault."
+
+[setting.general.language]
+name = "Servertaal"
+description = "Standaardtaal; persoonlijke keuzes hebben voorrang."
+
+[setting.hotReload.enabled]
+name = "Automatisch herladen"
+description = "Bewerkte configuratie- en taalbestanden automatisch toepassen."
+
+[setting.presentation.splashScreen]
+name = "Opstartbanner"
+description = "Pluginbanner in het serverlog tonen."
+
+[setting.debug.uploadEnabled]
+name = "Diagnoseuploads"
+description = "Uploads alleen toestaan wanneer uitdrukkelijk gevraagd."
+
+[setting.transfers.extractionMaterials]
+name = "Extractiematerialen"
+description = "Toegestane materialen; een lege lijst staat geschikte voorwerpen toe."
+
+[setting.transfers.applicationMaterials]
+name = "Toepassingsmaterialen"
+description = "Toegestane materialen; een lege lijst staat compatibele voorwerpen toe."
+
+[setting.transfers.bookName]
+name = "Naam van geëxtraheerd boek"
+description = "Leeg gebruikt de standaardnaam uit vanilla. Kleuropmaak wordt ondersteund."
+
+[setting.transfers.bookLore]
+name = "Beschrijving van geëxtraheerd boek"
+description = "Maximaal 20 regels van elk 512 tekens. Leeg voegt geen beschrijving toe."
+
+[setting.enchantments]
+name = "Betoveringsregels"
+description = "Extractiekosten, valuta en activering per betovering."
+
+[setting.editor]
+title = "Inscribe / Instellingen"
+
+[setting.metrics.enabled]
+name = "Gebruiksstatistieken"
+description = "Anonieme gebruiksrapportage via bStats inschakelen."
+
+[setting.general.updateNotifications]
+name = "Updatemeldingen"
+description = "Op nieuwe versies controleren en bevoegde spelers informeren. Geen automatische installatie."
+
+[setting.policy.enabled]
+name = "Ingeschakeld"
+description = "Overdracht van deze betovering toestaan."
+
+[setting.policy.cost]
+name = "Kosten"
+description = "Extractieprijs van deze betovering."
+
+[setting.policy.perLevel]
+name = "Per niveau"
+description = "De prijs vermenigvuldigen met het betoveringsniveau."
+
+[setting.policy.currency]
+name = "Valuta"
+description = "EXPERIENCE gebruikt punten; MONEY gebruikt Vault."
+
+[debug.error]
+missing-permission = "Ontbrekende toestemming: {permission}"
+already-preparing = "Een rapport voor {plugin} wordt al voorbereid."
+already-preparing-short = "Een rapport wordt al voorbereid."
+schedule-failed = "Rapport kon niet worden ingepland."
+provider-closed = "De diagnostische dienst is gesloten."
+closed-before-capture = "De dienst is gesloten voordat het rapport werd verzameld."
+writer-schedule-failed = "Het opslaan van het rapport kon niet worden ingepland."
+capture-failed = "Het rapport kon niet worden verzameld; bekijk de serverconsole."
+closed-before-write = "De dienst is gesloten voordat het rapport werd opgeslagen."
+write-failed = "Het rapport kon niet worden opgeslagen; bekijk de serverconsole."
+
+[debug]
+preparing = "Rapport voor {plugin} voorbereiden..."
+saved = "Rapport voor {plugin} opgeslagen in {path}."
+
+[debug.upload]
+interrupted = "Upload onderbroken; lokaal rapport opgeslagen."
+failed = "Upload mislukt; lokaal rapport opgeslagen."
+completed = "Geüpload als VolmitSoftware - {plugin} - v{version}."
+
+[debug.action]
+open = "Openen: {url}"
+open-description = "Open het geüploade rapport."
+copy-path = "Lokaal pad kopiëren"
+copy-path-description = "Kopieer het pad van het lokale rapport."
+
+[setting.general]
+name = "Algemeen"
+description = "Hoofdschakelaar, servertaal en updatemeldingen."
+
+[setting.metrics]
+name = "Statistieken"
+description = "Anonieme bStats-gebruiksstatistieken."
+
+[setting.presentation]
+name = "Weergave"
+description = "Opstartuitvoer."
+
+[setting.hotReload]
+name = "Hot reload"
+description = "Bewerkte bestanden toepassen zonder herstart."
+
+[setting.debug]
+name = "Diagnose"
+description = "Diagnoserapporten."
+
+[setting.transfers]
+name = "Overdrachten"
+description = "Wie mag overdragen, geschikte voorwerpen en hoe boeken worden gecombineerd."
+
+[setting.pricing]
+name = "Prijzen"
+description = "Standaardprijzen en betaalvaluta."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Controle-interval"
+description = "Milliseconden tussen bestandscontroles, 250 tot 60000."
+
+[setting.hotReload.cooldownMillis]
+name = "Rustperiode"
+description = "Milliseconden dat een bestand ongewijzigd moet blijven voordat het wordt toegepast."
+
+[setting.hotReload.notifyOperators]
+name = "Meldingen voor operators"
+description = "Toegepaste of geweigerde bestandswijzigingen in de actiebalk tonen."
+
+[setting.transfers.mergeEqualLevels]
+name = "Gelijke niveaus samenvoegen"
+description = "Gelijke niveaus van boek en voorwerp samenvoegen tot het volgende niveau, zoals een aambeeld."
+
+[setting.transfers.increaseRepairCost]
+name = "Reparatiekosten verhogen"
+description = "De reparatiekosten van het voorwerp verhogen bij het toepassen van een boek, zoals een aambeeld."
+
+[status]
+pricing = "&7Valuta &f{currency}&r &8|&r &7extractiekosten &f{extraction}&r &8|&r &7toepassingskosten &f{application}&r"
+transfers = "&7Open menu's &f{menus}&r &8|&r &7niveaus samenvoegen {merge} &8|&r &7reparatiekosten {repair}"
+configuration = "&7Configuratie {enabled} &8|&r &7taal &f{language}&r &8|&r &7hot reload {hot_reload}"
+services = "&7Statistieken {metrics} &8|&r &7updatemeldingen {updates}"
+compatibility = "&7Compatibiliteit &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribe-status"
+
+[command.feedback]
+files_applied = "&aToegepast:&7 wijzigingen in configuratie- en taalbestanden."
+files_rejected = "&cBestandswijzigingen geweigerd; de laatste geldige instellingen blijven actief."
+
+[status.state]
+enabled = "&aingeschakeld&r"
+disabled = "&cuitgeschakeld&r"

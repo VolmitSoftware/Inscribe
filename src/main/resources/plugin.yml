@@ -1,0 +1,52 @@
+name: ${name}
+version: ${version}
+main: ${main}
+api-version: '${apiVersion}'
+folia-supported: true
+load: POSTWORLD
+authors:
+  - VolmitSoftware
+  - Arcane Arts
+  - SwiftSwamp
+  - NextdoorPsycho
+website: https://volmitsoftware.com
+description: Transfer selected enchantments from equipment into a book, then apply enchanted books through inventory clicks.
+softdepend: [Vault]
+commands:
+  inscribe:
+    aliases: [ins]
+    description: Inscribe help and administration
+    usage: /inscribe
+permissions:
+  inscribe.command:
+    description: Allows viewing Inscribe help, status, and version
+    default: true
+  inscribe.extract:
+    description: Allows extracting enchantments from an item into a book
+    default: true
+  inscribe.apply:
+    description: Allows applying enchanted books to items
+    default: true
+  inscribe.language.self:
+    description: Allows choosing a personal Inscribe language
+    default: true
+  inscribe.config:
+    description: Allows editing Inscribe configuration and server languages in game
+    default: op
+  inscribe.debug:
+    description: Allows creating and optionally uploading Inscribe diagnostic reports
+    default: op
+  inscribe.update:
+    description: Includes Inscribe in shared update notices and permits its update report
+    default: op
+  inscribe.*:
+    description: Grants every Inscribe permission
+    default: op
+    children:
+      inscribe.command: true
+      inscribe.extract: true
+      inscribe.apply: true
+      inscribe.language.self: true
+      inscribe.config: true
+      inscribe.debug: true
+      inscribe.update: true

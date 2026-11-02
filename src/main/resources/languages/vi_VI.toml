@@ -1,0 +1,426 @@
+# Inscribe vi_VI
+
+[director.help]
+no_subcommands = "Không có lệnh con trên trang này."
+no_description = "Không có mô tả"
+command_group = "Nhóm lệnh. Nhấp để mở."
+category = "Danh mục lệnh"
+no_parameters = "Không có tham số. Nhấp để điền sẵn lệnh."
+parameters_hover = "Di chuột qua các tham số để tìm hiểu thêm."
+
+[director.help.navigation]
+back = "Quay lại"
+page = "Trang"
+
+[director.help.navigation.parent]
+hover = "Quay lại nhóm lệnh cha"
+
+[director.help.navigation.previous]
+hover = "Trang trước"
+
+[director.help.navigation.next]
+hover = "Trang sau"
+
+[director.help.parameter]
+required = "Tham số này là bắt buộc."
+optional = "Tham số này là tùy chọn."
+default = "Mặc định là \"{value}\" nếu không được chỉ định."
+type = "Tham số này có kiểu {type}."
+
+[director.runtime.error]
+invalid_origin = "Không thể chạy lệnh này từ nguồn này."
+unknown_parameter = "Khóa tham số không xác định: {key}"
+unexpected_argument = "Đối số không mong đợi \"{argument}\". Các tham số tùy chọn phải được chỉ định bằng khóa, ví dụ seed=123"
+unclosed_group = "Thiếu dấu \"]\" đóng cho tham số {key}"
+conversion_failed = "Không thể chuyển \"{value}\" thành {type} cho {parameter}"
+default_parse_failed = "Không thể phân tích giá trị mặc định của tham số {parameter}"
+missing_argument = "Thiếu đối số \"{parameter}\" ({type})"
+execution_failed = "Không thể thực thi lệnh {command}: {reason}"
+
+[language.menu]
+your_language = "Ngôn ngữ của bạn"
+reset_your_language = "Đặt lại ngôn ngữ của bạn"
+server_default = "Ngôn ngữ mặc định của máy chủ"
+edit_messages = "Chỉnh sửa thông báo ngôn ngữ"
+use_server_default = "Dùng ngôn ngữ mặc định của máy chủ"
+current = "Hiện tại: {locale}"
+current_with_personal = "Hiện tại: {locale} (Của bạn: {personal})"
+your_description = "Chỉ thay đổi những thông báo bạn thấy."
+reset_description = "Dùng ngôn ngữ mặc định của máy chủ."
+server_description = "Thay đổi ngôn ngữ mặc định của máy chủ."
+edit_description = "Mở trình chỉnh sửa thông báo cho từng ngôn ngữ."
+select_description = "Nhấp để chọn ngôn ngữ này."
+remove_personal_description = "Xóa lựa chọn ngôn ngữ cá nhân của bạn."
+no_controls = "Bạn không có quyền dùng các tùy chọn ngôn ngữ."
+command = "Lệnh: {command}"
+selected = "đã chọn"
+all-volmit-plugins = "tất cả plugin Volmit"
+
+[language.error]
+stopping = "Không thể chọn ngôn ngữ trong khi plugin đang dừng."
+editor-player-only = "Mở trình chỉnh sửa ngôn ngữ trong trò chơi."
+no-providers = "Không có nhà cung cấp ngôn ngữ Volmit nào khả dụng."
+numeric-page = "Nhập số trang bằng chữ số."
+personal-player-only = "Bạn phải chọn ngôn ngữ cá nhân trong trò chơi."
+personal-permission = "Bạn không có quyền chọn ngôn ngữ của mình."
+plugin-personal-permission = "Bạn không có quyền chọn ngôn ngữ của mình cho {plugin}."
+plugin-server-permission = "Bạn không có quyền thay đổi ngôn ngữ máy chủ cho {plugin}."
+server-locale-required = "Chọn mã ngôn ngữ như en_US làm ngôn ngữ mặc định của máy chủ."
+unavailable-for-all = "Ngôn ngữ {locale} không khả dụng cho tất cả plugin đã chọn."
+
+[language.usage]
+editor = "Cách dùng: /{command} language server edit [locale]"
+selection = "Cách dùng: /{command} language self [locale|reset] hoặc server [locale]"
+volmit-selection = "Cách dùng: /volmit plugins languages [locale]"
+update = "Cách dùng: /{command} language update"
+
+[language.update]
+checking = "{plugin}: Đang kiểm tra thay đổi trong kho ngôn ngữ..."
+unchanged = "{plugin}: Các ngôn ngữ đã cài đặt đã khớp với kho."
+applied = "{plugin}: Đã cập nhật {locale} (thêm {added}, thay đổi {updated}, giữ lại {kept} chỉnh sửa cục bộ)."
+cooldown = "{plugin}: Kho ngôn ngữ vừa được kiểm tra; hãy thử lại sau {remaining}."
+locale-failed = "{plugin}: {locale} chưa được cập nhật: {reason}"
+failed = "{plugin}: Cập nhật ngôn ngữ thất bại: {reason}"
+
+[language.selection]
+preparing = "Đang chuẩn bị ngôn ngữ {locale} cho {target}..."
+save-failed = "{plugin}: Không thể lưu lựa chọn ngôn ngữ; hãy kiểm tra bảng điều khiển máy chủ."
+english-fallback = "{plugin}: {locale} không khả dụng; đang dùng tiếng Anh (en_US)."
+personal-selected = "{plugin}: Ngôn ngữ của bạn hiện là {locale}."
+server-selected = "{plugin}: Ngôn ngữ máy chủ hiện là {locale}."
+server-default-selected = "{plugin}: Ngôn ngữ của bạn hiện dùng ngôn ngữ mặc định của máy chủ."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "Đang tải thông báo cho {locale}..."
+
+[language.editor.section]
+languages = "Ngôn ngữ"
+search = "Tìm kiếm"
+search-title = "{locale} / Tìm kiếm"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "Tìm khóa hoặc nội dung thông báo. Nhập cancel để quay lại."
+value = "Nhập giá trị mới cho {key} trong trò chuyện."
+current = "Giá trị hiện tại: {value}"
+variables = "Biến: {variables}"
+guidance = "Dùng \\n để xuống dòng, \\\\ để nhập dấu gạch chéo ngược, hoặc nhập cancel để quay lại."
+
+[language.editor.input]
+expired = "Đã hết thời gian nhập trong trình chỉnh sửa ngôn ngữ."
+too-long = "Nội dung nhập chỉ được có tối đa {maximum} ký tự."
+unable-to-save = "Không thể lưu: {reason}"
+
+[language.editor.navigation]
+back = "&eQuay lại&r"
+close = "&cĐóng&r"
+previous-page = "&eTrang trước&r"
+next-page = "&eTrang sau&r"
+
+[language.editor.search]
+messages = "Tìm thông báo"
+messages-lore = "Nhấp để tìm trong tất cả thông báo."
+clear = "Xóa tìm kiếm"
+
+[language.editor.message]
+current-value = "&7Giá trị hiện tại:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7Nhấp để chỉnh sửa một dạng số nhiều.&r"
+edit-lines = "&7Nhấp để chỉnh sửa từng dòng.&r"
+edit-chat = "&7Nhấp để chỉnh sửa trong trò chuyện.&r"
+
+[language.editor.locale]
+open = "&8Nhấp để mở ngôn ngữ này.&r"
+
+[language.editor.category]
+message-count = "&7{count} thông báo&r"
+open = "&8Nhấp để mở danh mục này.&r"
+
+[language.editor.error]
+no-permission = "Bạn không có quyền chỉnh sửa ngôn ngữ của {plugin}."
+unable-to-edit = "Không thể chỉnh sửa: {reason}"
+
+[language.editor.saved]
+summary = "Đã lưu {locale}. Các lựa chọn ngôn ngữ không thay đổi."
+change = "{key}: “{before}” đã đổi thành “{after}”."
+
+[language.editor.part]
+line = "Dòng {line}"
+
+[language.editor.value]
+none = "Không có"
+empty = "(trống)"
+
+[config.editor]
+title = "{plugin} / Cấu hình"
+section = "Mục: {path}"
+page = "Trang {page}/{pages}"
+entry = "Mục {number}"
+current = "Hiện tại: {value}"
+open = "Nhấp để mở mục này."
+toggle = "Nhấp để chuyển giữa true và false."
+edit = "Nhấp để nhập giá trị mới trong trò chuyện."
+prompt = "Nhập giá trị mới cho {path}. Nhập cancel để quay lại."
+expired = "Đã hết thời gian nhập cấu hình."
+too-long = "Nhập tối đa {maximum} ký tự."
+saving = "Đang lưu cấu hình..."
+saved = "Đã lưu {path}. Thay đổi được áp dụng tự động."
+failed = "Không thể chỉnh sửa cấu hình: {reason}"
+loading = "Đang tải cấu hình..."
+empty = "Mục này không có cài đặt."
+player-only = "Mở trình chỉnh sửa cấu hình trong trò chơi."
+no-permission = "Bạn không có quyền chỉnh sửa cấu hình này."
+back = "Quay lại"
+previous = "Trang trước"
+next = "Trang sau"
+refresh = "Làm mới"
+close = "Đóng"
+
+[config.editor.type]
+text = "Văn bản; không cần dấu ngoặc kép bao quanh."
+integer = "Nhập một số nguyên."
+decimal = "Nhập một số, ví dụ 0.25."
+list = "Dùng danh sách TOML, ví dụ [\"stone\", \"deepslate\"]."
+
+[transfer]
+disabled = "Tính năng chuyển phù phép đã bị tắt."
+creative = "Chuyển sang chế độ sinh tồn để chuyển phù phép."
+denied = "Bạn không có quyền thực hiện thao tác này."
+empty = "Vật phẩm này không có phù phép có thể chuyển."
+space = "Dọn chỗ trong túi đồ để nhận sách."
+changed = "Vật phẩm hoặc cài đặt của bạn đã thay đổi. Hãy bắt đầu chuyển lại."
+unaffordable = "Bạn không đủ khả năng trả chi phí chuyển này."
+economy = "Thanh toán bằng tiền hiện không khả dụng."
+failed = "Chuyển thất bại. Hãy liên hệ quản trị viên."
+success = "Đã chuyển phù phép."
+applied = "Đã áp dụng phù phép."
+incompatible = "Sách này không có nâng cấp phù hợp với vật phẩm đó."
+select = "Chọn ít nhất một phù phép."
+reconciliation = "Thanh toán thất bại bất ngờ. Hãy nhờ quản trị viên kiểm tra hệ thống kinh tế trước khi thử lại."
+
+[menu]
+title = "Inscribe"
+keep = "Giữ: {name} {level}"
+transfer = "Chuyển: {name} {level}"
+cost = "Chi phí: {cost}"
+price = "{experience} XP + {money} tiền"
+experience = "{experience} XP"
+money = "{money} tiền"
+free = "Miễn phí"
+confirm = "Xác nhận chuyển"
+cancel = "Hủy"
+previous = "Trang trước"
+next = "Trang sau"
+total = "Tổng: {cost}"
+apply = "Áp dụng: {name} {level}"
+skip = "Bỏ qua: {name} {level}"
+current = "Cấp hiện tại: {level}"
+confirm_apply = "Áp dụng phù phép"
+
+[command]
+player = "Sử dụng lệnh này trong trò chơi."
+failed = "Lệnh thất bại. Xem bảng điều khiển máy chủ."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "Lưu báo cáo chẩn đoán"
+root = "Trợ giúp và quản trị Inscribe"
+language = "Chọn hoặc chỉnh sửa ngôn ngữ"
+debug = "Công cụ chẩn đoán"
+version = "Xem phiên bản đã cài"
+config = "Chỉnh sửa cài đặt Inscribe"
+status = "Hiển thị cài đặt, menu đang mở và khả năng tương thích"
+
+[command.parameter]
+upload = "Chỉ tải lên khi được cho phép rõ ràng."
+
+[setting.general.enabled]
+name = "Bật"
+description = "Bật trích xuất và áp dụng."
+
+[setting.transfers.allowCreative]
+name = "Chế độ sáng tạo"
+description = "Cho phép chuyển trong chế độ sáng tạo."
+
+[setting.transfers.allowUnsafe]
+name = "Cấp vượt giới hạn"
+description = "Giữ cấp cao hơn; vẫn kiểm tra tính tương thích và xung đột."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Thanh toán bằng tiền trên Folia"
+description = "Chỉ bật khi nhà cung cấp kinh tế của bạn hỗ trợ Folia."
+
+[setting.pricing.extractionCost]
+name = "Phí trích xuất"
+description = "Chi phí mặc định cho mỗi phù phép được chọn, bằng điểm hoặc tiền."
+
+[setting.pricing.extractionCostPerLevel]
+name = "Trích xuất theo cấp"
+description = "Nhân từng khoản phí trích xuất với cấp phù phép."
+
+[setting.pricing.applicationCost]
+name = "Phí áp dụng"
+description = "Chi phí mỗi lần áp dụng; đặt 0 để miễn phí."
+
+[setting.pricing.applicationCostPerLevel]
+name = "Áp dụng theo cấp"
+description = "Nhân phí áp dụng với tổng các cấp được áp dụng."
+
+[setting.pricing.currency]
+name = "Tiền tệ"
+description = "EXPERIENCE dùng điểm kinh nghiệm thô. MONEY cần Vault."
+
+[setting.general.language]
+name = "Ngôn ngữ máy chủ"
+description = "Ngôn ngữ mặc định; lựa chọn cá nhân được ưu tiên."
+
+[setting.hotReload.enabled]
+name = "Tự động tải lại"
+description = "Tự động áp dụng tệp cấu hình và ngôn ngữ đã chỉnh sửa."
+
+[setting.presentation.splashScreen]
+name = "Biểu ngữ khởi động"
+description = "Hiện biểu ngữ plugin trong nhật ký máy chủ."
+
+[setting.debug.uploadEnabled]
+name = "Tải báo cáo chẩn đoán"
+description = "Chỉ cho phép tải lên khi có yêu cầu rõ ràng."
+
+[setting.transfers.extractionMaterials]
+name = "Vật liệu trích xuất"
+description = "Vật liệu cho phép; danh sách trống cho phép vật phẩm đủ điều kiện."
+
+[setting.transfers.applicationMaterials]
+name = "Vật liệu áp dụng"
+description = "Vật liệu cho phép; danh sách trống cho phép vật phẩm tương thích."
+
+[setting.transfers.bookName]
+name = "Tên sách trích xuất"
+description = "Để trống sẽ dùng tên gốc. Hỗ trợ định dạng màu."
+
+[setting.transfers.bookLore]
+name = "Mô tả sách trích xuất"
+description = "Tối đa 20 dòng, mỗi dòng 512 ký tự. Để trống sẽ không thêm mô tả."
+
+[setting.enchantments]
+name = "Quy tắc phù phép"
+description = "Chi phí trích xuất, tiền tệ và trạng thái bật theo từng phù phép."
+
+[setting.editor]
+title = "Inscribe / Cài đặt"
+
+[setting.metrics.enabled]
+name = "Thống kê sử dụng"
+description = "Bật báo cáo sử dụng bStats ẩn danh."
+
+[setting.general.updateNotifications]
+name = "Thông báo phiên bản"
+description = "Kiểm tra phiên bản mới và thông báo cho người chơi có quyền. Không tự động cài đặt."
+
+[setting.policy.enabled]
+name = "Bật"
+description = "Cho phép chuyển phù phép này."
+
+[setting.policy.cost]
+name = "Chi phí"
+description = "Giá trích xuất phù phép này."
+
+[setting.policy.perLevel]
+name = "Mỗi cấp"
+description = "Nhân giá với cấp phù phép."
+
+[setting.policy.currency]
+name = "Tiền tệ"
+description = "EXPERIENCE dùng điểm; MONEY dùng Vault."
+
+[debug.error]
+missing-permission = "Thiếu quyền: {permission}"
+already-preparing = "Bản kết xuất gỡ lỗi cho {plugin} đang được chuẩn bị."
+already-preparing-short = "Bản kết xuất gỡ lỗi đang được chuẩn bị."
+schedule-failed = "Không thể lên lịch bản kết xuất gỡ lỗi."
+provider-closed = "Trình cung cấp gỡ lỗi đã đóng."
+closed-before-capture = "Trình cung cấp gỡ lỗi đã đóng trước khi thu thập báo cáo."
+writer-schedule-failed = "Không thể lên lịch cho trình ghi bản kết xuất gỡ lỗi."
+capture-failed = "Không thể thu thập bản kết xuất gỡ lỗi; hãy kiểm tra bảng điều khiển máy chủ."
+closed-before-write = "Trình cung cấp gỡ lỗi đã đóng trước khi ghi báo cáo."
+write-failed = "Không thể ghi bản kết xuất gỡ lỗi; hãy kiểm tra bảng điều khiển máy chủ."
+
+[debug]
+preparing = "Đang chuẩn bị bản kết xuất gỡ lỗi cho {plugin}..."
+saved = "Đã lưu bản kết xuất gỡ lỗi của {plugin} vào {path}."
+
+[debug.upload]
+interrupted = "Tải lên bản kết xuất gỡ lỗi bị gián đoạn; báo cáo cục bộ đã được lưu."
+failed = "Tải lên bản kết xuất gỡ lỗi thất bại; báo cáo cục bộ đã được lưu."
+completed = "Đã tải lên với tên VolmitSoftware - {plugin} - v{version}."
+
+[debug.action]
+open = "Mở: {url}"
+open-description = "Mở báo cáo chẩn đoán đã tải lên."
+copy-path = "Sao chép đường dẫn cục bộ"
+copy-path-description = "Sao chép đường dẫn báo cáo cục bộ."
+
+[setting.general]
+name = "Chung"
+description = "Công tắc chính, ngôn ngữ máy chủ và thông báo phát hành."
+
+[setting.metrics]
+name = "Số liệu"
+description = "Thống kê sử dụng bStats ẩn danh."
+
+[setting.presentation]
+name = "Hiển thị"
+description = "Đầu ra khi khởi động."
+
+[setting.hotReload]
+name = "Tải lại nóng"
+description = "Áp dụng tệp đã chỉnh sửa mà không cần khởi động lại."
+
+[setting.debug]
+name = "Chẩn đoán"
+description = "Báo cáo chẩn đoán."
+
+[setting.transfers]
+name = "Chuyển phù phép"
+description = "Ai được chuyển, vật phẩm hợp lệ và cách kết hợp sách."
+
+[setting.pricing]
+name = "Giá"
+description = "Giá mặc định và đơn vị thanh toán."
+
+[setting.hotReload.pollIntervalMillis]
+name = "Khoảng kiểm tra"
+description = "Số mili giây giữa các lần kiểm tra tệp, từ 250 đến 60000."
+
+[setting.hotReload.cooldownMillis]
+name = "Thời gian chờ"
+description = "Số mili giây tệp phải giữ nguyên trước khi được áp dụng."
+
+[setting.hotReload.notifyOperators]
+name = "Thông báo cho người điều hành"
+description = "Hiển thị thay đổi tệp đã áp dụng hoặc bị từ chối trên thanh hành động."
+
+[setting.transfers.mergeEqualLevels]
+name = "Gộp cấp bằng nhau"
+description = "Gộp cấp bằng nhau của sách và vật phẩm thành cấp tiếp theo, như đe."
+
+[setting.transfers.increaseRepairCost]
+name = "Tăng chi phí sửa chữa"
+description = "Tăng chi phí sửa chữa của vật phẩm khi áp dụng sách, như đe."
+
+[status]
+pricing = "&7Tiền tệ &f{currency}&r &8|&r &7phí trích xuất &f{extraction}&r &8|&r &7phí áp dụng &f{application}&r"
+transfers = "&7Menu đang mở &f{menus}&r &8|&r &7gộp cấp {merge} &8|&r &7chi phí sửa chữa {repair}"
+configuration = "&7Cấu hình {enabled} &8|&r &7ngôn ngữ &f{language}&r &8|&r &7tải lại nóng {hot_reload}"
+services = "&7Số liệu {metrics} &8|&r &7thông báo cập nhật {updates}"
+compatibility = "&7Tương thích &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Trạng thái Inscribe"
+
+[command.feedback]
+files_applied = "&aĐã áp dụng&7 các thay đổi trong tệp cấu hình và tệp ngôn ngữ."
+files_rejected = "&cĐã từ chối thay đổi tệp; cài đặt hợp lệ gần nhất vẫn được dùng."
+
+[status.state]
+enabled = "&abật&r"
+disabled = "&ctắt&r"

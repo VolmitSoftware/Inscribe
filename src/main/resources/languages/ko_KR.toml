@@ -1,0 +1,426 @@
+# Inscribe ko_KR
+
+[director.help]
+no_subcommands = "이 페이지에는 하위 명령어가 없습니다."
+no_description = "설명이 없습니다"
+command_group = "명령어 그룹입니다. 클릭하여 엽니다."
+category = "명령어 카테고리"
+no_parameters = "매개변수가 없습니다. 클릭하여 명령어를 미리 입력합니다."
+parameters_hover = "매개변수 위에 마우스를 올리면 자세한 내용을 볼 수 있습니다."
+
+[director.help.navigation]
+back = "뒤로"
+page = "페이지"
+
+[director.help.navigation.parent]
+hover = "상위 명령어 그룹으로 돌아가기"
+
+[director.help.navigation.previous]
+hover = "이전 페이지"
+
+[director.help.navigation.next]
+hover = "다음 페이지"
+
+[director.help.parameter]
+required = "이 매개변수는 필수입니다."
+optional = "이 매개변수는 선택 사항입니다."
+default = "지정하지 않으면 기본값은 \"{value}\"입니다."
+type = "이 매개변수의 유형은 {type}입니다."
+
+[director.runtime.error]
+invalid_origin = "이 실행 위치에서는 이 명령어를 실행할 수 없습니다."
+unknown_parameter = "알 수 없는 매개변수 키: {key}"
+unexpected_argument = "예상하지 못한 인수 \"{argument}\". 선택적 매개변수는 키와 함께 지정해야 합니다. 예: seed=123"
+unclosed_group = "매개변수 {key}의 닫는 \"]\"가 누락되었습니다"
+conversion_failed = "\"{value}\" 값을 {parameter}용 {type} 형식으로 변환할 수 없습니다"
+default_parse_failed = "매개변수 {parameter}의 기본값을 분석할 수 없습니다"
+missing_argument = "인수 \"{parameter}\" ({type})가 필요합니다"
+execution_failed = "명령어 {command} 실행에 실패했습니다: {reason}"
+
+[language.menu]
+your_language = "내 언어"
+reset_your_language = "내 언어 재설정"
+server_default = "서버 기본값"
+edit_messages = "언어 메시지 편집"
+use_server_default = "서버 기본값 사용"
+current = "현재: {locale}"
+current_with_personal = "현재: {locale} (내 언어: {personal})"
+your_description = "나에게 표시되는 메시지만 변경합니다."
+reset_description = "서버 기본 언어를 사용합니다."
+server_description = "서버 기본 언어를 변경합니다."
+edit_description = "언어별 메시지 편집기를 엽니다."
+select_description = "클릭하여 이 언어를 선택합니다."
+remove_personal_description = "개인 언어 선택을 제거합니다."
+no_controls = "사용할 수 있는 언어 설정이 없습니다."
+command = "명령어: {command}"
+selected = "선택됨"
+all-volmit-plugins = "모든 Volmit 플러그인"
+
+[language.error]
+stopping = "플러그인이 중지되는 동안에는 언어를 선택할 수 없습니다."
+editor-player-only = "게임 내에서 언어 편집기를 여세요."
+no-providers = "사용 가능한 Volmit 언어 제공자가 없습니다."
+numeric-page = "페이지 번호를 숫자로 입력하세요."
+personal-player-only = "개인 언어는 게임 내에서 선택해야 합니다."
+personal-permission = "내 언어를 선택할 권한이 없습니다."
+plugin-personal-permission = "{plugin}에서 내 언어를 선택할 권한이 없습니다."
+plugin-server-permission = "{plugin}의 서버 언어를 변경할 권한이 없습니다."
+server-locale-required = "서버 기본 언어로 en_US 같은 언어 코드를 선택하세요."
+unavailable-for-all = "{locale} 언어는 선택한 모든 플러그인에서 지원되는 것은 아닙니다."
+
+[language.usage]
+editor = "사용법: /{command} language server edit [locale]"
+selection = "사용법: /{command} language self [locale|reset] 또는 server [locale]"
+volmit-selection = "사용법: /volmit plugins languages [locale]"
+update = "사용법: /{command} language update"
+
+[language.update]
+checking = "{plugin}: 언어 저장소의 변경 사항을 확인하는 중..."
+unchanged = "{plugin}: 설치된 언어가 이미 저장소와 일치합니다."
+applied = "{plugin}: {locale}을(를) 업데이트했습니다 (추가 {added}, 변경 {updated}, 유지된 로컬 편집 {kept})."
+cooldown = "{plugin}: 언어 저장소를 최근에 확인했습니다. {remaining} 후에 다시 시도하세요."
+locale-failed = "{plugin}: {locale}을(를) 업데이트하지 못했습니다: {reason}"
+failed = "{plugin}: 언어 업데이트에 실패했습니다: {reason}"
+
+[language.selection]
+preparing = "{target}의 {locale} 언어를 준비하는 중..."
+save-failed = "{plugin}: 언어 선택을 저장하지 못했습니다. 서버 콘솔을 확인하세요."
+english-fallback = "{plugin}: {locale}을(를) 사용할 수 없어 영어(en_US)를 사용합니다."
+personal-selected = "{plugin}: 내 언어가 {locale}(으)로 설정되었습니다."
+server-selected = "{plugin}: 서버 언어가 {locale}(으)로 설정되었습니다."
+server-default-selected = "{plugin}: 내 언어가 이제 서버 기본값을 사용합니다."
+
+[language.editor]
+title = "{plugin} › {section}"
+loading = "{locale} 메시지를 불러오는 중..."
+
+[language.editor.section]
+languages = "언어"
+search = "검색"
+search-title = "{locale} / 검색"
+group-title = "{locale} / {group}"
+
+[language.editor.prompt]
+search = "메시지 키 또는 내용을 검색하세요. 돌아가려면 cancel을 입력하세요."
+value = "채팅에 {key}의 새 값을 입력하세요."
+current = "현재 값: {value}"
+variables = "변수: {variables}"
+guidance = "줄바꿈에는 \\n, 역슬래시에는 \\\\를 사용하세요. 돌아가려면 cancel을 입력하세요."
+
+[language.editor.input]
+expired = "언어 편집기의 입력 시간이 만료되었습니다."
+too-long = "입력은 최대 {maximum}자까지 가능합니다."
+unable-to-save = "저장하지 못했습니다: {reason}"
+
+[language.editor.navigation]
+back = "&e뒤로&r"
+close = "&c닫기&r"
+previous-page = "&e이전 페이지&r"
+next-page = "&e다음 페이지&r"
+
+[language.editor.search]
+messages = "메시지 검색"
+messages-lore = "클릭하여 모든 메시지를 검색합니다."
+clear = "검색 지우기"
+
+[language.editor.message]
+current-value = "&7현재 값:&r"
+variables = "&8{variables}&r"
+edit-plural = "&7클릭하여 복수형을 편집합니다.&r"
+edit-lines = "&7클릭하여 개별 줄을 편집합니다.&r"
+edit-chat = "&7클릭하여 채팅에서 편집합니다.&r"
+
+[language.editor.locale]
+open = "&8클릭하여 이 언어를 엽니다.&r"
+
+[language.editor.category]
+message-count = "&7메시지 {count}개&r"
+open = "&8클릭하여 이 카테고리를 엽니다.&r"
+
+[language.editor.error]
+no-permission = "{plugin} 언어를 편집할 권한이 없습니다."
+unable-to-edit = "편집하지 못했습니다: {reason}"
+
+[language.editor.saved]
+summary = "{locale}을(를) 저장했습니다. 언어 선택은 변경되지 않았습니다."
+change = "{key}: “{before}”에서 “{after}”(으)로 변경했습니다."
+
+[language.editor.part]
+line = "{line}번째 줄"
+
+[language.editor.value]
+none = "없음"
+empty = "(비어 있음)"
+
+[config.editor]
+title = "{plugin} / 설정"
+section = "섹션: {path}"
+page = "페이지 {page}/{pages}"
+entry = "항목 {number}"
+current = "현재: {value}"
+open = "클릭하여 이 섹션을 엽니다."
+toggle = "클릭하여 true 또는 false로 전환합니다."
+edit = "클릭하여 채팅에 새 값을 입력합니다."
+prompt = "{path}의 새 값을 입력하세요. cancel을 입력하면 돌아갑니다."
+expired = "설정 입력 시간이 만료되었습니다."
+too-long = "최대 {maximum}자까지 입력하세요."
+saving = "설정 저장 중..."
+saved = "{path}을(를) 저장했습니다. 변경 사항은 자동으로 적용됩니다."
+failed = "설정을 편집할 수 없습니다: {reason}"
+loading = "설정 불러오는 중..."
+empty = "이 섹션에는 설정이 없습니다."
+player-only = "게임 내에서 설정 편집기를 여세요."
+no-permission = "이 설정을 편집할 권한이 없습니다."
+back = "뒤로"
+previous = "이전 페이지"
+next = "다음 페이지"
+refresh = "새로 고침"
+close = "닫기"
+
+[config.editor.type]
+text = "바깥쪽 따옴표 없이 텍스트를 입력하세요."
+integer = "정수를 입력하세요."
+decimal = "0.25 같은 숫자를 입력하세요."
+list = "[\"stone\", \"deepslate\"] 같은 TOML 목록을 사용하세요."
+
+[transfer]
+disabled = "마법 부여 이전이 비활성화되어 있습니다."
+creative = "마법 부여를 이전하려면 서바이벌 모드로 전환하세요."
+denied = "이 작업을 수행할 권한이 없습니다."
+empty = "이 아이템에는 이전할 수 있는 마법 부여가 없습니다."
+space = "책을 받을 수 있도록 보관함에 공간을 확보하세요."
+changed = "아이템 또는 설정이 변경되었습니다. 이전을 다시 시작하세요."
+unaffordable = "이전 비용을 지불할 수 없습니다."
+economy = "화폐 결제를 사용할 수 없습니다."
+failed = "이전에 실패했습니다. 관리자에게 문의하세요."
+success = "마법 부여를 이전했습니다."
+applied = "마법 부여를 적용했습니다."
+incompatible = "이 책에는 해당 아이템과 호환되는 강화가 없습니다."
+select = "마법 부여를 하나 이상 선택하세요."
+reconciliation = "예기치 않게 결제에 실패했습니다. 다시 시도하기 전에 관리자에게 경제 시스템 확인을 요청하세요."
+
+[menu]
+title = "Inscribe"
+keep = "유지: {name} {level}"
+transfer = "이전: {name} {level}"
+cost = "비용: {cost}"
+price = "{experience} 경험치 + {money} 화폐"
+experience = "{experience} 경험치"
+money = "{money} 화폐"
+free = "무료"
+confirm = "이전 확인"
+cancel = "취소"
+previous = "이전 페이지"
+next = "다음 페이지"
+total = "합계: {cost}"
+apply = "적용: {name} {level}"
+skip = "건너뛰기: {name} {level}"
+current = "현재 레벨: {level}"
+confirm_apply = "마법 부여 적용"
+
+[command]
+player = "게임 내에서 이 명령어를 사용하세요."
+failed = "명령어에 실패했습니다. 서버 콘솔을 확인하세요."
+version = "<gradient:#E8B65B:#4AA89F>Inscribe v{version}</gradient>"
+
+[command.description]
+debug_dump = "진단 보고서 저장"
+root = "Inscribe 도움말 및 관리"
+language = "언어 선택 또는 편집"
+debug = "진단 도구"
+version = "설치된 버전 표시"
+config = "Inscribe 설정 편집"
+status = "설정, 열린 메뉴, 호환성 표시"
+
+[command.parameter]
+upload = "명시적으로 허용된 경우에만 업로드합니다."
+
+[setting.general.enabled]
+name = "활성화"
+description = "추출과 적용을 활성화합니다."
+
+[setting.transfers.allowCreative]
+name = "크리에이티브 모드"
+description = "크리에이티브 모드에서 이전을 허용합니다."
+
+[setting.transfers.allowUnsafe]
+name = "최대치를 넘는 레벨"
+description = "높은 레벨을 유지합니다. 호환성과 충돌은 계속 검사합니다."
+
+[setting.pricing.allowEconomyOnFolia]
+name = "Folia 화폐 결제"
+description = "경제 플러그인이 Folia를 지원할 때만 활성화하세요."
+
+[setting.pricing.extractionCost]
+name = "추출 비용"
+description = "선택한 마법 부여별 기본 비용이며 경험치 또는 화폐로 지불합니다."
+
+[setting.pricing.extractionCostPerLevel]
+name = "레벨별 추출"
+description = "각 추출 비용에 마법 부여 레벨을 곱합니다."
+
+[setting.pricing.applicationCost]
+name = "적용 비용"
+description = "적용 1회당 비용이며 0은 무료입니다."
+
+[setting.pricing.applicationCostPerLevel]
+name = "레벨별 적용"
+description = "적용 비용에 적용되는 레벨의 합을 곱합니다."
+
+[setting.pricing.currency]
+name = "통화"
+description = "EXPERIENCE는 경험치 포인트를 그대로 사용합니다. MONEY는 Vault가 필요합니다."
+
+[setting.general.language]
+name = "서버 언어"
+description = "기본 언어이며 개인 선택이 우선합니다."
+
+[setting.hotReload.enabled]
+name = "자동 리로드"
+description = "편집한 설정 및 언어 파일을 자동으로 적용합니다."
+
+[setting.presentation.splashScreen]
+name = "시작 배너"
+description = "서버 로그에 플러그인 배너를 표시합니다."
+
+[setting.debug.uploadEnabled]
+name = "진단 업로드"
+description = "명시적으로 요청한 경우에만 업로드를 허용합니다."
+
+[setting.transfers.extractionMaterials]
+name = "추출 재료"
+description = "허용되는 아이템 재료이며, 빈 목록은 적합한 아이템을 모두 허용합니다."
+
+[setting.transfers.applicationMaterials]
+name = "적용 재료"
+description = "허용되는 아이템 재료이며, 빈 목록은 호환되는 아이템을 모두 허용합니다."
+
+[setting.transfers.bookName]
+name = "추출한 책 이름"
+description = "비워 두면 기본 이름을 사용합니다. 색상 서식을 지원합니다."
+
+[setting.transfers.bookLore]
+name = "추출한 책 설명"
+description = "최대 20줄이며 각 512자입니다. 비워 두면 설명을 추가하지 않습니다."
+
+[setting.enchantments]
+name = "마법 부여 규칙"
+description = "마법 부여별 추출 비용, 통화 및 활성화 상태입니다."
+
+[setting.editor]
+title = "Inscribe / 설정"
+
+[setting.metrics.enabled]
+name = "사용 통계"
+description = "익명 bStats 사용 보고를 활성화합니다."
+
+[setting.general.updateNotifications]
+name = "릴리스 알림"
+description = "릴리스를 확인하고 권한이 있는 플레이어에게 알립니다. 자동으로 설치하지 않습니다."
+
+[setting.policy.enabled]
+name = "활성화"
+description = "이 마법 부여의 이전을 허용합니다."
+
+[setting.policy.cost]
+name = "비용"
+description = "이 마법 부여의 추출 비용입니다."
+
+[setting.policy.perLevel]
+name = "레벨당"
+description = "비용에 마법 부여 레벨을 곱합니다."
+
+[setting.policy.currency]
+name = "통화"
+description = "EXPERIENCE는 경험치, MONEY는 Vault를 사용합니다."
+
+[debug.error]
+missing-permission = "권한이 없습니다: {permission}"
+already-preparing = "{plugin} 보고서를 이미 준비 중입니다."
+already-preparing-short = "보고서를 이미 준비 중입니다."
+schedule-failed = "보고서를 예약할 수 없습니다."
+provider-closed = "진단 서비스가 종료되었습니다."
+closed-before-capture = "수집 전에 진단 서비스가 종료되었습니다."
+writer-schedule-failed = "보고서 쓰기를 예약할 수 없습니다."
+capture-failed = "보고서를 수집하지 못했습니다. 서버 콘솔을 확인하세요."
+closed-before-write = "저장 전에 진단 서비스가 종료되었습니다."
+write-failed = "보고서를 저장하지 못했습니다. 서버 콘솔을 확인하세요."
+
+[debug]
+preparing = "{plugin} 보고서 준비 중..."
+saved = "{plugin} 보고서를 {path}에 저장했습니다."
+
+[debug.upload]
+interrupted = "업로드가 중단되었습니다. 로컬 보고서는 저장되었습니다."
+failed = "업로드에 실패했습니다. 로컬 보고서는 저장되었습니다."
+completed = "VolmitSoftware - {plugin} - v{version} 이름으로 업로드했습니다."
+
+[debug.action]
+open = "열기: {url}"
+open-description = "업로드한 보고서를 엽니다."
+copy-path = "로컬 경로 복사"
+copy-path-description = "로컬 보고서 경로를 복사합니다."
+
+[setting.general]
+name = "일반"
+description = "전체 스위치, 서버 언어, 릴리스 알림."
+
+[setting.metrics]
+name = "지표"
+description = "익명 bStats 사용 통계."
+
+[setting.presentation]
+name = "표시"
+description = "시작 출력."
+
+[setting.hotReload]
+name = "핫 리로드"
+description = "편집한 파일을 재시작 없이 적용합니다."
+
+[setting.debug]
+name = "진단"
+description = "진단 보고서."
+
+[setting.transfers]
+name = "이전"
+description = "이전할 수 있는 사람, 대상 아이템, 책 결합 방식."
+
+[setting.pricing]
+name = "비용"
+description = "기본 비용과 결제 통화."
+
+[setting.hotReload.pollIntervalMillis]
+name = "확인 간격"
+description = "파일 확인 간격(밀리초, 250~60000)."
+
+[setting.hotReload.cooldownMillis]
+name = "대기 시간"
+description = "파일이 적용되기 전에 변경 없이 유지되어야 하는 시간(밀리초)."
+
+[setting.hotReload.notifyOperators]
+name = "운영자 알림"
+description = "적용되거나 거부된 파일 변경을 액션 바에 표시합니다."
+
+[setting.transfers.mergeEqualLevels]
+name = "같은 레벨 합치기"
+description = "책과 아이템의 같은 레벨을 모루처럼 다음 레벨로 합칩니다."
+
+[setting.transfers.increaseRepairCost]
+name = "수리 비용 증가"
+description = "책을 적용할 때 모루처럼 아이템의 수리 비용을 높입니다."
+
+[status]
+pricing = "&7통화 &f{currency}&r &8|&r &7추출 비용 &f{extraction}&r &8|&r &7적용 비용 &f{application}&r"
+transfers = "&7열린 메뉴 &f{menus}&r &8|&r &7레벨 합치기 {merge} &8|&r &7수리 비용 {repair}"
+configuration = "&7설정 {enabled} &8|&r &7언어 &f{language}&r &8|&r &7핫 리로드 {hot_reload}"
+services = "&7지표 {metrics} &8|&r &7릴리스 알림 {updates}"
+compatibility = "&7호환성 &fJava 25 / Bukkit {range}&r &8|&r &f{scheduler}&r"
+header = "Inscribe 상태"
+
+[command.feedback]
+files_applied = "&a적용됨&7: 설정 및 언어 파일 변경 사항."
+files_rejected = "&c파일 변경이 거부되었습니다. 마지막으로 유효했던 설정이 계속 사용됩니다."
+
+[status.state]
+enabled = "&a활성화&r"
+disabled = "&c비활성화&r"
