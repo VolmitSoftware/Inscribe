@@ -53,6 +53,6 @@ public final class InscribePresentation {
                 "Server: " + server,
                 "Minecraft: 26.1-26.3 | Java: " + javaVersion + " (minimum 25)",
                 "Started: " + date + " | Ready in " + elapsedMillis + " ms",
-                "https://volmit.com | /inscribe");
+                "https://volmitsoftware.com | /inscribe");
     }
 }

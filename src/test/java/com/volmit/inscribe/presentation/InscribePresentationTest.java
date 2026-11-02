@@ -13,6 +13,6 @@ class InscribePresentationTest {
                         "Server: Folia 26.1.2",
                         "Minecraft: 26.1-26.3 | Java: 25 (minimum 25)",
                         "Started: 2026-10-14 | Ready in 123 ms",
-                        "https://volmit.com | /inscribe");
+                        "https://volmitsoftware.com | /inscribe");
     }
 }
