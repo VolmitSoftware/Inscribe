@@ -201,8 +201,8 @@ reconciliation = "התשלום נכשל באופן בלתי צפוי. יש לב�
 
 [menu]
 title = "Inscribe"
-keep = "שמירה: {name} {level}"
-transfer = "העברה: {name} {level}"
+keep = "שמירה"
+transfer = "העברה"
 cost = "עלות: {cost}"
 price = "{experience} ניסיון + {money} כסף"
 experience = "{experience} ניסיון"
@@ -213,8 +213,8 @@ cancel = "ביטול"
 previous = "העמוד הקודם"
 next = "העמוד הבא"
 total = "סך הכול: {cost}"
-apply = "החלה: {name} {level}"
-skip = "דילוג: {name} {level}"
+apply = "החלה"
+skip = "דילוג"
 current = "רמה נוכחית: {level}"
 confirm_apply = "החלת כישופים"
 

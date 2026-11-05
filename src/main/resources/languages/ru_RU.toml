@@ -201,8 +201,8 @@ reconciliation = "Неожиданная ошибка оплаты. Попрос
 
 [menu]
 title = "Inscribe"
-keep = "Оставить: {name} {level}"
-transfer = "Перенести: {name} {level}"
+keep = "Оставить"
+transfer = "Перенести"
 cost = "Стоимость: {cost}"
 price = "{experience} опыта + {money} денег"
 experience = "{experience} опыта"
@@ -213,8 +213,8 @@ cancel = "Отмена"
 previous = "Предыдущая страница"
 next = "Следующая страница"
 total = "Итого: {cost}"
-apply = "Применить: {name} {level}"
-skip = "Пропустить: {name} {level}"
+apply = "Применить"
+skip = "Пропустить"
 current = "Текущий уровень: {level}"
 confirm_apply = "Применить зачарования"
 

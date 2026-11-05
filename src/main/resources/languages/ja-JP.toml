@@ -201,8 +201,8 @@ reconciliation = "支払いで予期しない問題が発生しました。再�
 
 [menu]
 title = "Inscribe"
-keep = "維持: {name} {level}"
-transfer = "移動: {name} {level}"
+keep = "維持"
+transfer = "移動"
 cost = "料金: {cost}"
 price = "{experience} 経験値 + {money} 通貨"
 experience = "{experience} 経験値"
@@ -213,8 +213,8 @@ cancel = "キャンセル"
 previous = "前のページ"
 next = "次のページ"
 total = "合計: {cost}"
-apply = "適用: {name} {level}"
-skip = "スキップ: {name} {level}"
+apply = "適用"
+skip = "スキップ"
 current = "現在のレベル: {level}"
 confirm_apply = "エンチャントを適用"
 

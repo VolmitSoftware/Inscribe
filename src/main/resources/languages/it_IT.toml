@@ -201,8 +201,8 @@ reconciliation = "Il pagamento non è riuscito inaspettatamente. Chiedi a un amm
 
 [menu]
 title = "Inscribe"
-keep = "Mantieni: {name} {level}"
-transfer = "Trasferisci: {name} {level}"
+keep = "Mantieni"
+transfer = "Trasferisci"
 cost = "Costo: {cost}"
 price = "{experience} XP + {money} denaro"
 experience = "{experience} XP"
@@ -213,8 +213,8 @@ cancel = "Annulla"
 previous = "Pagina precedente"
 next = "Pagina successiva"
 total = "Totale: {cost}"
-apply = "Applica: {name} {level}"
-skip = "Salta: {name} {level}"
+apply = "Applica"
+skip = "Salta"
 current = "Livello attuale: {level}"
 confirm_apply = "Applica incantesimi"
 

@@ -198,6 +198,26 @@ class TransferServiceTest {
     }
 
     @Test
+    void entriesShowSelectionThroughTheItemAndCarryTheRealEnchantment() {
+        player.getInventory().setItem(0, sword());
+        player.setItemOnCursor(new ItemStack(Material.BOOK));
+        clickSource();
+        Inventory menu = player.getOpenInventory().getTopInventory();
+        ItemStack unselected = menu.getItem(0);
+        assertThat(unselected.getType()).isEqualTo(Material.BOOK);
+        assertThat(unselected.getEnchantments()).hasSize(1);
+        assertThat(unselected.getItemMeta().getEnchantmentGlintOverride()).isFalse();
+        assertThat(unselected.getItemMeta().getDisplayName()).contains("menu.keep").startsWith("§");
+        Map.Entry<Enchantment, Integer> enchantment = unselected.getEnchantments().entrySet().iterator().next();
+        clickMenu(0);
+        ItemStack selected = menu.getItem(0);
+        assertThat(selected.getType()).isEqualTo(Material.ENCHANTED_BOOK);
+        assertThat(((EnchantmentStorageMeta) selected.getItemMeta()).getStoredEnchants()).containsExactly(enchantment);
+        assertThat(selected.getItemMeta().getDisplayName()).contains("menu.transfer").startsWith("§");
+        assertThat(selected.getItemMeta().getLore()).singleElement().asString().contains("menu.cost").startsWith("§");
+    }
+
+    @Test
     void applicationWaitsForConfirmationAndHonorsDeselection() {
         player.getInventory().setItem(0, new ItemStack(Material.DIAMOND_SWORD));
         ItemStack book = EnchantmentPlanTest.book(Map.of(Enchantment.SHARPNESS, 3));

@@ -1,9 +1,12 @@
 package com.volmit.inscribe.enchant;
 
+import art.arcane.volmlib.util.director.help.DirectorMiniMenu;
 import art.arcane.volmlib.util.inventorygui.BukkitInventoryShutdown;
+import art.arcane.volmlib.util.plugin.ComponentText;
 import art.arcane.volmlib.util.scheduling.FoliaScheduler;
 import com.volmit.inscribe.config.RuntimeConfig;
 import com.volmit.inscribe.localization.LanguageService;
+import com.volmit.inscribe.presentation.InscribePresentation;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -369,33 +372,36 @@ public final class TransferService implements Listener, AutoCloseable {
         session.inventory.clear();
         boolean extraction = session.input.mode() == Mode.EXTRACT;
         RuntimeConfig config = session.input.config();
+        DirectorMiniMenu.Theme theme = InscribePresentation.theme();
         List<Map.Entry<Enchantment, Integer>> entries = new ArrayList<>(session.input.available().entrySet());
         for (int slot = 0; slot < PAGE_SIZE && session.page * PAGE_SIZE + slot < entries.size(); slot++) {
             Map.Entry<Enchantment, Integer> entry = entries.get(session.page * PAGE_SIZE + slot);
-            String name = entry.getKey().getKey().getKey().replace('_', ' ');
             boolean chosen = session.selected.contains(entry.getKey());
-            String title = language.text(session.player, extraction ? chosen ? "menu.transfer" : "menu.keep"
-                    : chosen ? "menu.apply" : "menu.skip", "name", name, "level", Integer.toString(entry.getValue()));
+            String title = text(session.player, chosen ? theme.primaryLeft() : theme.description(),
+                    extraction ? chosen ? "menu.transfer" : "menu.keep" : chosen ? "menu.apply" : "menu.skip");
             int current = session.input.source().getEnchantmentLevel(entry.getKey());
             String detail = extraction
-                    ? language.text(session.player, "menu.cost", "cost", cost(session.player,
+                    ? text(session.player, theme.description(), "menu.cost", "cost", cost(session.player,
                             EnchantmentPlan.extractionCost(Map.of(entry.getKey(), entry.getValue()), config)))
-                    : current > 0 ? language.text(session.player, "menu.current", "level", Integer.toString(current)) : null;
-            session.inventory.setItem(slot, detail == null ? icon(Material.ENCHANTED_BOOK, title)
-                    : icon(Material.ENCHANTED_BOOK, title, detail));
+                    : current > 0 ? text(session.player, theme.description(), "menu.current", "level", Integer.toString(current)) : null;
+            session.inventory.setItem(slot, enchantmentIcon(entry, chosen, title, detail));
         }
         if (session.page > 0) {
-            session.inventory.setItem(45, icon(Material.ARROW, language.text(session.player, "menu.previous")));
+            session.inventory.setItem(45, icon(Material.ARROW, text(session.player, theme.primaryRight(), "menu.previous")));
         }
-        session.inventory.setItem(49, icon(Material.BARRIER, language.text(session.player, "menu.cancel")));
+        session.inventory.setItem(49, icon(Material.BARRIER, text(session.player, theme.required(), "menu.cancel")));
         EnchantmentPlan.Cost total = extraction ? EnchantmentPlan.extractionCost(selected(session), config)
                 : EnchantmentPlan.applicationCost(selected(session), config);
         session.inventory.setItem(51, icon(Material.LIME_CONCRETE,
-                language.text(session.player, extraction ? "menu.confirm" : "menu.confirm_apply"),
-                language.text(session.player, "menu.total", "cost", cost(session.player, total))));
+                text(session.player, theme.primaryLeft(), extraction ? "menu.confirm" : "menu.confirm_apply"),
+                text(session.player, theme.description(), "menu.total", "cost", cost(session.player, total))));
         if ((session.page + 1) * PAGE_SIZE < entries.size()) {
-            session.inventory.setItem(53, icon(Material.ARROW, language.text(session.player, "menu.next")));
+            session.inventory.setItem(53, icon(Material.ARROW, text(session.player, theme.primaryRight(), "menu.next")));
         }
+    }
+
+    private String text(Player player, String color, String key, String... replacements) {
+        return ComponentText.section(language.text(player, key, replacements)).colorIfAbsent(color).legacy();
     }
 
     private Map<Enchantment, Integer> selected(Session session) {
@@ -420,6 +426,21 @@ public final class TransferService implements Listener, AutoCloseable {
         }
         book.setItemMeta(metadata);
         return book;
+    }
+
+    private static ItemStack enchantmentIcon(Map.Entry<Enchantment, Integer> entry, boolean chosen, String title, String detail) {
+        ItemStack item = new ItemStack(chosen ? Material.ENCHANTED_BOOK : Material.BOOK);
+        ItemMeta metadata = item.getItemMeta();
+        if (metadata instanceof EnchantmentStorageMeta storage) {
+            storage.addStoredEnchant(entry.getKey(), entry.getValue(), true);
+        } else {
+            metadata.addEnchant(entry.getKey(), entry.getValue(), true);
+            metadata.setEnchantmentGlintOverride(false);
+        }
+        metadata.setDisplayName(title);
+        metadata.setLore(detail == null ? List.of() : List.of(detail));
+        item.setItemMeta(metadata);
+        return item;
     }
 
     private static ItemStack icon(Material material, String title, String... lore) {

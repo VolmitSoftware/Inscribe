@@ -201,8 +201,8 @@ reconciliation = "De betaling is onverwacht mislukt. Vraag een beheerder de econ
 
 [menu]
 title = "Inscribe"
-keep = "Behouden: {name} {level}"
-transfer = "Overdragen: {name} {level}"
+keep = "Behouden"
+transfer = "Overdragen"
 cost = "Kosten: {cost}"
 price = "{experience} XP + {money} geld"
 experience = "{experience} XP"
@@ -213,8 +213,8 @@ cancel = "Annuleren"
 previous = "Vorige pagina"
 next = "Volgende pagina"
 total = "Totaal: {cost}"
-apply = "Toepassen: {name} {level}"
-skip = "Overslaan: {name} {level}"
+apply = "Toepassen"
+skip = "Overslaan"
 current = "Huidig niveau: {level}"
 confirm_apply = "Betoveringen toepassen"
 

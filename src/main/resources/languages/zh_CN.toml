@@ -201,8 +201,8 @@ reconciliation = "支付意外失败。重试前请让管理员检查经济系�
 
 [menu]
 title = "Inscribe"
-keep = "保留：{name} {level}"
-transfer = "转移：{name} {level}"
+keep = "保留"
+transfer = "转移"
 cost = "费用：{cost}"
 price = "{experience} 经验值 + {money} 金钱"
 experience = "{experience} 经验值"
@@ -213,8 +213,8 @@ cancel = "取消"
 previous = "上一页"
 next = "下一页"
 total = "总计：{cost}"
-apply = "应用：{name} {level}"
-skip = "跳过：{name} {level}"
+apply = "应用"
+skip = "跳过"
 current = "当前等级：{level}"
 confirm_apply = "应用附魔"
 

@@ -201,8 +201,8 @@ reconciliation = "Płatność niespodziewanie nie powiodła się. Poproś admini
 
 [menu]
 title = "Inscribe"
-keep = "Zachowaj: {name} {level}"
-transfer = "Przenieś: {name} {level}"
+keep = "Zachowaj"
+transfer = "Przenieś"
 cost = "Koszt: {cost}"
 price = "{experience} PD + {money} pieniędzy"
 experience = "{experience} PD"
@@ -213,8 +213,8 @@ cancel = "Anuluj"
 previous = "Poprzednia strona"
 next = "Następna strona"
 total = "Razem: {cost}"
-apply = "Nałóż: {name} {level}"
-skip = "Pomiń: {name} {level}"
+apply = "Nałóż"
+skip = "Pomiń"
 current = "Obecny poziom: {level}"
 confirm_apply = "Nałóż zaklęcia"
 

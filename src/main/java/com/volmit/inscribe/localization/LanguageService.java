@@ -271,7 +271,8 @@ public final class LanguageService implements AutoCloseable {
     }
 
     public DirectorTextResolver directorResolver() {
-        return (key, arguments) -> render(null, key, arguments).miniMessage();
+        return (key, arguments) -> CATALOG.key(key.id()) == null ? ComponentText.literal(key.english()).miniMessage()
+                : render(null, key, arguments).miniMessage();
     }
 
     public void send(CommandSender sender, String key, MessageArgs arguments) {

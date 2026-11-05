@@ -56,6 +56,16 @@ final class ConfigEditorLayoutTest {
     }
 
     @Test
+    void policyEntriesShowReadableNames() {
+        BukkitConfigEditor.EditorLayout layout = ConfigEditorLayout.create(player -> { });
+        BukkitConfigEditor.EntryPresentation vanilla = layout.entries().apply(List.of("enchantments", "minecraft:binding_curse"));
+        assertEquals("Binding Curse", vanilla.name().english());
+        assertEquals("setting.enchantments.description", vanilla.description().id());
+        assertEquals("Storm Strike (mypack)", layout.entries().apply(List.of("enchantments", "mypack:storm_strike")).name().english());
+        assertEquals("Storm", layout.entries().apply(List.of("enchantments", "storm")).name().english());
+    }
+
+    @Test
     void dynamicSectionsOptInOnlyEnchantmentPolicies() {
         assertEquals(Set.of(List.of("enchantments")), ConfigEditorLayout.dynamicSections());
     }

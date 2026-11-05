@@ -201,8 +201,8 @@ reconciliation = "Thanh toán thất bại bất ngờ. Hãy nhờ quản trị 
 
 [menu]
 title = "Inscribe"
-keep = "Giữ: {name} {level}"
-transfer = "Chuyển: {name} {level}"
+keep = "Giữ"
+transfer = "Chuyển"
 cost = "Chi phí: {cost}"
 price = "{experience} XP + {money} tiền"
 experience = "{experience} XP"
@@ -213,8 +213,8 @@ cancel = "Hủy"
 previous = "Trang trước"
 next = "Trang sau"
 total = "Tổng: {cost}"
-apply = "Áp dụng: {name} {level}"
-skip = "Bỏ qua: {name} {level}"
+apply = "Áp dụng"
+skip = "Bỏ qua"
 current = "Cấp hiện tại: {level}"
 confirm_apply = "Áp dụng phù phép"
 

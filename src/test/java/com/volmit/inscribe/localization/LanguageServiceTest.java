@@ -263,11 +263,17 @@ final class LanguageServiceTest {
 
     @Test
     void untrustedArgumentsStayLiteralWithoutRecursiveSubstitution() {
-        TextKey key = (TextKey) InscribeMessages.catalog().require("menu.keep");
+        TextKey key = (TextKey) InscribeMessages.catalog().require("menu.price");
         String result = language.render(null, key, MessageArgs.builder()
-                .untrusted("name", "<red>{level}</red>&a")
-                .untrusted("level", "5").build()).plain();
-        assertEquals("Keep: <red>{level}</red>&a 5", result);
+                .untrusted("experience", "<red>{money}</red>&a")
+                .untrusted("money", "5").build()).plain();
+        assertEquals("<red>{money}</red>&a XP + 5 money", result);
+    }
+
+    @Test
+    void directorResolverShowsDynamicLabelsWithoutCatalogEntries() {
+        TextKey label = TextKey.of("setting.enchantments.entry.example.storm", "Storm (example)");
+        assertEquals("Storm (example)", language.directorResolver().resolve(label));
     }
 
     private LanguageService service() {

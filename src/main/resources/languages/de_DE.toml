@@ -201,8 +201,8 @@ reconciliation = "Die Zahlung ist unerwartet fehlgeschlagen. Bitte einen Adminis
 
 [menu]
 title = "Inscribe"
-keep = "Behalten: {name} {level}"
-transfer = "Übertragen: {name} {level}"
+keep = "Behalten"
+transfer = "Übertragen"
 cost = "Kosten: {cost}"
 price = "{experience} EP + {money} Geld"
 experience = "{experience} EP"
@@ -213,8 +213,8 @@ cancel = "Abbrechen"
 previous = "Vorherige Seite"
 next = "Nächste Seite"
 total = "Gesamt: {cost}"
-apply = "Anwenden: {name} {level}"
-skip = "Überspringen: {name} {level}"
+apply = "Anwenden"
+skip = "Überspringen"
 current = "Aktuelle Stufe: {level}"
 confirm_apply = "Verzauberungen anwenden"
 

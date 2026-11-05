@@ -201,8 +201,8 @@ reconciliation = "예기치 않게 결제에 실패했습니다. 다시 시도�
 
 [menu]
 title = "Inscribe"
-keep = "유지: {name} {level}"
-transfer = "이전: {name} {level}"
+keep = "유지"
+transfer = "이전"
 cost = "비용: {cost}"
 price = "{experience} 경험치 + {money} 화폐"
 experience = "{experience} 경험치"
@@ -213,8 +213,8 @@ cancel = "취소"
 previous = "이전 페이지"
 next = "다음 페이지"
 total = "합계: {cost}"
-apply = "적용: {name} {level}"
-skip = "건너뛰기: {name} {level}"
+apply = "적용"
+skip = "건너뛰기"
 current = "현재 레벨: {level}"
 confirm_apply = "마법 부여 적용"
 

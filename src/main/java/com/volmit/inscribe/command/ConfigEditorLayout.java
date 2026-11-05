@@ -40,10 +40,38 @@ public final class ConfigEditorLayout {
     }
 
     private static BukkitConfigEditor.EntryPresentation presentation(List<String> path, Consumer<Player> languages) {
+        if (path.size() == 2 && path.getFirst().equals("enchantments")) {
+            return policyPresentation(path.getLast());
+        }
         String field = path.size() == 3 && path.getFirst().equals("enchantments") ? "policy." + path.getLast() : String.join(".", path);
         Setting setting = SETTINGS.get(field);
         return setting == null ? null : new BukkitConfigEditor.EntryPresentation(setting.name(), setting.description(),
                 setting.icon(), setting.order(), setting.numeric(), null, field.equals("general.language") ? languages : null);
+    }
+
+    private static BukkitConfigEditor.EntryPresentation policyPresentation(String id) {
+        Setting section = SETTINGS.get("enchantments");
+        TextKey name = TextKey.of("setting.enchantments.entry." + id.replaceAll("[^A-Za-z0-9_.-]", "."), policyName(id));
+        return new BukkitConfigEditor.EntryPresentation(name, section.description(), section.icon(), 0, null, null, null);
+    }
+
+    private static String policyName(String id) {
+        int separator = id.indexOf(':');
+        String namespace = id.substring(0, Math.max(separator, 0));
+        StringBuilder name = new StringBuilder();
+        for (String word : id.substring(separator + 1).split("[_/.-]+")) {
+            if (word.isEmpty()) {
+                continue;
+            }
+            if (!name.isEmpty()) {
+                name.append(' ');
+            }
+            name.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
+        }
+        if (name.isEmpty()) {
+            return id;
+        }
+        return namespace.isEmpty() || namespace.equals("minecraft") ? name.toString() : name + " (" + namespace + ")";
     }
 
     private static Map<String, Setting> settings() {

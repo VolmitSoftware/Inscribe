@@ -201,8 +201,8 @@ reconciliation = "Maksu epäonnistui odottamatta. Pyydä ylläpitäjää tarkist
 
 [menu]
 title = "Inscribe"
-keep = "Säilytä: {name} {level}"
-transfer = "Siirrä: {name} {level}"
+keep = "Säilytä"
+transfer = "Siirrä"
 cost = "Hinta: {cost}"
 price = "{experience} XP + {money} rahaa"
 experience = "{experience} XP"
@@ -213,8 +213,8 @@ cancel = "Peruuta"
 previous = "Edellinen sivu"
 next = "Seuraava sivu"
 total = "Yhteensä: {cost}"
-apply = "Lisää: {name} {level}"
-skip = "Ohita: {name} {level}"
+apply = "Lisää"
+skip = "Ohita"
 current = "Nykyinen taso: {level}"
 confirm_apply = "Lisää lumoukset"
 

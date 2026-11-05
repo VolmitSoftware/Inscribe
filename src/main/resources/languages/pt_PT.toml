@@ -201,8 +201,8 @@ reconciliation = "O pagamento falhou inesperadamente. Pede a um administrador pa
 
 [menu]
 title = "Inscribe"
-keep = "Manter: {name} {level}"
-transfer = "Transferir: {name} {level}"
+keep = "Manter"
+transfer = "Transferir"
 cost = "Custo: {cost}"
 price = "{experience} EXP + {money} dinheiro"
 experience = "{experience} EXP"
@@ -213,8 +213,8 @@ cancel = "Cancelar"
 previous = "Página anterior"
 next = "Página seguinte"
 total = "Total: {cost}"
-apply = "Aplicar: {name} {level}"
-skip = "Ignorar: {name} {level}"
+apply = "Aplicar"
+skip = "Ignorar"
 current = "Nível atual: {level}"
 confirm_apply = "Aplicar encantamentos"
 

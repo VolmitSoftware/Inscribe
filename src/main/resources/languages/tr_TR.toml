@@ -201,8 +201,8 @@ reconciliation = "Ödeme beklenmedik şekilde başarısız oldu. Tekrar denemede
 
 [menu]
 title = "Inscribe"
-keep = "Koru: {name} {level}"
-transfer = "Aktar: {name} {level}"
+keep = "Koru"
+transfer = "Aktar"
 cost = "Ücret: {cost}"
 price = "{experience} XP + {money} para"
 experience = "{experience} XP"
@@ -213,8 +213,8 @@ cancel = "İptal"
 previous = "Önceki sayfa"
 next = "Sonraki sayfa"
 total = "Toplam: {cost}"
-apply = "Uygula: {name} {level}"
-skip = "Atla: {name} {level}"
+apply = "Uygula"
+skip = "Atla"
 current = "Mevcut seviye: {level}"
 confirm_apply = "Büyüleri uygula"
 

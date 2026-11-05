@@ -201,8 +201,8 @@ reconciliation = "Mokėjimas netikėtai nepavyko. Prieš bandydami dar kartą pa
 
 [menu]
 title = "Inscribe"
-keep = "Palikti: {name} {level}"
-transfer = "Perkelti: {name} {level}"
+keep = "Palikti"
+transfer = "Perkelti"
 cost = "Kaina: {cost}"
 price = "{experience} patirties + {money} pinigų"
 experience = "{experience} patirties"
@@ -213,8 +213,8 @@ cancel = "Atšaukti"
 previous = "Ankstesnis puslapis"
 next = "Kitas puslapis"
 total = "Iš viso: {cost}"
-apply = "Pritaikyti: {name} {level}"
-skip = "Praleisti: {name} {level}"
+apply = "Pritaikyti"
+skip = "Praleisti"
 current = "Dabartinis lygis: {level}"
 confirm_apply = "Pritaikyti užkerėjimus"
 
